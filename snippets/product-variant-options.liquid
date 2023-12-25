@@ -50,12 +50,11 @@
   {% if option.name == "Color" %}
 
     {% for variant in product.variants %}
-
       {% if value == variant.metafields.custom.colour_swatch.value.colour_name %}
-
-        <span>{{ value }} : {{ variant.metafields.custom.colour_swatch.value.colour_hex }}</span>
+        {%- assign new_color_hex = variant.metafields.custom.colour_swatch.value.colour_hex -%}
       {% endif %}
     {% endfor %}
+
     <input
       type="radio"
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -68,10 +67,13 @@
       {% if option_disabled %}
       class="disabled"
       {% endif %}>
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-      {{ value -}}
+    <label
+      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      class="color-swatch"
+      style="background-color: {{new_color_hex}}">
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
+
   {% endif %}
   {% if option.name == "Size" %}
     <input
@@ -91,7 +93,13 @@
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
   {% endif %}
-
+  <style>
+    .color-swatch {
+      padding: 0 !important;
+      width: 30px;
+      height: 30px;
+    }
+  </style>
   {%- if block.settings.picker_type == 'button' -%}
 
   {%- elsif block.settings.picker_type == 'dropdown' -%}
