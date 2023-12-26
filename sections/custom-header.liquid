@@ -1,6 +1,9 @@
 {% liquid 
-   assign sectionID = 'shopify-section-' | append: section.id %}
- <header id="{{ sectionID }}"class="navigation-bar">
+   assign sectionID = 'shopify-section-' | append: section.id 
+assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
+%}
+   
+ <header id="{{ divID}}"class="navigation-bar">
         <div class="left-section">
             <form class="aa-Form" action="" novalidate="" role="search">
                 <div class="aa-InputWrapperPrefix"><label class="aa-Label" for="autocomplete-0-input"
