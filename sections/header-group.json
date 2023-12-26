@@ -2,12 +2,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "84e3b162-eace-4e12-aefc-ac320f4628af": {
-      "type": "custom-announcement-bar",
-      "disabled": true,
-      "settings": {
-      }
-    },
     "header": {
       "type": "header",
       "disabled": true,
@@ -32,16 +26,15 @@
       "settings": {
       }
     },
-    "e49d08b5-ce72-4c08-9bed-30d705113786": {
+    "8a738622-ddce-4ad6-a4f5-0c10fb16db72": {
       "type": "custom-header",
       "settings": {
       }
     }
   },
   "order": [
-    "84e3b162-eace-4e12-aefc-ac320f4628af",
     "header",
     "7b902bf4-ed6c-4dc6-bce6-2105fc64875b",
-    "e49d08b5-ce72-4c08-9bed-30d705113786"
+    "8a738622-ddce-4ad6-a4f5-0c10fb16db72"
   ]
 }
