@@ -169,6 +169,44 @@
       "settings": {
       }
     },
+    "fcd86e49-ff55-4bdf-a0cd-1f2703c565f4": {
+      "type": "custom-benefits-section",
+      "blocks": {
+        "2a82c616-7493-4c76-9285-d911a338a7cd": {
+          "type": "benefits",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/online-support-64.webp",
+            "direct_benefit_text": "on hand technical support"
+          }
+        },
+        "fac289f9-03a9-451a-9da4-c64b8729113b": {
+          "type": "benefits",
+          "settings": {
+            "direct_benefit_text": ""
+          }
+        },
+        "f2ee89e1-b16e-46fa-ac50-e5ac9c146cfa": {
+          "type": "benefits",
+          "settings": {
+            "direct_benefit_text": ""
+          }
+        },
+        "8e685c4e-5d14-4833-abbf-c00a29b3dfd9": {
+          "type": "benefits",
+          "settings": {
+            "direct_benefit_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "2a82c616-7493-4c76-9285-d911a338a7cd",
+        "fac289f9-03a9-451a-9da4-c64b8729113b",
+        "f2ee89e1-b16e-46fa-ac50-e5ac9c146cfa",
+        "8e685c4e-5d14-4833-abbf-c00a29b3dfd9"
+      ],
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -202,6 +240,7 @@
     "ac313d55-ff48-42b7-8efa-34e67e5f4c6b",
     "157b7d98-7837-45e2-a55b-6e26a4b4a429",
     "a5ef4251-f0d9-44ee-acbb-a47319bba267",
+    "fcd86e49-ff55-4bdf-a0cd-1f2703c565f4",
     "featured_collection"
   ]
 }
