@@ -1,12 +1,268 @@
+{{ 'base-test.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign directIcon = section.settings.direct_Icon
+    assign directTitle = section.settings.direct_Title
+    assign directText = section.settings.direct_Text
+    assign directButtonText = section.settings.direct_description_btn_text
+    assign directButtonUrl = section.settings.direct_description_btn_url
+%}
+
+<section class="direct-usp-text-content_wrapper">
+  <div class="direct-usp-container">
+      {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% liquid
+           assign directUspIcon = block.settings.direct_image
+           assign directProductText = block.settings.direct_product_text 
+      %}
+        <div class="direct-usp-text-item">
+                <div class="direct-icon-container">
+                   <figure>
+                    {% render 'snippet-image', image: directUspIcon, loadingLazy: 'false', class: 'direct-usp-icon ' %}
+                   </figure>
+                  </div>
+          <div class="direct-usp-text">
+            {{ directProductText }}
+          </div>
+        </div>
+        
+         {% endfor %}
+    {% endif %}
+  </div>
+  
+  <div class="direct-text">
+    
+     {% if directIcon != 'blank' %}
+              <p class="table-subheading descriptionIcon text-center c-title text-white">
+                {% render 'snippet-image', image: directIcon, loadingLazy: 'false', class: 'directIcon' %}
+              </p>
+            {% endif %}
+
+     {% if directTitle != 'blank' %}
+              <p class="table-heading descriptionTitle text-center c-title text-white">
+                {{ directTitle }}
+              </p>
+            {% endif %}
+
+    {% if directText != 'blank' %}
+              <p class="table-subheading descriptionText text-center c-title text-white">
+                {{ directText }}
+              </p>
+            {% endif %}
+            <div class="container">
+              
+      <a href="{{ directButtonUrl }}" class="button button-primary">{{ directButtonText }}</a>
+            </div>
+  </div>
+</section>
+
+<style>
+ .direct-usp-text-item .direct-icon-container figure {
+	margin: 0;
+	display: flex;
+	height:100%;
+}
+.direct-usp-text-item .direct-icon-container figure > img {
+	height: auto;
+	object-fit: cover;
+}
+.direct-usp-text-content_wrapper {
+	display: flex;
+}
+.direct-usp-text-content_wrapper > div {
+	width: 100%;
+}
+.direct-text {
+	padding: 70px;
+	background-color: #042950;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.direct-usp-container {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	align-items: center;
+	gap: 20px;
+	padding: 0 30px;
+	flex-wrap: wrap;
+}
+.direct-usp-text-item {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	width: 48%;
+	background: #f7f7f7;
+	padding: 25px;
+}
+.direct-usp-text {
+	font-family: var(--hero-heading-font);
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.direct-usp-icon {
+	width: 50px;
+}
+.directIcon {
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+}
+.direct-text > .descriptionTitle {
+	font-family: var(--usp-text-heading-font) !important;
+	font-size: 58px !important;
+	font-weight: 700;
+	padding: 10px 50px;
+	line-height: 70px !important;
+	text-transform: uppercase;
+}
+.descriptionText {
+	font-size: 14px;
+	padding: 0 50px;
+	font-weight: 300 !important;
+	opacity: 0.9;
+}
+.button {
+	text-decoration: none;
+	padding: 10px 20px;
+	font-size: 12px;
+	border-radius: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: var(--body-font);
+	margin: 30px 5px;
+}
+.button-primary{
+	background-color: white;
+	color: #000;
+}
+.button-primary:hover{
+	opacity: 0.9;
+}
+.button-secondary {
+	background: transparent;
+	border: 1px solid white;
+	color:white;
+}
+.button-secondary:hover {
+	background: white;
+	border: 1px solid white;
+	color:black;
+}
+.button, .button::before, .button::after,.button:hover, .button:hover:after {
+	box-shadow: none !important;
+}
+.container {
+	display: flex;
+}
+@media all and (max-width: 1218px) {
+	.direct-usp-text-item {
+		width: 100%;
+	}
+}
+@media all and (max-width: 991px) {
+	.direct-usp-text-content_wrapper {
+		max-height: 100%;
+	}
+	.direct-usp-text-image-container {
+		display: none;
+	}
+	.direct-text {
+		padding: 30px;
+	}
+	.descriptionIcon img {
+		width: 50px;
+		height: 50px;
+	}
+	.direct-text > .descriptionTitle {
+		font-size: 32px !important;
+		line-height: initial !important;
+	}
+}
+@media all and (max-width: 768px) {
+	.direct-usp-text-content_wrapper{
+		flex-wrap: wrap;
+	}
+	.container {
+		flex-direction: column;
+	}
+	.direct-usp-text-text {
+		padding: 20px 0;
+	}
+	.button-primary {
+		margin: 10px;
+	}
+	.descriptionTitle {
+		font-size: 28px;
+	}
+}
+
+  </style>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Direct USP & Description",
+    "settings": [
+       {
+        "type": "image_picker",
+        "id": "direct_Icon",
+        "label": "Text Icon"
+      },
+      {
+        "type": "text",
+        "id": "direct_Title",
+        "label": "Description Title"
+      },
+      {
+        "type": "textarea",
+        "id": "direct_Text",
+        "label": "Section Text"
+      },
+      {
+        "type": "text",
+        "id": "direct_description_btn_text",
+        "label": "Description Button Text"
+      },
+      {
+        "type": "url",
+        "id": "direct_description_btn_url",
+        "label": "Description Button URL"
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Direct USP & Description"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "usp",
+        "name": "Usp Text item",
+        "settings": [
+       {
+        "type": "text",
+        "id": "direct_product_text",
+        "label": "Product Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "direct_image",
+        "label": "Section Image"
+      }
+    ]
+      }
+    ],
+    "max_blocks": 8,
+    "presets": [
+      {
+        "name": "Usp Item"
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
