@@ -4,12 +4,12 @@
   "sections": {
     "84e3b162-eace-4e12-aefc-ac320f4628af": {
       "type": "custom-announcement-bar",
+      "disabled": true,
       "settings": {
       }
     },
     "header": {
       "type": "header",
-      "disabled": true,
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
