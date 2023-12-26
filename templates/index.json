@@ -182,7 +182,8 @@
         "fac289f9-03a9-451a-9da4-c64b8729113b": {
           "type": "benefits",
           "settings": {
-            "direct_benefit_text": ""
+            "direct_image": "shopify:\/\/shop_images\/Australia_Largest_Products_Icon_2.svg",
+            "direct_benefit_text": "10k+ products"
           }
         },
         "f2ee89e1-b16e-46fa-ac50-e5ac9c146cfa": {
