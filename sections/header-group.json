@@ -25,10 +25,16 @@
       "type": "custom-announcement-bar",
       "settings": {
       }
+    },
+    "54b6cb91-43cf-4c1a-858d-1b1d42ed1891": {
+      "type": "custom-header",
+      "settings": {
+      }
     }
   },
   "order": [
     "header",
-    "c699b2fe-ac3a-4934-93e6-8f5cc0defd31"
+    "c699b2fe-ac3a-4934-93e6-8f5cc0defd31",
+    "54b6cb91-43cf-4c1a-858d-1b1d42ed1891"
   ]
 }
