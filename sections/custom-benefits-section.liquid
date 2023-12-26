@@ -1,0 +1,146 @@
+{{ 'base-test.css' | asset_url | stylesheet_tag }}
+<section class="direct-benefits-section">
+
+  {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% liquid
+           assign directUspImage = block.settings.direct_image
+           assign directBenefitText = block.settings.direct_benefit_text 
+      %}
+        <div class="direct-benefits-item">
+                <div class="direct-benefits-image-container">
+                   <figure>
+                    {% render 'snippet-image', image: directUspImage, loadingLazy: 'false', class: 'direct-benefits-hero-image ' %}
+                   </figure>
+                  </div>
+          <div class="direct-benefit-name">{{ directBenefitText }}</div>
+        </div>
+        {% unless forloop.last %}
+             <hr>
+          {% endunless %}
+         {% endfor %}
+    {% endif %}
+    </section>
+    
+
+
+<style>
+ .direct-benefits-image-container figure {
+	margin: 0;
+	display: flex;
+	height:100%;
+}
+.direct-benefits-image-container figure > img {
+	width:100%;
+	height: auto;
+	object-fit: cover;
+}
+.direct-benefits-section {
+	margin: 50px 0px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	padding: 40px;
+	flex-wrap: wrap;
+	gap: 10px;
+	background-color: #042950;
+	color: white;
+}
+.direct-benefits-item {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 250px;
+}
+.direct-benefits-image-container {
+	overflow: hidden;
+	width: 50px;
+	aspect-ratio: 1;
+}
+.direct-benefits-image-container img {
+	object-fit: contain;
+	width: 100%;
+}
+.direct-benefit-name {
+	font-size: 21px;
+	text-transform: uppercase;
+	margin-top: 20px;
+	word-wrap: break-word;
+	font-weight: 700;
+	font-family: var(--hero-heading-font)
+}
+.direct-benefits-section hr {
+	width: 100px;
+	height: 1px;
+	background: white;
+	opacity: 0.8;
+	transform: rotate(90deg);
+	margin: 0;
+	position: relative;
+	top: 70px;
+}
+@media (max-width: 991px) {
+	.direct-benefits-section hr {
+		display: none;
+	}
+	.direct-benefits-item {
+		width: 33%;
+	}
+}
+@media (max-width: 768px) {
+	.direct-benefits-item {
+		width: 100%;
+	}
+}
+@media (max-width: 480px) {
+	.direct-benefits-item {
+		width: 100%;
+		max-width: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.direct-benefits-item .direct-benefits-image-container {
+		align-self: center;
+	}
+}
+
+</style>
+
+{% schema %}
+
+  {
+    "name": "Direct Benefits Section",
+    "blocks": [
+      {
+        "type": "benefits",
+        "name": "Benefit Item",
+        "settings": [
+      {
+        "type": "image_picker",
+        "id": "direct_image",
+        "label": "Benefit Icon Image"
+      },
+      {
+        "type": "text",
+        "id": "direct_benefit_text",
+        "label": "Benefit Text"
+      }
+    ]
+      }
+    ],
+    "max_blocks": 4,
+    "presets": [
+      {
+        "name": "Direct Benefits Section"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
