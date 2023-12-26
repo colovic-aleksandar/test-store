@@ -189,13 +189,15 @@
         "f2ee89e1-b16e-46fa-ac50-e5ac9c146cfa": {
           "type": "benefits",
           "settings": {
-            "direct_benefit_text": ""
+            "direct_image": "shopify:\/\/shop_images\/Lowest_Prices_Everyday_Icon_e21eff83-8260-4d2b-9ee0-c4887ca00df5.svg",
+            "direct_benefit_text": "lowest prices everyday"
           }
         },
         "8e685c4e-5d14-4833-abbf-c00a29b3dfd9": {
           "type": "benefits",
           "settings": {
-            "direct_benefit_text": ""
+            "direct_image": "shopify:\/\/shop_images\/Backed_By_Quality_Icon_000817f3-4f3f-4057-aee4-21c7f819b107.svg",
+            "direct_benefit_text": "backed by quality guarantee"
           }
         }
       },
