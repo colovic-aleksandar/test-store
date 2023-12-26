@@ -76,10 +76,27 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "157b7d98-7837-45e2-a55b-6e26a4b4a429": {
+      "type": "side-by-side",
+      "settings": {
+        "background_first": "shopify:\/\/shop_images\/HOMEPAGE_LEFT_-_ILUKA_1880x_c29ad359-743c-4c87-9273-addfe546c9bc.webp",
+        "subheading_text": "Zodiac Chlorine Remover",
+        "heading_text": "Cleander and safer pool",
+        "side_text": "",
+        "button_text_left": "",
+        "button_link_left": "",
+        "background_second": "shopify:\/\/shop_images\/HOMEPAGE_RIGHT_-_ROBOT_1880x_d2a1d762-3d9a-49b1-a8df-227192f6f8f8.webp",
+        "subheading_text_right": "Essential",
+        "heading_right": "Pool Cleaners Collection",
+        "button_text_right": "",
+        "button_link_right": ""
+      }
     }
   },
   "order": [
     "ac313d55-ff48-42b7-8efa-34e67e5f4c6b",
-    "featured_collection"
+    "featured_collection",
+    "157b7d98-7837-45e2-a55b-6e26a4b4a429"
   ]
 }
