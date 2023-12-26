@@ -49,6 +49,126 @@
       "settings": {
       }
     },
+    "157b7d98-7837-45e2-a55b-6e26a4b4a429": {
+      "type": "side-by-side",
+      "settings": {
+        "background_first": "shopify:\/\/shop_images\/HOMEPAGE_LEFT_-_ILUKA_1880x_c29ad359-743c-4c87-9273-addfe546c9bc.webp",
+        "subheading_text": "Zodiac Chlorine Remover",
+        "heading_text": "Cleander and safer pool",
+        "side_text": "",
+        "button_text_left": "",
+        "button_link_left": "",
+        "background_second": "shopify:\/\/shop_images\/HOMEPAGE_RIGHT_-_ROBOT_1880x_d2a1d762-3d9a-49b1-a8df-227192f6f8f8.webp",
+        "subheading_text_right": "Essential",
+        "heading_right": "Pool Cleaners Collection",
+        "button_text_right": "",
+        "button_link_right": ""
+      }
+    },
+    "a5ef4251-f0d9-44ee-acbb-a47319bba267": {
+      "type": "logo-section",
+      "blocks": {
+        "77bb8bd3-a0c8-4a79-876d-730dfcb249c9": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/waterco-logo_1570x_bbd54f8b-83ca-4ef3-a20a-cbf30f810e3f.webp",
+            "direct_blackwhite": false
+          }
+        },
+        "c1031af5-1b50-4449-9e4a-3e43d6efad2e": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/aquaquip-aq-blue-logo_1066x_59f95f73-2bce-421c-bba8-d43c89e94a10.webp",
+            "direct_blackwhite": false
+          }
+        },
+        "4bb4c1e2-74be-45b4-bd0d-761fe704ce40": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Brand_Logo_3_2x_430x_7f6b56f3-9a02-4536-b961-ec09746e1a7b.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "ca6d6536-58e3-407e-b9d6-f1b0641ab901": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/intex_logo_270x_30bcfe9b-308f-4300-80d2-89d3bb3f7887.svg",
+            "direct_blackwhite": false
+          }
+        },
+        "a914c19e-db1a-49c7-9f0a-775dbc14d6d9": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Lochlor_logo_270x_649e7d3d-59e0-418d-b17e-5032206b2e12.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "9dc3f8d0-2516-4bc6-b558-c6bc868be558": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Aquatight_198x_803259b4-ef5d-4913-93bc-9d04af4728f6.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "5759c0a3-e271-46c2-a82a-89b783d3a04f": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/ZodiacLogo_2x_290x_41ca8126-4c8c-4244-a1be-b040e0e9b1a7.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "70cbc578-0502-4ae1-9d57-7ebf1f9ed7f8": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/kreepy-krauly-logo-618C0AA709-seeklogo.com_290x_d358419d-6de5-446a-bae7-07de8928b1dc.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "c3286eb4-492c-433e-aa9f-05cdcb9fffb9": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Abgal_220x_20315c53-b9eb-4ff6-8a29-b70b486714e7.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "5a668790-ac1a-4e41-9e47-a86f8aa4e75d": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Onga_198x_6eacc40e-6f68-4080-a423-bcfb2daf7211.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "da2a74ae-635d-42ed-8054-71bb5210a7ea": {
+          "type": "usp",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Iluka_370x_fde1557e-af4f-474b-b593-2eec06e152a7.jpg",
+            "direct_blackwhite": false
+          }
+        },
+        "f038b67b-8f86-4bd6-a8c6-61f7eea5f45f": {
+          "type": "usp",
+          "settings": {
+            "direct_blackwhite": false
+          }
+        }
+      },
+      "block_order": [
+        "77bb8bd3-a0c8-4a79-876d-730dfcb249c9",
+        "c1031af5-1b50-4449-9e4a-3e43d6efad2e",
+        "4bb4c1e2-74be-45b4-bd0d-761fe704ce40",
+        "ca6d6536-58e3-407e-b9d6-f1b0641ab901",
+        "a914c19e-db1a-49c7-9f0a-775dbc14d6d9",
+        "9dc3f8d0-2516-4bc6-b558-c6bc868be558",
+        "5759c0a3-e271-46c2-a82a-89b783d3a04f",
+        "70cbc578-0502-4ae1-9d57-7ebf1f9ed7f8",
+        "c3286eb4-492c-433e-aa9f-05cdcb9fffb9",
+        "5a668790-ac1a-4e41-9e47-a86f8aa4e75d",
+        "da2a74ae-635d-42ed-8054-71bb5210a7ea",
+        "f038b67b-8f86-4bd6-a8c6-61f7eea5f45f"
+      ],
+      "settings": {
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -76,27 +196,12 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "157b7d98-7837-45e2-a55b-6e26a4b4a429": {
-      "type": "side-by-side",
-      "settings": {
-        "background_first": "shopify:\/\/shop_images\/HOMEPAGE_LEFT_-_ILUKA_1880x_c29ad359-743c-4c87-9273-addfe546c9bc.webp",
-        "subheading_text": "Zodiac Chlorine Remover",
-        "heading_text": "Cleander and safer pool",
-        "side_text": "",
-        "button_text_left": "",
-        "button_link_left": "",
-        "background_second": "shopify:\/\/shop_images\/HOMEPAGE_RIGHT_-_ROBOT_1880x_d2a1d762-3d9a-49b1-a8df-227192f6f8f8.webp",
-        "subheading_text_right": "Essential",
-        "heading_right": "Pool Cleaners Collection",
-        "button_text_right": "",
-        "button_link_right": ""
-      }
     }
   },
   "order": [
     "ac313d55-ff48-42b7-8efa-34e67e5f4c6b",
-    "featured_collection",
-    "157b7d98-7837-45e2-a55b-6e26a4b4a429"
+    "157b7d98-7837-45e2-a55b-6e26a4b4a429",
+    "a5ef4251-f0d9-44ee-acbb-a47319bba267",
+    "featured_collection"
   ]
 }
