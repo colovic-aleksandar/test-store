@@ -25,10 +25,22 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "7b902bf4-ed6c-4dc6-bce6-2105fc64875b": {
+      "type": "custom-announcement-bar",
+      "settings": {
+      }
+    },
+    "dd8d06ef-359a-47fe-99ae-d6b5d0deb39a": {
+      "type": "custom-header",
+      "settings": {
+      }
     }
   },
   "order": [
     "84e3b162-eace-4e12-aefc-ac320f4628af",
-    "header"
+    "header",
+    "7b902bf4-ed6c-4dc6-bce6-2105fc64875b",
+    "dd8d06ef-359a-47fe-99ae-d6b5d0deb39a"
   ]
 }
