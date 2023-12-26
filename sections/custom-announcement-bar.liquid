@@ -1,4 +1,4 @@
-   <div class="announcement-bar">
+ <div class="custom-announcement-bar">
         <div class="left-section">
             <div class="social-icons">
                 <div class="icon-wrapper">
@@ -8,10 +8,9 @@
                             <path
                                 d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
                             </path>
-                          
+
                     </svg>
                     </a>
-
                 </div>
 
                 <div class="icon-wrapper">
@@ -21,19 +20,6 @@
                             <path
                                 d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
                             </path>
-                          
-
-                    </svg>
-                    </a>
-                </div>
-                <div class="icon-wrapper">
-                    <a href="" class="icon-link">
-                        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 320 512" class="icon icon-facebook">
-                            <path
-                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
-                            </path>
-                          
                     </svg>
                     </a>
 
@@ -45,12 +31,19 @@
                             <path
                                 d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
                             </path>
-                          
                     </svg>
                     </a>
-
                 </div>
-
+                <div class="icon-wrapper">
+                    <a href="" class="icon-link">
+                        <svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512" class="icon icon-facebook">
+                            <path
+                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                            </path>
+                    </svg>
+                    </a>
+                </div>
             </div>
             <div class="phone-number">1800 648 363</div>
         </div>
@@ -70,24 +63,7 @@
             </nav>
         </div>
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slider').slick({
-                infinite: true,
-                vertical: false,
-                adaptiveHeight: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: false,
-                autoplay: true,
-                autoplaySpeed: 3000,
-
-                nextArrow: '<div class="next-arrow"><svg viewBox="0 0 478.448 478.448" class="icon icon-chevron-right" id="icon-chevron-right"><g><g><polygon points="131.659,0 100.494,32.035 313.804,239.232 100.494,446.373 131.65,478.448 377.954,239.232"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>',
-                prevArrow: '<div class="prev-arrow"><svg viewBox="0 0 370.814 370.814" class="icon icon-chevron-left" id="icon-chevron-left"><g><g><polygon points="292.92,24.848 268.781,0 77.895,185.401 268.781,370.814 292.92,345.961 127.638,185.401"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>',
-            });
-        });
-    </script>
+    
     {% stylesheet %}
     
     .custom-announcement-bar {
@@ -273,7 +249,22 @@
     }
       
 {% endstylesheet %}
- 
+ <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                infinite: true,
+                vertical: false,
+                adaptiveHeight: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                nextArrow: '<div class="next-arrow"><svg viewBox="0 0 478.448 478.448" class="icon icon-chevron-right" id="icon-chevron-right"><g><g><polygon points="131.659,0 100.494,32.035 313.804,239.232 100.494,446.373 131.65,478.448 377.954,239.232"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>',
+                prevArrow: '<div class="prev-arrow"><svg viewBox="0 0 370.814 370.814" class="icon icon-chevron-left" id="icon-chevron-left"><g><g><polygon points="292.92,24.848 268.781,0 77.895,185.401 268.781,370.814 292.92,345.961 127.638,185.401"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>',
+            });
+        });
+</script>
   {% schema %}
   {
     "name": "Custom Announcement ",
