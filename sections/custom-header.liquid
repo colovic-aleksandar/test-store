@@ -1,3 +1,5 @@
+{% liquid 
+   assign sectionID = 'shopify-section-' | append: section.id %}
  <header class="navigation-bar">
         <div class="left-section">
             <form class="aa-Form" action="" novalidate="" role="search">
@@ -418,15 +420,15 @@
 
 
 {% stylesheet %}
-  .font-16 {
+#{{ sectionID }}  .font-16 {
             font-size: 16px;
         }
 
-        .font-10 {
+  #{{ sectionID }}      .font-10 {
             font-size: 10px;
         }
 
-        .navigation-bar {
+   #{{ sectionID }}     .navigation-bar {
             font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: space-between;
@@ -434,12 +436,12 @@
             color: #fff;
         }
 
-        .left-section {
+  #{{ sectionID }}      .left-section {
             flex: 1;
         }
 
 
-        .left-section form {
+     #{{ sectionID }}   .left-section form {
             height: 100%;
             border: none;
             padding-left: 15px;
@@ -458,12 +460,12 @@
             height: 70px;
         }
 
-        input {
+     #{{ sectionID }}   input {
             outline: 0;
         }
 
-        .aa-Label,
-        .aa-LoadingIndicator {
+    #{{ sectionID }}    .aa-Label,
+   #{{ sectionID }}     .aa-LoadingIndicator {
             cursor: initial;
             flex-shrink: 0;
             height: 100%;
@@ -471,7 +473,7 @@
             text-align: left;
         }
 
-        button.aa-SubmitButton {
+     #{{ sectionID }}   button.aa-SubmitButton {
             pointer-events: none;
             cursor: pointer;
             background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <title>0DBD8774-40E1-4FD9-93CF-8A9C81547816</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g id="Direct-Pool-Supplies---Homepage-v8" transform="translate(-506.000000, -116.000000)" stroke="%23000000" stroke-width="1.42966154"> <g id="Group-6" transform="translate(50.000000, 93.000000)"> <g id="Search-Icon" transform="translate(456.000000, 23.000000)"> <path d="M2.67524624,11.2644928 C2.67524624,16.0082111 6.5210991,19.8539206 11.2649942,19.8539206 C16.0088893,19.8539206 19.85441,16.0085432 19.85441,11.2648249 C19.85441,8.19617717 18.2171309,5.36059809 15.5594753,3.82622285 C12.9018198,2.29184761 9.62748961,2.29178432 6.96989336,3.82605681 C4.31229711,5.3603293 2.67524624,8.19584508 2.67524624,11.2644928 Z" id="Path" transform="translate(11.264828, 11.264659) rotate(-23.025000) translate(-11.264828, -11.264659) "></path> <line x1="17.3381146" y1="17.3375246" x2="24" y2="24" id="Path"></line> </g> </g> </g> </g></svg>');
@@ -484,7 +486,7 @@
             height: 100%;
         }
 
-        .aa-InputWrapperPrefix {
+     #{{ sectionID }}   .aa-InputWrapperPrefix {
             align-items: center;
             display: flex;
             flex-shrink: 0;
@@ -492,14 +494,14 @@
             order: 1;
         }
 
-        .aa-InputWrapper {
+     #{{ sectionID }}   .aa-InputWrapper {
             order: 3;
             position: relative;
             width: 100%;
         }
 
-        input#autocomplete-0-input,
-        input#autocomplete-0-input::placeholder {
+      #{{ sectionID }}  input#autocomplete-0-input,
+      #{{ sectionID }}  input#autocomplete-0-input::placeholder {
             color: #939393;
             font-family: 'Montserrat', sans-serif;
             font-size: 16px;
@@ -515,39 +517,39 @@
             width: 100%;
         }
 
-        .middle-section {
+     #{{ sectionID }}   .middle-section {
             flex: 1;
             text-align: center;
         }
 
 
 
-        .right-section {
+      #{{ sectionID }}  .right-section {
             flex: 1;
             display: flex;
             justify-content: flex-end;
             align-items: center;
         }
 
-        .icon {
+     #{{ sectionID }}   .icon {
             margin-left: 20px;
             display: flex;
             align-items: center;
         }
 
-        .icon img {
+    #{{ sectionID }}    .icon img {
             height: auto;
             width: auto;
             aspect-ratio: auto 34/35;
             margin-right: 5px;
         }
 
-        .chat-icon span {
+     #{{ sectionID }}   .chat-icon span {
 
             color: rgb(65, 65, 65);
         }
 
-        .cart-count {
+     #{{ sectionID }}   .cart-count {
             background-color: black;
             color: #fff;
             padding: 3px 6px;
@@ -558,37 +560,37 @@
             bottom: 10px;
         }
 
-     .d-flex {
+    #{{ sectionID }} .d-flex {
             display: flex;
         }
 
-        a {
+     #{{ sectionID }}   a {
             padding: 0;
         }
 
-        .mega-menu {
+     #{{ sectionID }}   .mega-menu {
             font-family: 'Montserrat', sans-serif;
         }
 
-        #menu-list {
+   #{{ sectionID }}     #menu-list {
             display: flex;
             justify-content: center;
         }
 
-        ul {
+    #{{ sectionID }}    ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        .dropdown-item {
+    #{{ sectionID }}    .dropdown-item {
             display: inline-block;
             vertical-align: top;
             position: relative;
             text-align: left;
         }
 
-        .dropdown-item>a {
+    #{{ sectionID }}    .dropdown-item>a {
             text-transform: uppercase;
             color: #000;
             font-family: Montserrat;
@@ -605,17 +607,17 @@
             position: relative;
         }
 
-        .dropdown-item a:hover {
+      #{{ sectionID }}  .dropdown-item a:hover {
             text-decoration: underline;
         }
 
-        a {
+   #{{ sectionID }}     a {
             display: block;
             color: black;
             text-decoration: none;
         }
 
-        .mega-dropdown {
+   #{{ sectionID }}     .mega-dropdown {
             position: fixed;
             width: 100%;
             max-width: 1500px;
@@ -634,24 +636,24 @@
             box-sizing: border-box;
         }
 
-        .link-part,
-        .image-part {
+      #{{ sectionID }}  .link-part,
+      #{{ sectionID }}  .image-part {
             float: left;
         }
 
-        .link-part {
+       #{{ sectionID }} .link-part {
             width: 80%;
         }
 
-        .link-part ul {
+       #{{ sectionID }} .link-part ul {
             padding: 20px;
         }
 
-        .link-part ul li {
+       #{{ sectionID }} .link-part ul li {
             margin-bottom: 10px;
         }
 
-        .dropdown-link-section {
+      #{{ sectionID }}  .dropdown-link-section {
             width: 100%;
             padding: 0 20px 0 0;
             display: inline-block;
@@ -662,14 +664,14 @@
             margin-bottom: 10px;
         }
 
-        .dropdown-link-section a {
+      #{{ sectionID }}  .dropdown-link-section a {
             font-size: 18px;
             font-weight: 500;
             line-height: 22px;
             padding: 8px 0;
         }
 
-        .image-part {
+       #{{ sectionID }} .image-part {
             position: absolute;
             max-width: 25%;
             width: 25%;
@@ -678,7 +680,7 @@
             break-inside: avoid-column;
         }
 
-        .image-part .image-wrapper {
+      #{{ sectionID }}  .image-part .image-wrapper {
             color: #222222;
             font-family: "Montserrat";
             font-size: 16px;
@@ -689,13 +691,13 @@
             position: relative;
         }
 
-        .image-wrapper img {
+     #{{ sectionID }}   .image-wrapper img {
             width: 100%;
             aspect-ratio: 9/6;
             object-fit: cover;
         }
 
-        .image-wrapper p {
+     #{{ sectionID }}   .image-wrapper p {
             margin: -20px 20px 20px;
             background: #fff;
             z-index: 1;
@@ -704,7 +706,7 @@
             box-shadow: 0 3px 7px #0e1f351f;
         }
 
-        .image-wrapper span {
+     #{{ sectionID }}   .image-wrapper span {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -720,7 +722,7 @@
         }
 
 
-        .dropdown-link-section li {
+     #{{ sectionID }}   .dropdown-link-section li {
             position: initial;
             display: flex;
             margin: 0;
@@ -733,7 +735,7 @@
             box-shadow: none !important;
         }
 
-        .dropdown-link-item {
+       #{{ sectionID }} .dropdown-link-item {
             width: 100%;
             padding: 0 20px 0 0;
             display: inline-block;
@@ -741,7 +743,7 @@
             position: relative;
         }
 
-        .dropdown-link-item a {
+      #{{ sectionID }}  .dropdown-link-item a {
             font-weight: 300;
             padding: 0;
             line-height: 31px;
