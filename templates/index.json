@@ -37,12 +37,6 @@
             "direct_product_text": "",
             "direct_image": "shopify:\/\/shop_images\/Toys_570x_877540a3-70ab-4b43-99ce-50b0a2d3185d.webp"
           }
-        },
-        "cc2e79a9-6673-400a-87a6-a71a5953e652": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": ""
-          }
         }
       },
       "block_order": [
@@ -50,8 +44,7 @@
         "d0406aec-cc07-4fb6-80f5-89c207d2b392",
         "600d5bf5-71d6-44fb-b136-5fa1ac58ebd3",
         "3e2a7eb0-11c2-40d4-b5a6-996916da32fb",
-        "eeba42ca-cd12-46ac-bd16-2d2aa2cddc06",
-        "cc2e79a9-6673-400a-87a6-a71a5953e652"
+        "eeba42ca-cd12-46ac-bd16-2d2aa2cddc06"
       ],
       "settings": {
       }
