@@ -1,0 +1,206 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+{{ 'base-test.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign directIntro = section.settings.direct_Intro
+    assign directTitle = section.settings.direct_Title
+    assign directText = section.settings.direct_Text
+    assign directImage = section.settings.direct_Image
+    assign directImageSecond = section.settings.direct_Image_Second
+    assign directButton1Text = section.settings.direct_hero_btn1_text
+    assign directButton1Url = section.settings.direct_hero_btn1_url
+    assign directButton2Text = section.settings.direct_hero_btn2_text
+    assign directButton2Url = section.settings.direct_hero_btn2_url
+
+%}
+
+<section class="direct-hero-content_wrapper">
+  <div class="direct-hero-image-container">
+      <figure>
+        {% render 'snippet-image', image: directImage, loadingLazy: 'false', class: 'direct-hero-image' %}
+      </figure>
+  </div>
+  <div class="direct-hero-text">
+    
+     {% if directIntro != 'blank' %}
+              <p class="table-subheading heroIntro text-center c-title text-white">
+                {{ directIntro }}
+              </p>
+            {% endif %}
+
+     {% if directTitle != 'blank' %}
+              <p class="table-heading heroTitle text-center c-title text-white">
+                {{ directTitle }}
+              </p>
+            {% endif %}
+
+    {% if directText != 'blank' %}
+              <p class="table-subheading heroText text-center c-title text-white">
+                {{ directText }}
+              </p>
+            {% endif %}
+            <div class="container">
+              
+      <a href="{{ directButton1Url }}" class="button-primary">{{ directButton1Text }}</a>
+              
+      <a href="{{ directButton2Url }}" class="button-primary">{{ directButton2Text }}</a>
+            </div>
+  </div>
+  <div class="direct-hero-image-container">
+   <figure>
+        {% render 'snippet-image', image: directImageSecond, loadingLazy: 'false', class: 'direct-hero-image' %}
+      </figure>
+  </div>
+</section>
+
+<style>
+ .direct-hero-content_wrapper {
+	display: flex;
+	max-height: 500px;
+}
+.direct-hero-content_wrapper > div {
+	width: 100%;
+}
+.direct-hero-text {
+	padding: 70px;
+	background-color: #042950;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.direct-hero-image-container figure {
+	margin: 0;
+	display: flex;
+	height:100%;
+}
+.direct-hero-image-container figure > img {
+	width:100%;
+	height: auto;
+	object-fit: cover;
+}
+.heroIntro {
+	font-size:14px;
+	font-family: 'Bebas Neue', sans-serif !important;
+	text-transform: uppercase;
+	opacity: 0.95;
+}
+.heroTitle {
+	font-family: var(--hero-heading-font) !important;
+	font-size: 38px !important;
+	font-weight: 700;
+	padding: 10px 50px;
+	line-height: 40px !important;
+}
+.heroText {
+	font-size: 14px;
+	padding: 0 50px;
+	font-weight: 300 !important;
+	opacity: 0.9;
+}
+.button-primary{
+	text-decoration: none;
+	padding: 10px 20px;
+	background-color: white;
+	color: #000;
+	font-size: 12px;
+	border-radius: 30px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: var(--body-font);
+	margin: 30px 5px;
+}
+.button-primary:hover{
+	opacity: 0.9;
+}
+.container {
+	display: flex;
+}
+@media all and (max-width: 992px) {
+	.direct-hero-image-container {
+		display: none;
+	}
+	.heroText {
+		padding: 30px 50px !important;
+	}
+	.heroTitle {
+		font-size: 32px;
+	}
+}
+@media all and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+	}
+	.direct-hero-text {
+		padding: 50px 0;
+	}
+	.button-primary {
+		margin: 10px;
+	}
+	.heroTitle {
+		font-size: 28px;
+	}
+}
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Direct  Hero",
+    "settings": [
+       {
+        "type": "text",
+        "id": "direct_Intro",
+        "label": "Hero Intro"
+      },
+      {
+        "type": "text",
+        "id": "direct_Title",
+        "label": "Hero Title"
+      },
+      {
+        "type": "textarea",
+        "id": "direct_Text",
+        "label": "Section Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "direct_Image",
+        "label": "Section Image Left"
+      },
+      {
+        "type": "image_picker",
+        "id": "direct_Image_Second",
+        "label": "Section Image Right"
+      },
+      {
+        "type": "text",
+        "id": "direct_hero_btn1_text",
+        "label": "Hero Button 1 Text"
+      },
+      {
+        "type": "url",
+        "id": "direct_hero_btn1_url",
+        "label": "Hero Button 1 URL"
+      },
+       {
+        "type": "text",
+        "id": "direct_hero_btn2_text",
+        "label": "Hero Button 2 Text"
+      },
+      {
+        "type": "url",
+        "id": "direct_hero_btn2_url",
+        "label": "Hero Button 2 URL"
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Direct Hero"
+      }
+    ]
+  }
+{% endschema %}
