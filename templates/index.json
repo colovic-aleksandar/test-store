@@ -1,1 +1,91 @@
-{"sections":{"image_banner":{"type":"image-banner","blocks":{"heading":{"type":"heading","settings":{"heading":"Browse our latest products","heading_size":"h0"}},"button":{"type":"buttons","settings":{"button_label_1":"Shop all","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading","button"],"settings":{"image_overlay_opacity":40,"image_height":"large","desktop_content_position":"bottom-center","show_text_box":false,"desktop_content_alignment":"center","color_scheme":"inverse","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":false,"show_text_below":false}},"featured_collection":{"type":"featured-collection","settings":{"title":"Featured products","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":8,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":44,"padding_bottom":36}}},"order":["image_banner","featured_collection"]}
+{
+  "sections": {
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "ac313d55-ff48-42b7-8efa-34e67e5f4c6b": {
+      "type": "custom-usp",
+      "blocks": {
+        "9fe67e50-50e2-4f56-95eb-ab81efe6b0ca": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": "",
+            "direct_image": "shopify:\/\/shop_images\/Lighting_570x_f9a18300-3e50-4839-97f4-4104951bbbd6.webp"
+          }
+        },
+        "d0406aec-cc07-4fb6-80f5-89c207d2b392": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": "",
+            "direct_image": "shopify:\/\/shop_images\/Spa_Equipment_Image_2x_570x_a84b22de-f69e-4f1b-abab-9acc99a10060.webp"
+          }
+        },
+        "600d5bf5-71d6-44fb-b136-5fa1ac58ebd3": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": "",
+            "direct_image": "shopify:\/\/shop_images\/Pool_Accessories_570x_f70a9596-dc43-481f-991a-4c77d4eb4a90.webp"
+          }
+        },
+        "3e2a7eb0-11c2-40d4-b5a6-996916da32fb": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": "",
+            "direct_image": "shopify:\/\/shop_images\/Spare_Parts_Image_2x_570x_57d66d15-6d5e-4f5b-bf7b-43a4f5f39578.webp"
+          }
+        },
+        "eeba42ca-cd12-46ac-bd16-2d2aa2cddc06": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "0d733999-2232-4bd2-a2c1-6933d136c46f": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "9fe67e50-50e2-4f56-95eb-ab81efe6b0ca",
+        "d0406aec-cc07-4fb6-80f5-89c207d2b392",
+        "600d5bf5-71d6-44fb-b136-5fa1ac58ebd3",
+        "3e2a7eb0-11c2-40d4-b5a6-996916da32fb",
+        "eeba42ca-cd12-46ac-bd16-2d2aa2cddc06",
+        "0d733999-2232-4bd2-a2c1-6933d136c46f"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "featured_collection",
+    "ac313d55-ff48-42b7-8efa-34e67e5f4c6b"
+  ]
+}
