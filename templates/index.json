@@ -315,6 +315,42 @@
         "direct_description_btn_text": "find my spares",
         "direct_description_btn_url": ""
       }
+    },
+    "4a1dedb8-0df6-4ea1-b07f-abf81488fb06": {
+      "type": "custom-help",
+      "blocks": {
+        "80f37716-e734-401c-b472-c4eb8d1d0384": {
+          "type": "help",
+          "settings": {
+            "direct_help_text": "technician appointment",
+            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
+          }
+        },
+        "5ceb46cb-84f9-45dd-b10b-329734bdb1ce": {
+          "type": "help",
+          "settings": {
+            "direct_help_text": "contact us",
+            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
+          }
+        },
+        "bc9da358-5e12-4099-92c0-1d8878bb9ef1": {
+          "type": "help",
+          "settings": {
+            "direct_help_text": "product enquires",
+            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
+          }
+        }
+      },
+      "block_order": [
+        "80f37716-e734-401c-b472-c4eb8d1d0384",
+        "5ceb46cb-84f9-45dd-b10b-329734bdb1ce",
+        "bc9da358-5e12-4099-92c0-1d8878bb9ef1"
+      ],
+      "settings": {
+        "direct_heading": "How can we help",
+        "direct_subheading": "Or Give us a call",
+        "direct_mobile": "+61 2 4956 5694"
+      }
     }
   },
   "order": [
@@ -323,6 +359,7 @@
     "a5ef4251-f0d9-44ee-acbb-a47319bba267",
     "fcd86e49-ff55-4bdf-a0cd-1f2703c565f4",
     "featured_collection",
-    "32ee266f-b119-4341-8310-6319039f99df"
+    "32ee266f-b119-4341-8310-6319039f99df",
+    "4a1dedb8-0df6-4ea1-b07f-abf81488fb06"
   ]
 }
