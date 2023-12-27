@@ -52,98 +52,118 @@
       </figure>
   </div>
 </section>
-
 <style>
- .direct-hero-content_wrapper {
-	display: flex;
-	max-height: 500px;
+.direct-hero-content_wrapper {
+    display: flex;
+    max-height: 500px;
 }
-.direct-hero-content_wrapper > div {
-	width: 100%;
-}
-.direct-hero-text {
-	padding: 70px;
-	background-color: #042950;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-.direct-hero-image-container figure {
-	margin: 0;
-	display: flex;
-	height:100%;
-}
-.direct-hero-image-container figure > img {
-	width:100%;
-	height: auto;
-	object-fit: cover;
-}
-.heroIntro {
-	font-size:14px;
-	font-family: 'Bebas Neue', sans-serif !important;
-	text-transform: uppercase;
-	opacity: 0.95;
-}
-.heroTitle {
-	font-family: var(--hero-heading-font) !important;
-	font-size: 38px !important;
-	font-weight: 700;
-	padding: 10px 50px;
-	line-height: 40px !important;
-}
-.heroText {
-	font-size: 14px;
-	padding: 0 50px;
-	font-weight: 300 !important;
-	opacity: 0.9;
-}
-.button-primary{
-	text-decoration: none;
-	padding: 10px 20px;
-	background-color: white;
-	color: #000;
-	font-size: 12px;
-	border-radius: 30px;
-	font-weight: 700;
-	text-transform: uppercase;
-	font-family: var(--body-font);
-	margin: 30px 5px;
-}
-.button-primary:hover{
-	opacity: 0.9;
-}
-.container {
-	display: flex;
-}
-@media all and (max-width: 992px) {
-	.direct-hero-image-container {
-		display: none;
-	}
-	.heroText {
-		padding: 30px 50px !important;
-	}
-	.heroTitle {
-		font-size: 32px;
-	}
-}
-@media all and (max-width: 768px) {
-	.container {
-		flex-direction: column;
-	}
-	.direct-hero-text {
-		padding: 50px 0;
-	}
-	.button-primary {
-		margin: 10px;
-	}
-	.heroTitle {
-		font-size: 28px;
-	}
-}
-  
-</style>
 
+.direct-hero-content_wrapper > div {
+    width: 100%;
+}
+
+.direct-hero-text {
+    padding: 70px;
+    background-color: #042950;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.direct-hero-image-container figure {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.direct-hero-image-container figure > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.direct-hero-image-container:hover figure > img {
+    transform: scale(1.2);
+}
+
+.heroIntro {
+    font-size: 14px;
+    font-family: 'Bebas Neue', sans-serif !important;
+    text-transform: uppercase;
+    opacity: 0.95;
+}
+
+.heroTitle {
+    font-family: var(--hero-heading-font) !important;
+    font-size: 38px !important;
+    font-weight: 700;
+    padding: 10px 50px;
+    line-height: 40px !important;
+}
+
+.heroText {
+    font-size: 14px;
+    padding: 0 50px;
+    font-weight: 300 !important;
+    opacity: 0.9;
+}
+
+.button-primary {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: white;
+    color: #000;
+    font-size: 12px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: var(--body-font);
+    margin: 30px 5px;
+}
+
+.button-primary:hover {
+    opacity: 0.9;
+}
+
+.container {
+    display: flex;
+}
+
+@media all and (max-width: 992px) {
+    .direct-hero-image-container {
+        display: none;
+    }
+
+    .heroText {
+        padding: 30px 50px !important;
+    }
+
+    .heroTitle {
+        font-size: 32px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .direct-hero-text {
+        padding: 50px 0;
+    }
+
+    .button-primary {
+        margin: 10px;
+    }
+
+    .heroTitle {
+        font-size: 28px;
+    }
+}
+</style>
 {% schema %}
   {
     "name": "Direct  Hero",
