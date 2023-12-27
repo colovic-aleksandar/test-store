@@ -237,6 +237,76 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "32ee266f-b119-4341-8310-6319039f99df": {
+      "type": "usp-description",
+      "blocks": {
+        "9040aa22-62cb-42fd-a200-649fc359ffe0": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "c545e8f0-1a25-47e8-8350-7d5abec53de8": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "7c63aca6-1f94-4865-b351-26d538a2076d": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "cc926308-73af-4d3b-8e63-0f54cfb9b3a7": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "d265a567-54b8-40d7-8541-f114c3190fe8": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "1fdb01d2-35c7-4714-bd5b-7d3848c1e6eb": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "6000839d-dfd4-4a5b-a92d-55d631a00188": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        },
+        "740548d1-bc82-4d9a-bbdc-fb55a9152642": {
+          "type": "usp",
+          "settings": {
+            "direct_product_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "9040aa22-62cb-42fd-a200-649fc359ffe0",
+        "c545e8f0-1a25-47e8-8350-7d5abec53de8",
+        "7c63aca6-1f94-4865-b351-26d538a2076d",
+        "cc926308-73af-4d3b-8e63-0f54cfb9b3a7",
+        "d265a567-54b8-40d7-8541-f114c3190fe8",
+        "1fdb01d2-35c7-4714-bd5b-7d3848c1e6eb",
+        "6000839d-dfd4-4a5b-a92d-55d631a00188",
+        "740548d1-bc82-4d9a-bbdc-fb55a9152642"
+      ],
+      "settings": {
+        "direct_Icon": "shopify:\/\/shop_images\/pool_pumps_61x_473b09de-0778-4566-87fb-cde940e150f9.webp",
+        "direct_Title": "pool pumps part finder",
+        "direct_Text": "Direct Pool Supplies are specialist consultants, salespeople, technicians and suppliers of a wide range of Pool & Spa Equipment, Chemicals and Accessories.",
+        "direct_description_btn_text": "find my spares",
+        "direct_description_btn_url": ""
+      }
     }
   },
   "order": [
@@ -244,6 +314,7 @@
     "157b7d98-7837-45e2-a55b-6e26a4b4a429",
     "a5ef4251-f0d9-44ee-acbb-a47319bba267",
     "fcd86e49-ff55-4bdf-a0cd-1f2703c565f4",
-    "featured_collection"
+    "featured_collection",
+    "32ee266f-b119-4341-8310-6319039f99df"
   ]
 }
