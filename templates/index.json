@@ -210,34 +210,6 @@
       "settings": {
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
     "32ee266f-b119-4341-8310-6319039f99df": {
       "type": "usp-description",
       "blocks": {
@@ -351,6 +323,47 @@
         "direct_subheading": "Or Give us a call",
         "direct_mobile": "+61 2 4956 5694"
       }
+    },
+    "2bb15b5e-59f4-403b-b4a6-cd913f9f4bdf": {
+      "type": "custom-text-image",
+      "settings": {
+        "direct_Intro": "a little about us",
+        "direct_Title": "Australia's Favourite Pool & Spa Product Supplier",
+        "direct_Text": "Direct Pool Supplies are specialist consultants, salespeople, technicians and suppliers of a wide range of Pool & Spa Equipment, Chemicals and Accessories.",
+        "direct_Image": "shopify:\/\/shop_images\/pool_equipment_1370x_520c8b4c-432e-48e8-9296-feaffbfd1044.webp",
+        "direct_hero_btn1_text": "brands we sell",
+        "direct_hero_btn1_url": "",
+        "direct_hero_btn2_text": "about us",
+        "direct_hero_btn2_url": ""
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -358,8 +371,9 @@
     "157b7d98-7837-45e2-a55b-6e26a4b4a429",
     "a5ef4251-f0d9-44ee-acbb-a47319bba267",
     "fcd86e49-ff55-4bdf-a0cd-1f2703c565f4",
-    "featured_collection",
     "32ee266f-b119-4341-8310-6319039f99df",
-    "4a1dedb8-0df6-4ea1-b07f-abf81488fb06"
+    "4a1dedb8-0df6-4ea1-b07f-abf81488fb06",
+    "2bb15b5e-59f4-403b-b4a6-cd913f9f4bdf",
+    "featured_collection"
   ]
 }
