@@ -244,49 +244,57 @@
         "9040aa22-62cb-42fd-a200-649fc359ffe0": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "Pool cleaners part",
+            "direct_image": "shopify:\/\/shop_images\/Pool_Cleaners_Parts_Icon_20x_e403eb71-6945-4c3b-a408-71e3b4e8f7ab.svg"
           }
         },
         "c545e8f0-1a25-47e8-8350-7d5abec53de8": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "Pool heating parts",
+            "direct_image": "shopify:\/\/shop_images\/Pool_Heating_Parts_Icon_20x_f7c060ef-bb70-4e6f-be5e-f96c87c9f1bd.svg"
           }
         },
         "7c63aca6-1f94-4865-b351-26d538a2076d": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "Chlorinator parts",
+            "direct_image": "shopify:\/\/shop_images\/Chlorinators_Parts_Icon_20x_bc52076e-6a32-468c-806a-1decd55f92e6.svg"
           }
         },
         "cc926308-73af-4d3b-8e63-0f54cfb9b3a7": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "pool chemicals",
+            "direct_image": "shopify:\/\/shop_images\/Pool_Chemicals_Icon_20x_1f0c07dd-4767-406f-84ba-75773389aead.svg"
           }
         },
         "d265a567-54b8-40d7-8541-f114c3190fe8": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "sand filters",
+            "direct_image": "shopify:\/\/shop_images\/Sand_Filter_Parts_Icon_20x_ee64b2ff-1c93-41a7-986c-223761ec7556.svg"
           }
         },
         "1fdb01d2-35c7-4714-bd5b-7d3848c1e6eb": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "pool lights",
+            "direct_image": "shopify:\/\/shop_images\/Pool_Lights_Parts_Icon_20x_84170dcf-5248-4a6a-a88d-f8f4b1ba0bf2.svg"
           }
         },
         "6000839d-dfd4-4a5b-a92d-55d631a00188": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "skimmer box parts",
+            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
           }
         },
         "740548d1-bc82-4d9a-bbdc-fb55a9152642": {
           "type": "usp",
           "settings": {
-            "direct_product_text": ""
+            "direct_product_text": "spa lights",
+            "direct_image": "shopify:\/\/shop_images\/Pool_Lights_Parts_Icon_20x_84170dcf-5248-4a6a-a88d-f8f4b1ba0bf2.svg"
           }
         }
       },
