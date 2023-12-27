@@ -1,5 +1,19 @@
 {
   "sections": {
+    "395ce8f6-cce3-4752-9159-309498138af7": {
+      "type": "test-hero",
+      "settings": {
+        "direct_Intro": "DIRECT POOL SUPPLIES",
+        "direct_Title": "Pool & Spa Equipment",
+        "direct_Text": "Welcome to Direct Pool Supplies, Australia's leading authority in pool and spa solutions. Offering competitive prices on a comprehensive range of trusted brands, we're your one-stop destination for all your pool and spa essentials",
+        "direct_Image": "shopify:\/\/shop_images\/Banner_Image_1_2x_1270x_e346a06d-3e99-4b57-bb7f-a5636b530da3.webp",
+        "direct_Image_Second": "shopify:\/\/shop_images\/Banner_Image_2_2x_1_1270x_20d85b9d-811c-4f5e-9714-43d4c7cc1804.webp",
+        "direct_hero_btn1_text": "",
+        "direct_hero_btn1_url": "",
+        "direct_hero_btn2_text": "",
+        "direct_hero_btn2_url": ""
+      }
+    },
     "ac313d55-ff48-42b7-8efa-34e67e5f4c6b": {
       "type": "custom-usp",
       "blocks": {
@@ -367,6 +381,7 @@
     }
   },
   "order": [
+    "395ce8f6-cce3-4752-9159-309498138af7",
     "ac313d55-ff48-42b7-8efa-34e67e5f4c6b",
     "157b7d98-7837-45e2-a55b-6e26a4b4a429",
     "a5ef4251-f0d9-44ee-acbb-a47319bba267",
