@@ -1,4 +1,9 @@
- <div class="custom-announcement-bar">
+{% liquid 
+assign sectionID = 'shopify-section-' | append: section.id 
+assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
+%}
+ 
+ <div id="{{ divID}}" class="custom-announcement-bar">
         <div class="left-section">
             <div class="social-icons">
                 <div class="icon-wrapper">
@@ -64,9 +69,9 @@
         </div>
     </div>
     
-    {% stylesheet %}
+    <style>
     
-    .custom-announcement-bar {
+    #{{ sectionID }}     .custom-announcement-bar {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -76,30 +81,30 @@
         font-family: Montserrat, sans-serif;
     }
 
-    .left-section {
+    #{{ sectionID }}  .left-section {
         display: flex;
         align-items: center;
     }
 
-    .left-section * {
+    #{{ sectionID }}   .left-section * {
 
         font-weight: 300;
         font-size: 16px;
     }
 
-    .social-icons {
+    #{{ sectionID }}  .social-icons {
         display: flex;
         margin-right: 20px;
     }
 
-    .icon-wrapper {
+    #{{ sectionID }}  .icon-wrapper {
         margin: 0 10px 0 0;
         height: 50px;
         display: inline-flex;
         align-items: center;
     }
 
-    .icon-link {
+    #{{ sectionID }}  .icon-link {
         display: block;
         position: relative;
         width: 100%;
@@ -111,11 +116,11 @@
         background-color: #fff;
     }
 
-    .icon-link:hover {
+    #{{ sectionID }}   .icon-link:hover {
         background-color: #000;
     }
 
-    .icon-link::before {
+    #{{ sectionID }}  .icon-link::before {
         content: "";
         position: absolute;
         width: 100%;
@@ -139,7 +144,7 @@
         box-shadow: 0 0 0 2px #000;
     }
 
-    .icon-link:hover::before {
+    #{{ sectionID }}  .icon-link:hover::before {
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
         -ms-transform: scale(1);
@@ -147,29 +152,29 @@
         opacity: 1;
     }
 
-    .icon-wrapper .icon-link svg {
+    #{{ sectionID }}  .icon-wrapper .icon-link svg {
         fill: #003e82;
         scale: .85;
         width: 18px;
         height: 18px;
     }
 
-    .icon-wrapper .icon-link:hover svg {
+    #{{ sectionID }}  .icon-wrapper .icon-link:hover svg {
         fill: #fff;
     }
 
-    .phone-number {
+    #{{ sectionID }}  .phone-number {
         display: block;
     }
 
     @media (max-width: 1400px) {
 
-        .social-icons {
+    #{{ sectionID }}   .social-icons {
             display: none;
         }
     }
 
-    .center-section {
+    #{{ sectionID }}  .center-section {
         width: 33%;
         text-align: center;
         height: 50px;
@@ -178,24 +183,24 @@
         align-items: center;
     }
 
-    .center-section * {
+    #{{ sectionID }}  .center-section * {
         text-transform: uppercase;
         font-weight: 700;
         font-size: 14px;
     }
 
-    .slider {
+    #{{ sectionID }}   .slider {
         position: relative;
         overflow: hidden;
     }
 
-    .announcement {
+    #{{ sectionID }}   .announcement {
         width: 100%;
         text-align: center;
       
     }
 
-    .slider-nav {
+    #{{ sectionID }}  .slider-nav {
         position: absolute;
         top: 50%;
         width: 100%;
@@ -203,8 +208,8 @@
         justify-content: space-between;
     }
 
-    .prev-arrow,
-    .next-arrow {
+    #{{ sectionID }}   .prev-arrow,
+    #{{ sectionID }}  .next-arrow {
         width: 20px;
         height: 20px;
         cursor: pointer;
@@ -213,12 +218,12 @@
         top: 20%;
     }
 
-    .next-arrow {
+    #{{ sectionID }}  .next-arrow {
         right: 0;
     }
 
-    .prev-arrow svg,
-    .next-arrow svg {
+    #{{ sectionID }}  .prev-arrow svg,
+    #{{ sectionID }}  .next-arrow svg {
         width: 18px;
         height: 18px;
         transform: rotate(0) !important;
@@ -226,29 +231,28 @@
         color: #ffffff;
     }
 
-    .right-section {
+    #{{ sectionID }}   .right-section {
         text-align: right;
     }
 
-    .right-section nav a:hover {
+    #{{ sectionID }}  .right-section nav a:hover {
         color: #000;
         box-sizing: border-box;
         border-bottom: 1px solid #000;
     }
 
-    .right-section * {
+    #{{ sectionID }}  .right-section * {
 
         font-size: 14px;
         font-weight: 400;
     }
 
-    nav a {
+    #{{ sectionID }}  nav a {
         color: #fff;
         text-decoration: none;
         margin-left: 20px;
     }
-      
-{% endstylesheet %}
+      </style>
  <script>
         $(document).ready(function () {
             $('.slider').slick({
