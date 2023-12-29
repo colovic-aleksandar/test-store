@@ -10,9 +10,7 @@ body {
 .shopify-section {
   background: #fff !important;
 }
-section {
-  margin-bottom: 50px;
-}
+
 :root {
     /* Colors */
     --color-isabelle: #F6EBEC;

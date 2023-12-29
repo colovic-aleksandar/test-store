@@ -1,12 +1,290 @@
+{% liquid
+  assign background-first = section.settings.background_first | img_url: 'master'
+  assign background-second = section.settings.background_second | img_url: 'master'
+  assign sideText = section.settings.side_text
+  assign image-left = section.settings.image_left
+  assign subheading = section.settings.subheading_text
+  assign heading = section.settings.heading_text
+  assign subheading-right = section.settings.subheading_text_right
+  assign heading-right = section.settings.heading_right
+  assign button-text-left = section.settings.button_text_left
+  assign button-link-left = section.settings.button_link_left
+  assign button-text-right =section.settings.button_text_right
+  assign button-link-right = section.settings.button_link_right
+%}
+<section class="custom-container">
+  <div class="custom-background-section left-side" style="background-image: url('{{ background-first }}');">
+    <figure>
+      {% render 'snippet-image'
+        , image: image-left
+        , loadingLazy: 'false'
+        , class: 'image' %}
+    </figure>
+    <div class="flx-clmn">
+      {% if subheading != 'blank' %}
+        <h2>
+          {{ subheading }}
+        </h2>
+      {% endif %}
+
+      {% if heading != 'blank' %}
+        <div>
+          {{ heading }}
+        </div>
+      {% endif %}
+
+      {% if sideText != 'blank' %}
+        <p>
+          {{ sideText }}
+        </p>
+      {% endif %}
+
+      {% if button-text-left != blank and button-link-left != blank %}
+        <a href="{{ button-link-left }}" class="btn">{{ button-text-left }}</a>
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="custom-background-section sale-container" style="background-image: url('{{ background-second }}');">
+    <div class="flx-clmn sale">
+      {% if subheading-right != 'blank' %}
+        <div class="">
+          <h2 class="">
+            {{ subheading-right }}
+          </h2>
+        </div>
+      {% endif %}
+      {% if heading-right != 'blank' %}
+        <div>
+          {{ heading-right }}
+        </div>
+      {% endif %}
+
+      {% if button-text-right != blank and button-link-right != blank %}
+        <a href="{{ button-link-right }}" class="btn">{{ button-text-right }}</a>
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .custom-background-section.left-side figure {
+    margin: 0;
+    display: flex;
+    height: 100%;
+  }
+  .custom-background-section.left-side figure > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .custom-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    gap: 30px;
+  }
+  .custom-background-section {
+    display: flex;
+    width: 48%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    gap: 30px;
+  }
+  .flx-clmn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .left-side .image {
+    object-fit: contain;
+  }
+  .custom-background-section figure {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    max-width: 50%;
+    object-fit: contain;
+  }
+  .sale-container {
+    justify-content: flex-end;
+  }
+  .flx-clmn > * {
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Bebas Neue'
+    , sans-serif;
+    line-height: 90%;
+  }
+  .btn {
+    background: white !important;
+    color: black !important;
+    box-shadow: none;
+    padding: 20px 30px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed'
+    , sans-serif;
+    font-size: 20px;
+    text-align: left;
+    transition: transform 0.2s;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  .flx-clmn h2 {
+    color: #fff;
+    font-family: Bebas Neue;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 37px;
+    text-align: center;
+    height: 34px;
+    width: 179px;
+    font-weight: 500;
+    background-color: #fd9e4ecc;
+    margin-bottom: 10px;
+  }
+  .flx-clmn h1 {
+    font-size: 100px;
+    margin: 20px 0;
+  }
+  .flx-clmn div > b {
+    font-family: 'Bebas Neue'
+    , sans-serif;
+    font-size: 40px;
+    line-height: 50px;
+    background: #ffffffcc;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding: 0 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .sale {
+    display: flex;
+    justify-content: center;
+  }
+  .sale-offer {
+    background: #fd9e4e;
+    padding: 10px 50px;
+  }
+  .sale-offer-text {
+    font-size: 24px !important;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue'
+    , sans-serif;
+    line-height: 90%;
+  }
+  @media screen and (max-width: 991px) {
+    .custom-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    figure,
+    .flx-clmn {
+      width: 100%;
+      align-items: center;
+    }
+    .custom-background-section {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .flx-clmn > * {
+      text-align: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .custom-background-section.left-side figure {
+      display: none;
+    }
+    .flx-clmn h1 {
+      font-size: 50px;
+    }
+  }
+
+</style>
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Direct Side By Side",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_first",
+        "label": "Select Background Image",
+        "info": "Choose an image for the background."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_left",
+        "label": "Section Image Left"
+      },
+
+      {
+        "type": "text",
+        "label": "Heading Text",
+        "id": "subheading_text",
+        "default": "Zodiac Chlorine Remover"
+      },
+      {
+        "type": "text",
+        "label": "Heading Text",
+        "id": "heading_text",
+        "default": "Cleander and safer pool"
+      }, {
+        "type": "textarea",
+        "id": "side_text",
+        "label": "Section Text"
+      }, {
+        "type": "text",
+        "id": "button_text_left",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "button_link_left",
+        "label": "Button  URL"
+      }, {
+        "type": "image_picker",
+        "id": "background_second",
+        "label": "Select Background Image Second",
+        "info": "Choose an image for the background."
+      }, {
+        "type": "text",
+        "label": "Heading Text",
+        "id": "subheading_text_right",
+        "default": "Sale up to 50% off"
+      }, {
+        "type": "text",
+        "label": "Heading Text",
+        "id": "heading_right",
+        "default": "Summer Sale"
+      }, {
+        "type": "text",
+        "id": "button_text_right",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "button_link_right",
+        "label": "Button  URL"
+      }
+
+
+    ],
+    "presets": [
+      {
+        "name": "Direct Side by Side"
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
