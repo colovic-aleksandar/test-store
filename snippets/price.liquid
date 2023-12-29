@@ -124,5 +124,23 @@
     <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
       {{ 'products.product.sold_out' | t }}
     </span>
+
+    {% comment %} New logic badge {% endcomment %}
+    {% assign currentDateThumbSize2 = 'now' | date: "%s" | plus: 0 %}
+    {% assign productDateThumbSize2 = product.created_at | date: "%s" | plus: 0 %}
+    {% assign threeMonthsAgoThumbSize2 = currentDateThumbSize2 | minus: 7776000 %}
+    {% assign productStatusThumbSize2 = variant.metafields.custom.product_status.value %}
+
+    {% for product in product.variants limit:1%}
+      {% if product.product_option == selected_value  %}
+        {% if product.created_at != threeMonthsAgoThumbSize2 %}
+          <span class="badge price__badge-new color-{{ settings.sold_out_badge_color_scheme }}">
+        {{ 'New' }}
+        </span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% comment %} New logic badge {% endcomment %}
+    
   {%- endif -%}
 </div>
