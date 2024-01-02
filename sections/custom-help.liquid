@@ -1,159 +1,164 @@
 {{ 'base-test.css' | asset_url | stylesheet_tag }}
 {% liquid
-           assign directHelpHeading = section.settings.direct_heading
-           assign directHelpSubHeading = section.settings.direct_subheading
-           assign directHelpMobile = section.settings.direct_mobile
-  
-      %}
-      
+  assign directHelpHeading = section.settings.direct_heading
+  assign directHelpSubHeading = section.settings.direct_subheading
+  assign directHelpMobile = section.settings.direct_mobile
+%}
+
 <section class="direct-help-wrapper">
-<div class= "direct-help-heading">
-  <p class="helpHeading">{{ directHelpHeading }}</p>
-   <span class="helpSubheading">{{ directHelpSubHeading }}</span>
-  <a href="tel:{{ directHelpMobile }}" class="helpMobile">{{ directHelpMobile }}</a>
-</div> 
+  <div class="direct-help-heading">
+    <p class="helpHeading">{{ directHelpHeading }}</p>
+    <span class="helpSubheading">{{ directHelpSubHeading }}</span>
+    <a href="tel:{{ directHelpMobile }}" class="helpMobile">{{ directHelpMobile }}</a>
+  </div>
   <div class="direct-help-section">
-     {% if section.blocks.size > 0 %}
+    {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
         {% liquid
-           assign directHelpImage = block.settings.direct_image
-           assign directHelpText = block.settings.direct_help_text 
-      %}
+          assign directHelpImage = block.settings.direct_image
+          assign directHelpText = block.settings.direct_help_text
+        %}
 
-        
+
         <div class="direct-help-item">
           <div class="direct-help-text">
             <div class="direct-help-icon-container">
-           <figure>
-            {% render 'snippet-image', image: directHelpImage, loadingLazy: 'false', class: 'direct-help-icon ' %}
-           </figure>
-        </div>
-            <div class="direct-help-text-container">  {{ directHelpText }}</div>
-          
+              <figure>
+                {% render 'snippet-image'
+                  , image: directHelpImage
+                  , loadingLazy: 'false'
+                  , class: 'direct-help-icon ' %}
+              </figure>
+            </div>
+            <div class="direct-help-text-container">
+              {{ directHelpText }}</div>
+
           </div>
         </div>
-         {% endfor %}
+      {% endfor %}
     {% endif %}
   </div>
- 
-    </section>
-    
+
+</section>
 
 
- <style>
- .direct-help-wrapper{
-	padding-top: 30px;
-	background: #f7f7f7;
-}
-.direct-help-heading {
-	text-align: center;
-	font-weight: 700;
-	color: #000;
-}
-.helpHeading {
-	font-size: 32px;
-	margin:0;
-	text-transform: capitalize;
-	font-family: var(--hero-heading-font);
-}
-.helpSubheading, .helpMobile {
-	font-size: 24px;
-	font-family: var(--hero-heading-font);
-}
-.helpMobile {
-	color: #003e82;
-	text-decoration: none;
-	margin-left: 10px;
-}
-.direct-help-text {
-	display: flex;
-	align-items: center;
-	font-family: var(--hero-heading-font);
-}
-.direct-help-icon-container figure {
-	margin: 0;
-	height: 30px;
-}
-.direct-help-icon-container figure > img {
-	height: auto;
-}
-.direct-help-icon-container img {
-	width: 30px;
-	margin-right: 20px;
-	aspect-ratio: 1;
-	object-fit: contain;
-}
-.direct-help-section {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 50px 150px;
-	flex-wrap: wrap;
-	gap: 20px
-}
-.direct-help-item {
-	text-align: center;
-	overflow: hidden;
-	width: 32%;
-	background: #fff;
-	border: 1px solid #003e82;
-	padding: 20px 30px;
-	display: flex;
-	justify-content: center;
-}
-.direct-logo-product-name {
-	font-family: var(--hero-heading-font);
-	font-size: 24px;
-	margin-top: 20px;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-.all-brands {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.all-brands a {
-	color: #000;
-	font-size: 24px;
-	font-weight: 600;
-}
-.direct-help-text-container {
-	font-size: 18px;
-	text-transform: capitalize;
-}
-@media (max-width: 1314px) {
-	.direct-help-section {
-		padding: 100px;
-	}
-}
-@media (max-width: 991px) {
-	.direct-help-section {
-		padding: 30px;
-	}
-	.direct-help-item{
-		width: 100%;
-	}
-}
-@media (max-width: 768px) {
-	.direct-help-item {
-		display: flex;
-		justify-content: center;
-	}
-}
-.direct-logo-product-name {
-	font-size: 18px;
-}
+<style>
+  .direct-help-wrapper {
+    margin: 100px 0;
+    background: #f7f7f7;
+    padding-top: 45px;
+    padding-bottom: 90px;
+  }
+  .direct-help-heading {
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+  }
+  .helpHeading {
+    font-size: 32px;
+    margin: 0;
+    text-transform: capitalize;
+    font-family: var(--hero-heading-font);
+  }
+  .helpSubheading,
+  .helpMobile {
+    font-size: 24px;
+    font-family: var(--hero-heading-font);
+  }
+  .helpMobile {
+    color: #003e82;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  .direct-help-text {
+    display: flex;
+    align-items: center;
+    font-family: var(--hero-heading-font);
+  }
+  .direct-help-icon-container figure {
+    margin: 0;
+    height: 30px;
+  }
+  .direct-help-icon-container figure > img {
+    height: auto;
+  }
+  .direct-help-icon-container img {
+    width: 30px;
+    margin-right: 20px;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+  .direct-help-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px 150px;
+    flex-wrap: wrap;
+    gap: 20px
+  }
+  .direct-help-item {
+    text-align: center;
+    overflow: hidden;
+    width: 32%;
+    background: #fff;
+    border: 1px solid #003e82;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .direct-logo-product-name {
+    font-family: var(--hero-heading-font);
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .all-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .all-brands a {
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .direct-help-text-container {
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  @media (max-width: 1314px) {
+    .direct-help-section {
+      padding: 100px;
+    }
+  }
+  @media (max-width: 991px) {
+    .direct-help-section {
+      padding: 30px;
+    }
+    .direct-help-item {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .direct-help-item {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .direct-logo-product-name {
+    font-size: 18px;
+  }
 }
 @media all and (max-width: 480px) {
-.direct-help-item {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-.direct-help-item .direct-logo-image-container {
-	align-self: center;
-}
+  .direct-help-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .direct-help-item .direct-logo-image-container {
+    align-self: center;
+  }
 }
 </style>
 {% schema %}
@@ -161,18 +166,16 @@
   {
     "name": "Direct Help Section",
     "settings": [
-      
+
       {
         "type": "text",
         "id": "direct_heading",
         "label": "Help Section Heading"
-      },
-      {
+      }, {
         "type": "text",
         "id": "direct_subheading",
         "label": "Help Section Subeading"
-      },
-       {
+      }, {
         "type": "text",
         "id": "direct_mobile",
         "label": "Help Section Mobile"
@@ -184,16 +187,15 @@
         "name": "Help Item",
         "settings": [
           {
-        "type": "text",
-        "id": "direct_help_text",
-        "label": "Help Item Text"
-      },
-      {
-        "type": "image_picker",
-        "id": "direct_image",
-        "label": "Help Item Icon"
-      }
-    ]
+            "type": "text",
+            "id": "direct_help_text",
+            "label": "Help Item Text"
+          }, {
+            "type": "image_picker",
+            "id": "direct_image",
+            "label": "Help Item Icon"
+          }
+        ]
       }
     ],
     "max_blocks": 6,

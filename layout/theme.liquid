@@ -400,6 +400,43 @@ body {
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
+
+      // $(function () {
+      //   selectVariation = function (elm) {
+      //       $(elm).parents('fieldset').find('.option-selected').text($(elm).attr('data-value'));          
+      //       setTimeout(function() {  
+      //         var selectedColor = '';
+      //         var selectedSize = '';
+      //         var badge = $(elm).attr('data-badge');
+      //         if ($('.product-form__input input[name="Color"]:checked').val() !== undefined) {
+      //           selectedColor = $('.product-form__input input[name="Color"]:checked').val().toLowerCase().replaceAll(' ','-');
+      //         } else if ($('.product-form__input input[name="Colour"]:checked').val() !== undefined) {
+      //           selectedColor = $('.product-form__input input[name="Colour"]:checked').val().toLowerCase().replaceAll(' ','-');
+      //         }
+      //         if ($('.product-form__input input[name="Color"]:checked').val() !== undefined) {
+      //           selectedSize = $('.product-form__input input[name="Size"]:checked').val().toLowerCase().replaceAll(' ','-');
+      //         }
+      //         var targetVariation = selectedColor + '-' + selectedSize;
+      //         if (selectedSize !== '' && selectedColor !== '') {
+      //            badge = $(elm).parents('.variation-options-wrapper').find('.badge-helper').attr(targetVariation);
+      //         }
+      //         $('.grid__item.product__media-wrapper .badges .badge').attr('data-badge',badge);           
+      //         $('.variant-item').removeClass('show');
+      //         $('.variant-item input').val(0);
+      //         $('.variant-item').each(function() {
+      //             var checkSelectedColor2 = '';
+      //             if ($('.product-form__input input[name="Color"]:checked').val() !== undefined) {
+      //               checkSelectedColor2 = $('.product-form__input input[name="Color"]:checked').val();
+      //             } else if ($('.product-form__input input[name="Colour"]:checked').val() !== undefined) {
+      //               checkSelectedColor2 = $('.product-form__input input[name="Colour"]:checked').val();
+      //             }
+      //             if ($(this).attr('color-value') === checkSelectedColor2) {
+      //                 $(this).addClass('show');
+      //             }
+      //         })
+      //       }, 100)
+      //   };
+      //     });
     </script>
 
     {%- if settings.predictive_search_enabled -%}
@@ -408,8 +445,8 @@ body {
 
 
   {% comment %} <script
-        type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-      defer="defer"></script> {% endcomment %}
+                type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+          defer="defer"></script> {% endcomment %}
   </body>
 </html>

@@ -1,110 +1,109 @@
 <section class="direct-logo-usp-section">
 
   {% if section.blocks.size > 0 %}
-      {% for block in section.blocks %}
-        {% liquid
-           assign directUspImage = block.settings.direct_image
-           assign directProductText = block.settings.direct_product_text 
+    {% for block in section.blocks %}
+      {% liquid
+        assign directUspImage = block.settings.direct_image
+        assign directProductText = block.settings.direct_product_text
       %}
-        <style>
-        {% if block.settings.direct_blackwhite  %}
-            .image-{{ forloop.index }} img {
-              filter: grayscale(1);
-            }
-          {% endif %}
-        
-        </style>
-        <div class="direct-logo-usp-item">
-            {% if forloop.index != 12 %}
-                <div class="direct-logo-image-container image-{{ forloop.index }}">
-                   <figure>
-                    {% render 'snippet-image', image: directUspImage, loadingLazy: 'false', class: 'direct-logo-hero-image ' %}
-                   </figure>
-                  </div>
-                {% else %}
-              <div class="direct-logo-image-container all-brands">
-                   <a href=""> ALL BRANDS</a>
-                  </div>
-            {% endif %}
-          
-        </div>
-        
-         {% endfor %}
-    {% endif %}
-    </section>
-    
+      <div class="direct-logo-usp-item">
+        {% if forloop.index != 12 %}
+          <div class="direct-logo-image-container image-{{ forloop.index }}">
+            <figure>
+              {% render 'snippet-image'
+                , image: directUspImage
+                , loadingLazy: 'false'
+                , class: 'direct-logo-hero-image ' %}
+            </figure>
+          </div>
+        {% else %}
+          <div class="direct-logo-image-container all-brands">
+            <a href="">
+              ALL BRANDS</a>
+          </div>
+        {% endif %}
+
+      </div>
+
+    {% endfor %}
+  {% endif %}
+</section>
 
 
 <style>
- .direct-logo-image-container figure {
-	margin: 0;
-	display: flex;
-	height:100%;
-}
-.direct-logo-image-container figure > img {
-	width:100%;
-	height: auto;
-	object-fit: cover;
-}
-.direct-logo-usp-section {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 100px 20px;
-	flex-wrap: wrap;
-	gap: 10px
-}
-.direct-logo-usp-item {
-	text-align: center;
-}
-.direct-logo-image-container {
-	overflow: hidden;
-	width: 300px;
-	height: 200px;
-	aspect-ratio: 1;
-	background: #f7f7f7;
-}
-.direct-logo-image-container img {
-	object-fit: contain !important;
-	width: 100%;
-}
-.direct-logo-product-name {
-	font-family: var(--hero-heading-font);
-	font-size: 24px;
-	margin-top: 20px;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-.all-brands {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.all-brands a {
-	color: #000;
-	font-size: 24px;
-	font-weight: 600;
-}
-@media (max-width: 768px) {
-	.direct-logo-usp-item {
-		display: flex;
-		justify-content: center;
-	}
-}
-.direct-logo-product-name {
-	font-size: 18px;
-}
-}
-@media (max-width: 480px) {
-.direct-logo-usp-item {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-.direct-logo-usp-item .direct-logo-image-container {
-	align-self: center;
-}
-}
+  .direct-logo-image-container figure {
+    margin: 0;
+    display: flex;
+    height: 100%;
+  }
+
+  .direct-logo-image-container figure > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .direct-logo-image-container figure > img:hover {
+    filter: grayscale(1);
+  }
+  .direct-logo-usp-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 10px
+  }
+  .direct-logo-usp-item {
+    text-align: center;
+  }
+  .direct-logo-image-container {
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    aspect-ratio: 1;
+    background: #f7f7f7;
+  }
+  .direct-logo-image-container img {
+    object-fit: contain !important;
+    width: 100%;
+    padding: 50px;
+  }
+  .direct-logo-product-name {
+    font-family: var(--hero-heading-font);
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .all-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .all-brands a {
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    .direct-logo-usp-item {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .direct-logo-product-name {
+    font-size: 18px;
+  }
+  @media (max-width: 480px) {
+    .direct-logo-usp-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .direct-logo-usp-item .direct-logo-image-container {
+      align-self: center;
+    }
+  }
 
 </style>
 {% schema %}
@@ -116,17 +115,16 @@
         "type": "usp",
         "name": "Logo Item",
         "settings": [
-      {
-        "type": "image_picker",
-        "id": "direct_image",
-        "label": "Section Image"
-      },
           {
+            "type": "image_picker",
+            "id": "direct_image",
+            "label": "Section Image"
+          }, {
             "type": "checkbox",
             "id": "direct_blackwhite",
-            "label":"Black and white photo"
+            "label": "Black and white photo"
           }
-    ]
+        ]
       }
     ],
     "max_blocks": 12,

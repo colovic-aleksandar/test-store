@@ -13,56 +13,59 @@
   assign button-link-right = section.settings.button_link_right
 %}
 <section class="custom-container">
-  <div class="custom-background-section left-side" style="background-image: url('{{ background-first }}');">
-    <figure>
-      {% render 'snippet-image'
-        , image: image-left
-        , loadingLazy: 'false'
-        , class: 'image' %}
-    </figure>
-    <div class="flx-clmn">
-      {% if subheading != 'blank' %}
-        <h2>
-          {{ subheading }}
-        </h2>
-      {% endif %}
+  <div class="custom-background-section left-side">
+    <div class="flx-clmn" style="background-image: url('{{ background-first }}');">
+      <figure>
+        {% render 'snippet-image'
+          , image: image-left
+          , loadingLazy: 'false'
+          , class: 'image' %}
+      </figure>
+      <div>
+        {% if subheading != 'blank' %}
+          <h2>
+            {{ subheading }}
+          </h2>
+        {% endif %}
 
-      {% if heading != 'blank' %}
-        <div>
-          {{ heading }}
-        </div>
-      {% endif %}
+        {% if heading != 'blank' %}
+          <div>
+            {{ heading }}
+          </div>
+        {% endif %}
 
-      {% if sideText != 'blank' %}
-        <p>
-          {{ sideText }}
-        </p>
-      {% endif %}
+        {% if sideText != 'blank' %}
+          <p>
+            {{ sideText }}
+          </p>
+        {% endif %}
 
-      {% if button-text-left != blank and button-link-left != blank %}
-        <a href="{{ button-link-left }}" class="btn">{{ button-text-left }}</a>
-      {% endif %}
-
+        {% if button-text-left != blank and button-link-left != blank %}
+          <a href="{{ button-link-left }}" class="btn">{{ button-text-left }}</a>
+        {% endif %}
+      </div>
     </div>
   </div>
-  <div class="custom-background-section sale-container" style="background-image: url('{{ background-second }}');">
-    <div class="flx-clmn sale">
-      {% if subheading-right != 'blank' %}
-        <div class="">
-          <h2 class="">
-            {{ subheading-right }}
-          </h2>
-        </div>
-      {% endif %}
-      {% if heading-right != 'blank' %}
-        <div>
-          {{ heading-right }}
-        </div>
-      {% endif %}
+  <div class="custom-background-section sale-container">
+    <div class="flx-clmn sale" style="background-image: url('{{ background-second }}');">
+      <div class="flx-clmn-wrapper">
+        {% if subheading-right != 'blank' %}
+          <div class="">
+            <h2 class="">
+              {{ subheading-right }}
+            </h2>
+          </div>
+        {% endif %}
+        {% if heading-right != 'blank' %}
+          <div>
+            {{ heading-right }}
+          </div>
+        {% endif %}
 
-      {% if button-text-right != blank and button-link-right != blank %}
-        <a href="{{ button-link-right }}" class="btn">{{ button-text-right }}</a>
-      {% endif %}
+        {% if button-text-right != blank and button-link-right != blank %}
+          <a href="{{ button-link-right }}" class="btn">{{ button-text-right }}</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 
@@ -92,8 +95,8 @@
     width: 48%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 30px;
     gap: 30px;
+    min-height: 280px;
   }
   .flx-clmn {
     display: flex;
@@ -102,6 +105,19 @@
   }
   .left-side .image {
     object-fit: contain;
+  }
+  .left-side .flx-clmn {
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    transition: all 0.5s;
+    background-position: center;
+  }
+  .left-side .flx-clmn > div {
+    margin-left: 30px;
+  }
+  .left-side .flx-clmn:hover {
+    background-size: 110%;
   }
   .custom-background-section figure {
     margin: 0;
@@ -121,6 +137,7 @@
     font-family: 'Bebas Neue'
     , sans-serif;
     line-height: 90%;
+    font-size: 40px;
   }
   .btn {
     background: white !important;
@@ -137,6 +154,11 @@
   .btn:hover {
     transform: scale(1.05);
   }
+  .flx-clmn-wrapper {
+    margin-right: 30px;
+    padding: 40px 0;
+  }
+
   .flx-clmn h2 {
     color: #fff;
     font-family: Bebas Neue;
@@ -149,6 +171,7 @@
     font-weight: 500;
     background-color: #fd9e4ecc;
     margin-bottom: 10px;
+    text-wrap: nowrap;
   }
   .flx-clmn h1 {
     font-size: 100px;
@@ -157,8 +180,8 @@
   .flx-clmn div > b {
     font-family: 'Bebas Neue'
     , sans-serif;
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 60px;
+    line-height: 80px;
     background: #ffffffcc;
     color: #000;
     text-transform: uppercase;
@@ -168,9 +191,20 @@
     display: inline-block;
     margin-bottom: 10px;
   }
+  .sale-container {
+    padding: 0;
+  }
   .sale {
     display: flex;
     justify-content: center;
+    width: 100%;
+    background-size: 100%;
+    align-items: flex-end;
+    transition: 0.5s ease-in-out;
+    background-position: center;
+  }
+  .sale:hover {
+    background-size: 110%;
   }
   .sale-offer {
     background: #fd9e4e;

@@ -42,7 +42,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 100px 20px 0;
+    padding: 100px 0;
     flex-wrap: wrap;
     gap: 20px
   }
@@ -58,6 +58,10 @@
   .direct-image-container img {
     object-fit: cover;
     width: 100%;
+    cursor: pointer;
+  }
+  .direct-image-container img:hover {
+    filter: grayscale(1);
   }
   .direct-product-name {
     font-family: 'Montserrat'
