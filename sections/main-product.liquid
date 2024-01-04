@@ -85,14 +85,14 @@
         <div class="badges" >
           <span data-badge="New" class="badge new-badge">New</span>
         </div>
-        <style>
+       {% style %}
           .badges {
             position: relative;
             z-index: 3;
             top: 50px;
             left: 20px;
           }
-        </style>
+          {% endstyle %}
       {% endif %}
  
       {% render 'product-media-gallery', variant_images: variant_images %}
