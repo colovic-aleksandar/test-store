@@ -142,7 +142,7 @@
       {% assign currentVariantThumb = card_product.selected_or_first_available_variant %}
       {% assign currentDateThumb = 'now' | date: "%s" | plus: 0 %}
       {% assign productDateThumb = card_product.created_at | date: "%s" | plus: 0 %}
-      {% assign dateOneWeekThumb = currentDateThumb | minus: 604800 %}
+      {% assign dateOneWeekThumb = currentDateThumb | minus: 7776000 %}
       
       {% assign productStatusThumb = currentVariantThumb.metafields.custom.product_status.value %}
       

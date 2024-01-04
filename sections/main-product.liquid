@@ -75,7 +75,7 @@
       {% assign currentVariant = product.selected_or_first_available_variant %}
       {% assign currentDate = 'now' | date: "%s" | plus: 0 %}
       {% assign productDate = product.created_at | date: "%s" | plus: 0 %}
-      {% assign dateOneWeek = currentDate | minus: 604800 %}
+      {% assign dateOneWeek = currentDate | minus: 7776000 %}
       
       {% assign productStatus = currentVariant.metafields.custom.product_status.value %}
       

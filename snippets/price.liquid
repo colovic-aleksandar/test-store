@@ -80,7 +80,7 @@
       {% assign productDate = product_variant.created_at | date: "%s" | plus: 0 %}
       {% assign productStatus = product_variant.metafields.custom.product_status.value %}
       {% assign currentDateThumbSize = 'now' | date: "%s" | plus: 0 %}
-      {% assign oneWeekAgoThumbSize = currentDateThumbSize | minus: 604800 %}
+      {% assign oneWeekAgoThumbSize = currentDateThumbSize | minus: 7776000 %}
 
       {% if productStatus %}
         {% assign data_badge = productStatus %}

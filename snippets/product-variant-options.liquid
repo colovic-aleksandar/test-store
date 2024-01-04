@@ -55,33 +55,33 @@
     <span
       class="hide badge-helper"
       {%- assign product_metaobjects = '' -%}
-      {% assign badge = '' %}
+      {% assign data_badge = '' %}
       {%- for variant in product.variants -%}
       {%- for option in variant.options -%}
       {%- if option == value -%}
       {% assign currentDate1 = 'now' | date: '%s' | plus: 0 %}
       {% assign productDate1 = product.created_at | date: '%s' | plus: 0 %}
-      {% assign oneWeekAgo1 = currentDate1 | minus: 604800 %}
+      {% assign threeMonthsAgo1 = currentDate1 | minus: 7776000 %}
       {% assign productStatus1 = variant.metafields.custom.product_status.value %}
       {% if productStatus1 %}
-      {% assign badge1 = productStatus1 %}
+      {% assign data_badge1 = productStatus1 %}
       {% elsif variant.compare_at_price > variant.price %}
-      {% assign badge1 = 'Sale' %}
-      {% elsif productDate1 >= oneWeekAgo1 %}
-      {% assign badge1 = 'New' %}
+      {% assign data_badge1 = 'Sale' %}
+      {% elsif productDate1 >= threeMonthsAgo1 %}
+      {% assign data_badge1 = 'New' %}
       {% endif %}
-      {{ value | handle }}-{{ variant.option2 | handle }}="{{ badge1 }}"
+      {{ value | handle }}-{{ variant.option2 | handle }}="{{ data_badge1 }}"
       {%- if variant.option2 == product.selected_or_first_available_variant.option2 -%}
       {% assign currentDate = 'now' | date: '%s' | plus: 0 %}
       {% assign productDate = product.created_at | date: '%s' | plus: 0 %}
-      {% assign dateOneWeek = currentDate | minus: 604800 %}
+      {% assign threeMonthsAgo = currentDate | minus: 7776000 %}
       {% assign productStatus = variant.metafields.custom.product_status.value %}
       {% if productStatus %}
-      {% assign badge = productStatus %}
+      {% assign data_badge = productStatus %}
       {% elsif variant.compare_at_price > variant.price %}
-      {% assign badge = 'Sale' %}
-      {% elsif productDate >= dateOneWeek %}
-      {% assign badge = 'New' %}
+      {% assign data_badge = 'Sale' %}
+      {% elsif productDate >= threeMonthsAgo %}
+      {% assign data_badge = 'New' %}
       {% endif %}
       {%- endif -%}
       {% if variant.metafields.custom.variation_color.value.color_value != blank %}
@@ -104,7 +104,7 @@
       {% endif %}>
     <label
       onClick="selectVariation(this)"
-      data-badge="{{ badge }}"
+      data-badge="{{ data_badge }}"
       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
       class="color-swatch"
       style="background-color: {{new_color_hex}}">
@@ -135,33 +135,33 @@
     </label>
     <span
       class="hide badge-helper"
-      {% assign badge = '' %}
+      {% assign data_badge = '' %}
       {%- for variant in product.variants -%}
       {%- for option in variant.options -%}
       {%- if option == value -%}
-      {% assign dateNow2 = 'now' | date: "%s" | plus: 0 %}
-      {% assign productCreatedAt2 = product.created_at | date: "%s" | plus: 0 %}
-      {% assign dateWeekAgo2 = dateNow2 | minus: 604800 %}
-      {% assign productStatusValue2 = variant.metafields.custom.product_status.value %}
-      {% if productStatusValue2 %}
-      {% assign badge2 = productStatusValue2 %}
+      {% assign currentDateThumbSize2 = 'now' | date: "%s" | plus: 0 %}
+      {% assign productDateThumbSize2 = product.created_at | date: "%s" | plus: 0 %}
+      {% assign threeMonthsAgoThumbSize2 = currentDateThumbSize2 | minus: 7776000 %}
+      {% assign productStatusThumbSize2 = variant.metafields.custom.product_status.value %}
+      {% if productStatusThumbSize2 %}
+      {% assign data_badge2 = productStatusThumbSize2 %}
       {% elsif variant.compare_at_price > variant.price %}
-      {% assign badge2 = 'Sale' %}
-      {% elsif productCreatedAt2 >= dateWeekAgo2 %}
-      {% assign badge2 = 'New' %}
+      {% assign data_badge2 = 'Sale' %}
+      {% elsif productDateThumbSize2 >= threeMonthsAgoThumbSize2 %}
+      {% assign data_badge2 = 'New' %}
       {% endif %}
-      {{ variant.option1 | handle }}-{{ value | handle }}="{{ badge2 }}"
+      {{ variant.option1 | handle }}-{{ value | handle }}="{{ data_badge2 }}"
       {%- if variant.option1 == product.selected_or_first_available_variant.option1 -%}
-      {% assign dateNow = 'now' | date: "%s" | plus: 0 %}
-      {% assign productCreatedAt = product.created_at | date: "%s" | plus: 0 %}
-      {% assign dateWeekAgo = dateNow | minus: 604800 %}
-      {% assign productStatusValue = variant.metafields.custom.product_status.value %}
-      {% if productStatusValue %}
-      {% assign badge = productStatusValue %}
+      {% assign currentDateThumbSize = 'now' | date: "%s" | plus: 0 %}
+      {% assign productDateThumbSize = product.created_at | date: "%s" | plus: 0 %}
+      {% assign threeMonthsAgoThumbSize = currentDateThumbSize | minus: 7776000 %}
+      {% assign productStatusThumbSize = variant.metafields.custom.product_status.value %}
+      {% if productStatusThumbSize %}
+      {% assign data_badge = productStatusThumbSize %}
       {% elsif variant.compare_at_price > variant.price %}
-      {% assign badge = 'Sale' %}
-      {% elsif productCreatedAt >= dateWeekAgo %}
-      {% assign badge = 'New' %}
+      {% assign data_badge = 'Sale' %}
+      {% elsif productDateThumbSize >= threeMonthsAgoThumbSize %}
+      {% assign data_badge = 'New' %}
       {% endif %}
       {%- endif -%}
       {%- endif -%}
