@@ -2945,7 +2945,12 @@ details-disclosure > details {
   color: rgb(var(--color-badge-foreground));
   word-break: break-word;
 }
-
+.badges > .badge {
+  background-color: black;
+  color: white;
+  width: 80px;
+  font-size: 1.6rem;
+}
 .gradient {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
