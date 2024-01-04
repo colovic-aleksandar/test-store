@@ -1,0 +1,229 @@
+{{ 'base-test.css' | asset_url | stylesheet_tag }}
+{% liquid 
+assign sectionID = 'shopify-section-' | append: section.id 
+assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
+%}
+{% liquid
+  assign directIntro = section.settings.direct_Intro
+  assign directTitle = section.settings.direct_Title
+  assign directText = section.settings.direct_Text
+  assign directImage = section.settings.direct_Image
+  assign directImageSecond = section.settings.direct_Image_Second
+  assign directButton1Text = section.settings.direct_hero_btn1_text
+  assign directButton1Url = section.settings.direct_hero_btn1_url
+  assign directButton2Text = section.settings.direct_hero_btn2_text
+  assign directButton2Url = section.settings.direct_hero_btn2_url
+%}
+
+<section id="{{ divID}}" class="direct-hero-content_wrapper">
+  
+  <div class="direct-hero-image-container">
+   
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      {% assign largeImage = block.settings.large_image %}
+      <div class="direct-hero-image-container">
+        <figure>
+          {% render 'snippet-image'
+            , image: largeImage
+            , loadingLazy: 'false'
+            , class: 'direct-hero-image' %}
+        </figure>
+      </div>
+    {% endfor %}
+  {% endif %}
+</section> 
+
+  <div class="direct-hero-text">
+
+    {% if directIntro != 'blank' %}
+      <p class="table-subheading heroIntro text-center c-title text-white">
+        {{ directIntro }}
+      </p>
+    {% endif %}
+
+    {% if directTitle != 'blank' %}
+      <p class="table-heading heroTitle text-center c-title text-white">
+        {{ directTitle }}
+      </p>
+    {% endif %}
+
+    {% if directText != 'blank' %}
+      <p class="table-subheading heroText text-center c-title text-white">
+        {{ directText }}
+      </p>
+    {% endif %}
+    <div class="container">
+
+      <a href="{{ directButton1Url }}" class="button-primary">{{ directButton1Text }}</a>
+
+      <a href="{{ directButton2Url }}" class="button-primary">{{ directButton2Text }}</a>
+    </div>
+  </div>
+  <div class="direct-hero-image-container">
+    <figure>
+      {% render 'snippet-image'
+        , image: directImageSecond
+        , loadingLazy: 'false'
+        , class: 'direct-hero-image' %}
+    </figure>
+  </div>
+</section>
+<style>
+#{{ sectionID }}  .direct-hero-content_wrapper {
+    display: flex;
+    height: 570px;
+  }
+  #{{ sectionID }}  .direct-hero-content_wrapper > div {
+    flex-basis: 33.33%;
+  }
+  #{{ sectionID }} .direct-hero-text {
+    padding: 20px;
+    background-color: #00126a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #{{ sectionID }} .direct-hero-image-container figure {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+  }
+  .direct-hero-image-container figure > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.direct-hero-image-container:hover figure > img {
+    transform: scale(1.05);
+}
+
+  #{{ sectionID }} .heroIntro {
+    font-size: 18px;
+    font-family: 'Montserrat'
+    , sans-serif !important;
+    text-transform: uppercase;
+    opacity: 0.95;
+  }
+  #{{ sectionID }} .heroTitle {
+    font-family: var(--hero-heading-font) !important;
+    font-size: 45px !important;
+    font-weight: 700;
+    padding: 10px 50px;
+    line-height: 40px !important;
+  }
+  #{{ sectionID }} .heroText {
+    font-size: 17px;
+    padding: 0 50px;
+    font-weight: 400 !important;
+    line-height: 22px;
+    font-family: 'Montserrat',sans-serif;
+  }
+  #{{ sectionID }} .button-primary {
+    text-decoration: none;
+    min-width: 190px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #00126a;
+    font-size: 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: var(--body-font);
+    margin: 30px 5px;
+    text-align: center;
+    transition: all .5s cubic-bezier(.25,.46,.45,.94);
+    transform: translate(0);
+  
+  }
+  #{{ sectionID }} .button-primary:hover {
+    background: #232323;
+    color: #fff;
+  }
+  #{{ sectionID }} .container {
+    display: flex;
+  }
+  @media all and (max-width: 992px) {
+    #{{ sectionID }} .direct-hero-image-container {
+      display: none;
+    }
+    #{{ sectionID }} .heroText {
+      padding: 30px 50px !important;
+    }
+    #{{ sectionID }} .heroTitle {
+      font-size: 32px;
+    }
+  }
+  @media all and (max-width: 768px) {
+    #{{ sectionID }} .container {
+      flex-direction: column;
+    }
+    #{{ sectionID }} .direct-hero-text {
+      padding: 50px 0;
+    }
+    #{{ sectionID }}  .button-primary {
+      margin: 10px;
+    }
+    #{{ sectionID }}  .heroTitle {
+      font-size: 28px;
+    }
+  }
+
+</style>
+{% schema %}
+  {
+    "name": "Direct  Hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "direct_Intro",
+        "label": "Hero Intro"
+      },
+      {
+        "type": "text",
+        "id": "direct_Title",
+        "label": "Hero Title"
+      },
+      {
+        "type": "textarea",
+        "id": "direct_Text",
+        "label": "Section Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "direct_Image",
+        "label": "Section Image Left"
+      }, {
+        "type": "image_picker",
+        "id": "direct_Image_Second",
+        "label": "Section Image Right"
+      }, {
+        "type": "text",
+        "id": "direct_hero_btn1_text",
+        "label": "Hero Button 1 Text"
+      }, {
+        "type": "url",
+        "id": "direct_hero_btn1_url",
+        "label": "Hero Button 1 URL"
+      }, {
+        "type": "text",
+        "id": "direct_hero_btn2_text",
+        "label": "Hero Button 2 Text"
+      }, {
+        "type": "url",
+        "id": "direct_hero_btn2_url",
+        "label": "Hero Button 2 URL"
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Direct Hero"
+      }
+    ]
+  }
+{% endschema %}

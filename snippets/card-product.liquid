@@ -138,6 +138,27 @@
           </div>
         </div>
       </div>
+
+      {% assign currentVariantThumb = card_product.selected_or_first_available_variant %}
+      {% assign currentDateThumb = 'now' | date: "%s" | plus: 0 %}
+      {% assign productDateThumb = card_product.created_at | date: "%s" | plus: 0 %}
+      {% assign dateOneWeekThumb = currentDateThumb | minus: 604800 %}
+      
+      {% assign productStatusThumb = currentVariantThumb.metafields.custom.product_status.value %}
+      
+      {% if productStatusThumb %}
+        <div class="badges" style="max-width: 634px">
+          <span data-badge="{{ productStatusThumb }}" class="badge {{ productStatusThumb | handle }}-badge">{{ productStatusThumb }}</span>
+        </div>
+      {% elsif currentVariantThumb.compare_at_price > currentVariantThumb.price %}
+        <div class="badges" style="max-width: 634px">
+          <span data-badge="Sale" class="badge sale-badge">Sale</span>
+        </div>
+      {% elsif productDateThumb >= dateOneWeekThumb %}
+        <div class="badges" style="max-width: 634px">
+          <span data-badge="New" class="badge new-badge">New</span>
+        </div>
+      {% endif %}
       <div class="card__content">
         <div class="card__information">
           <h3

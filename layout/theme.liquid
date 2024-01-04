@@ -400,53 +400,79 @@ body {
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
-
-      // $(function () {
-      //   selectVariation = function (elm) {
-      //       $(elm).parents('fieldset').find('.option-selected').text($(elm).attr('data-value'));          
-      //       setTimeout(function() {  
-      //         var selectedColor = '';
-      //         var selectedSize = '';
-      //         var badge = $(elm).attr('data-badge');
-      //         if ($('.product-form__input input[name="Color"]:checked').val() !== undefined) {
-      //           selectedColor = $('.product-form__input input[name="Color"]:checked').val().toLowerCase().replaceAll(' ','-');
-      //         } else if ($('.product-form__input input[name="Colour"]:checked').val() !== undefined) {
-      //           selectedColor = $('.product-form__input input[name="Colour"]:checked').val().toLowerCase().replaceAll(' ','-');
-      //         }
-      //         if ($('.product-form__input input[name="Color"]:checked').val() !== undefined) {
-      //           selectedSize = $('.product-form__input input[name="Size"]:checked').val().toLowerCase().replaceAll(' ','-');
-      //         }
-      //         var targetVariation = selectedColor + '-' + selectedSize;
-      //         if (selectedSize !== '' && selectedColor !== '') {
-      //            badge = $(elm).parents('.variation-options-wrapper').find('.badge-helper').attr(targetVariation);
-      //         }
-      //         $('.grid__item.product__media-wrapper .badges .badge').attr('data-badge',badge);           
-      //         $('.variant-item').removeClass('show');
-      //         $('.variant-item input').val(0);
-      //         $('.variant-item').each(function() {
-      //             var checkSelectedColor2 = '';
-      //             if ($('.product-form__input input[name="Color"]:checked').val() !== undefined) {
-      //               checkSelectedColor2 = $('.product-form__input input[name="Color"]:checked').val();
-      //             } else if ($('.product-form__input input[name="Colour"]:checked').val() !== undefined) {
-      //               checkSelectedColor2 = $('.product-form__input input[name="Colour"]:checked').val();
-      //             }
-      //             if ($(this).attr('color-value') === checkSelectedColor2) {
-      //                 $(this).addClass('show');
-      //             }
-      //         })
-      //       }, 100)
-      //   };
-      //     });
     </script>
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script>
+      document.querySelectorAll('.variant-item').forEach(function(item) {
+       
+       var checkSelectedColor1 = '';
+       var colorInput = document.querySelector('.product-form__input input[name="Color"]:checked');
+       var colourInput = document.querySelector('.product-form__input input[name="Colour"]:checked');
+       
+       if (colorInput !== null && colorInput.value !== undefined) {
+           checkSelectedColor1 = colorInput.value;
+       } else if (colourInput !== null && colourInput.value !== undefined) {
+           checkSelectedColor1 = colourInput.value;
+       }
 
+       if (item.getAttribute('color-value') === checkSelectedColor1) {
+           item.classList.add('show');
+       }
+         });
+         document.addEventListener('DOMContentLoaded', function () {
+
+       window.selectVariation = function (elm) {
+           setTimeout(function () {
+         var selectedColor = '';
+         var selectedSize = '';
+         var badge = elm.getAttribute('data-badge');
+         var colorInput = document.querySelector('.product-form__input input[name="Color"]:checked');
+         var sizeInput = document.querySelector('.product-form__input input[name="Size"]:checked');
+         if (colorInput !== null && colorInput.value !== undefined) {
+             selectedColor = colorInput.value.toLowerCase().replaceAll(' ', '-');
+         }
+          if (sizeInput !== null && sizeInput.value !== undefined) {
+             selectedSize = sizeInput.value.toLowerCase().replaceAll(' ', '-');
+         }
+
+         var targetVariation = selectedColor + '-' + selectedSize;
+         if (selectedSize !== '' && selectedColor !== '') {
+             badge = elm.closest('.variation-options-wrapper').querySelector('.badge-helper').getAttribute(targetVariation);
+             
+             
+         }
+
+         let elBadge = document.querySelector('.grid__item.product__media-wrapper .badges .badge')
+            elBadge.setAttribute('data-badge', badge);
+            let badgeValue = elBadge.getAttribute('data-badge');
+            elBadge.textContent = badgeValue;
+         document.querySelectorAll('.variant-item').forEach(function (item) {
+             var checkSelectedColor2 = '';
+             var colorInput2 = document.querySelector('.product-form__input input[name="Color"]:checked');
+             var colourInput2 = document.querySelector('.product-form__input input[name="Colour"]:checked');
+
+             if (colorInput2 !== null && colorInput2.value !== undefined) {
+                 checkSelectedColor2 = colorInput2.value;
+             } else if (colourInput2 !== null && colourInput2.value !== undefined) {
+                 checkSelectedColor2 = colourInput2.value;
+             }
+
+             if (item.getAttribute('color-value') === checkSelectedColor2) {
+                 item.classList.add('show');
+             }
+         });
+           }, 100);
+       };
+         });
+
+    </script>
 
   {% comment %} <script
-                type="text/javascript"
-                src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-          defer="defer"></script> {% endcomment %}
+                                                                                                                                                                                            type="text/javascript"
+                                                                                                                                                                                            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+                                                                                                defer="defer"></script> {% endcomment %}
   </body>
 </html>
