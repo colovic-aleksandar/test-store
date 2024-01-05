@@ -2945,6 +2945,9 @@ details-disclosure > details {
   color: rgb(var(--color-badge-foreground));
   word-break: break-word;
 }
+header.header.header--middle-left.header--mobile-center.page-width.header--has-menu.header--has-localizations {
+  display: none;
+}
 .badges > .badge {
   background-color: black;
   color: white;
