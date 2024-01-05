@@ -2951,6 +2951,17 @@ details-disclosure > details {
   width: 80px;
   font-size: 1.6rem;
 }
+.card__inner ~ .badges .badge {
+  background: #3350b4;
+  color: white;
+}
+
+.card__inner ~ .badges {
+  position: relative;
+  top: initial;
+  bottom: 39px;
+  left: 10px;
+}
 .gradient {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
