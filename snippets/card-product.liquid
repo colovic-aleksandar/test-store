@@ -220,6 +220,65 @@
               </p>
             {%- endif -%}
 
+
+            <div class="variation_colors_wrap">
+              {%- assign product_metaobjects = '' -%}
+              {%- assign unique_colors = '' | split: ',' -%}
+              
+              {%- if card_product and card_product != empty -%}
+              
+                {%- for option in card_product.options -%}
+                  {%- if option == 'Color' -%}
+                    {%- for variant in card_product.variants -%}
+                      {%- for variant_option in variant.options -%}
+                        {%- if variant_option == variant.option1 -%}
+                           {%- assign product_metaobjects =  variant.metafields.custom.colour_swatch.value.colour_hex -%}
+                            {%- if variant.option2 == card_product.selected_or_first_available_variant.option2 -%}
+                              {% assign currentDateThumbColor = 'now' | date: "%s" | plus: 0 %}
+                              {% assign productDateThumbColor = card_product.created_at | date: "%s" | plus: 0 %}
+                              {% assign threeMonthsAgoThumbColor = currentDateThumbColor | minus: 7776000 %}
+                               
+                              {% assign productStatusThumbColor = variant.metafields.custom.product_status.value %}
+                            
+                              {% if productStatusThumbColor %}
+                                {% assign data_bagdeThumbColor = productStatusThumbColor %}
+                              {% elsif variant.compare_at_price > variant.price %}
+                                {% assign data_bagdeThumbColor = 'Sale' %}
+                              {% elsif productDateThumbColor >= threeMonthsAgoThumbColor %}
+                                {% assign data_bagdeThumbColor = 'New' %}
+                              {% endif %}
+                            <span data-badge="{{ data_bagdeThumbColor }}" color_value="{{ product_metaobjects }}" onmouseover="variation_colors_thumb(this)" data-img="https://aleksandar-colovic.myshopify.com/cdn/shop/{{ variant.featured_media }}" style="background: {{ product_metaobjects }} !important;" class="with_color"></span>
+                            <style>
+                              .variation_colors_wrap span[color_value="{{ product_metaobjects }}"] ~ span[color_value="{{ product_metaobjects }}"] {
+                                  display: none;
+                              }
+                              span.with_color {
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                display: inline-block;
+                                border: 1px solid;
+                              }
+                              span.with_color:hover {
+                                cursor: pointer;
+                              }
+                              .card-information {
+                                  width: 100%;
+                                  position: relative;
+                                  z-index: 2;
+                              }
+                            </style>
+                            
+                          {%- endif -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+
+            </div>
+            
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">

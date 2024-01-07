@@ -3425,7 +3425,6 @@ header.header.header--middle-left.header--mobile-center.page-width.header--has-m
     .card--shape.card--standard:not(.card--text)
     .card__inner
     .card__media:before {
-    background-image: var(--easter-egg);
     background-size: 250px 250px;
     mix-blend-mode: color-dodge;
     pointer-events: none;

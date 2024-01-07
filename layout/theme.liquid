@@ -467,12 +467,19 @@ body {
            }, 100);
        };
          });
-
+         $(function () {
+        variation_colors_thumb = function (elm) {
+            $(elm).parents('.card-wrapper').find('.card__media .media img').attr('src',$(elm).attr('data-img')).attr('srcset','');
+            $(elm).parents('.card-wrapper').find('.variation_colors_wrap span').removeClass("active");
+            $(elm).addClass("active");
+            $(elm).parents('.card-wrapper').find('.badges .badge').attr('data-badge',$(elm).attr('data-badge'));
+        };
+          });
     </script>
 
   {% comment %} <script
-                                                                                                                                                                                            type="text/javascript"
-                                                                                                                                                                                            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-                                                                                                defer="defer"></script> {% endcomment %}
+                                                                                                                                                                                                                type="text/javascript"
+                                                                                                                                                                                                                src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+                                                                                                          defer="defer"></script> {% endcomment %}
   </body>
 </html>
