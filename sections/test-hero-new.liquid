@@ -148,7 +148,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
         {% if directButton1Text != blank or directButton2Text != blank %}
         <div class="container">
     
-          <a href="{{ directButton1Url }}" class="button-primary btn1"
+          <a href="{{ directButton1Url }}" class="hero-button-primary btn1"
           style="
           font-size: {{direct_hero_btn1_size}}px;
           width: {{direct_hero_btn1_width}}px !important;
@@ -156,7 +156,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
           background-color: {{direct_hero_btn1_color_bg}};
           ">{{ directButton1Text }}</a>
     
-          <a href="{{ directButton2Url }}" class="button-primary btn2" style="
+          <a href="{{ directButton2Url }}" class="hero-button-primary btn2" style="
           font-size: {{direct_hero_btn2_size}}px;
           width: {{direct_hero_btn2_width}}px !important;
           color: {{direct_hero_btn2_color}};
@@ -261,7 +261,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     line-height: 22px;
     font-family: 'Montserrat',sans-serif;
   }
-  #{{ sectionID }} .button-primary {
+  #{{ sectionID }} .hero-button-primary {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 30px;
@@ -282,7 +282,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     flex-direction: column;
   } }
   @media all and (max-width: 992px) {
-    #{{ sectionID }} .button-primary {
+    #{{ sectionID }} .hero-button-primary {
       margin: 10px !important;
     }
 #{{ sectionID }}  .direct-hero-content_wrapper {
@@ -308,7 +308,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     #{{ sectionID }} .direct-hero-text {
       padding: 50px 0;
     }
-    #{{ sectionID }}  .button-primary {
+    #{{ sectionID }}  .hero-button-primary {
       margin: 10px;
     }
     #{{ sectionID }}  .heroTitle {
