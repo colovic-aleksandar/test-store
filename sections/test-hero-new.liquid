@@ -2,108 +2,248 @@
 {% liquid 
 assign sectionID = 'shopify-section-' | append: section.id 
 assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
-%}
-{% liquid
-  assign directIntro = section.settings.direct_Intro
-  assign directTitle = section.settings.direct_Title
-  assign directText = section.settings.direct_Text
-  assign directImage = section.settings.direct_Image
-  assign directImageSecond = section.settings.direct_Image_Second
-  assign directButton1Text = section.settings.direct_hero_btn1_text
-  assign directButton1Url = section.settings.direct_hero_btn1_url
-  assign directButton2Text = section.settings.direct_hero_btn2_text
-  assign directButton2Url = section.settings.direct_hero_btn2_url
+assign customClass = section.settings.direct_custom_class
+assign container_width = section.settings.container_width
+assign container_bg_color = section.settings.container_background_color
+assign container_bg_gradient = section.settings.container_background_gradient
+assign container_bg_image = section.settings.container_background_image | img_url: 'master'
+assign container_padding_top_desktop = section.settings.container_padding_top_desktop
+assign container_padding_top_tablet = section.settings.container_padding_top_tablet
+assign container_padding_top_mobile = section.settings.container_padding_top_mobile
+
+assign container_padding_bottom_desktop = section.settings.container_padding_bottom_desktop
+assign container_padding_bottom_tablet = section.settings.container_padding_bottom_tablet
+assign container_padding_bottom_mobile = section.settings.container_padding_bottom_mobile
 %}
 
-<section id="{{ divID}}" class="direct-hero-content_wrapper">
-  
-  <div class="direct-hero-image-container">
-   
+
+<section id="{{ divID}}" class="direct-hero-content_wrapper {% if customClass != blank %} {{customClass}}  {% endif %}">
   {% if section.blocks.size > 0 %}
-    {% for block in section.blocks %}
-      {% assign largeImage = block.settings.large_image %}
-      <div class="direct-hero-image-container">
-        <figure>
-          {% render 'snippet-image'
-            , image: largeImage
-            , loadingLazy: 'false'
-            , class: 'direct-hero-image' %}
-        </figure>
+    <link rel="stylesheet" href="{{ 'component-custom-image-banner-block.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-custom-image-banner-block.css' | asset_url | stylesheet_tag }}</noscript>
+    {% for block in section.blocks  %}
+      {% liquid
+          assign directIntro = block.settings.direct_Intro
+          assign directTitle = block.settings.direct_Title
+          assign directText = block.settings.direct_Text
+          assign directBackgroundColor = block.settings.direct_background_color
+          assign directButton1Text = block.settings.direct_hero_btn1_text
+          assign directButton1Url = block.settings.direct_hero_btn1_url
+          assign directButton2Text = block.settings.direct_hero_btn2_text
+          assign directButton2Url = block.settings.direct_hero_btn2_url
+          assign placeholder =  '//aleksandar-colovic.myshopify.com/cdn/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+          assign placeholderV2 = '//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+          assign block_width = block.settings.block_width
+          assign block_border_radius = block.settings.block_border_radius
+          assign block_spacing_top = block.settings.block_spacing_top
+          assign block_spacing_bottom = block.settings.block_spacing_bottom
+          assign align_items_v =  block.settings.align_items_v
+          assign align_items_h =  block.settings.align_items_h
+          assign direct_Intro_color = block.settings.direct_Intro_color
+          assign direct_Intro_font_size = block.settings.direct_Intro_font_size
+          assign direct_Intro_spacing_bottom = block.settings.direct_Intro_spacing_bottom
+          assign direct_Title_color = block.settings.direct_Title_color
+          assign direct_Title_font_size = block.settings.direct_Title_font_size
+          assign direct_Title_spacing_bottom = block.settings.direct_Title_spacing_bottom
+          assign direct_Text_color = block.settings.direct_Text_color
+          assign direct_Text_font_size = block.settings.direct_Text_font_size
+          assign direct_Text_spacing_bottom = block.settings.direct_Text_spacing_bottom
+          
+        assign direct_hero_btn1_size = block.settings.direct_hero_btn1_size
+        assign direct_hero_btn1_width = block.settings.direct_hero_btn1_width
+        assign direct_hero_btn1_color = block.settings.direct_hero_btn1_color
+        assign direct_hero_btn1_color_bg = block.settings.direct_hero_btn1_color_bg
+        assign direct_hero_btn1_color_hover = block.settings.direct_hero_btn1_color_hover
+        assign direct_hero_btn1_color_bg_hover = block.settings.direct_hero_btn1_color_bg_hover
+
+        assign direct_hero_btn2_size = block.settings.direct_hero_btn2_size
+        assign direct_hero_btn2_width = block.settings.direct_hero_btn2_width
+        assign direct_hero_btn2_color = block.settings.direct_hero_btn2_color
+        assign direct_hero_btn2_color_bg = block.settings.direct_hero_btn2_color_bg
+        assign direct_hero_btn2_color_hover = block.settings.direct_hero_btn2_color_hover
+        assign direct_hero_btn2_color_bg_hover = block.settings.direct_hero_btn2_color_bg_hover
+          %}
+
+      {% assign backgroundImage = block.settings.background_image | img_url: 'master' %}
+      <div class="direct-hero-block-container" style="
+      {% if block_width !=blank %}
+        width:{{block_width}};
+        {% endif %}
+        {% if block_border_radius != 0 %}
+        border-radius: {{block_border_radius}}px;
+        {% endif %}
+
+      ">
+        <div class="direct-hero-text"  style=" 
+        {% if directBackgroundColor != blank %}
+          background: {{directBackgroundColor}}; 
+          {% endif %}
+         {% if backgroundImage != placeholder and  backgroundImage != placeholderV2 %}
+          {% if backgroundImage != blank %}
+          background: url('{{backgroundImage}}');
+          {% endif %}
+
+        {% endif %}
+        {% if block_spacing_top !=blank %}
+          padding-top:{{block_spacing_top}}px;
+        {% endif %}
+        {% if block_spacing_bottom !=blank %}
+          padding-bottom:{{block_spacing_bottom}}px;
+        {% endif %}
+        justify-content: {{align_items_v}};
+        align-items: {{align_items_h}};
+        " >
+        {% if directIntro != blank  %}
+          <p class="table-subheading heroIntro text-center c-title text-white" style=" 
+            {% if direct_Intro_color != blank %}
+            color: {{direct_Intro_color}};
+            {% endif %}
+
+            {% if direct_Intro_font_size != 0 %}
+            font-size: {{direct_Intro_font_size}}px;
+            {% endif %}
+            {% if direct_Intro_spacing_bottom != 0 %}
+            padding-bottom: {{direct_Intro_spacing_bottom}}px;
+            {% endif %}
+            ">
+            {{ directIntro }}
+          </p>
+        {% endif %}
+    
+        {% if directTitle != blank %}
+          <p class="table-heading heroTitle text-center c-title text-white"
+          style=" 
+            {% if direct_Title_color != blank %}
+            color: {{direct_Title_color}};
+            {% endif %}
+
+            {% if direct_Title_font_size != 0 %}
+            font-size: {{direct_Title_font_size}}px;
+            {% endif %}
+            {% if direct_Title_spacing_bottom != 0 %}
+            padding-bottom: {{direct_Title_spacing_bottom}}px;
+            {% endif %}
+            ">
+            {{ directTitle }}
+          </p>
+        {% endif %}
+    
+        {% if directText != blank %}
+          <p class="table-subheading heroText text-center c-title text-white"
+          style=" 
+            {% if direct_Text_color != blank %}
+            color: {{direct_Text_color}};
+            {% endif %}
+
+            {% if direct_Intro_font_size != 0 %}
+            font-size: {{direct_Text_font_size}}px;
+            {% endif %}
+            {% if direct_Intro_spacing_bottom != 0 %}
+            padding-bottom: {{direct_Text_spacing_bottom}}px;
+            {% endif %}
+            ">
+            {{ directText }}
+          </p>
+        {% endif %}
+        {% if directButton1Text != blank or directButton2Text != blank %}
+        <div class="container">
+    
+          <a href="{{ directButton1Url }}" class="button-primary btn1"
+          style="
+          font-size: {{direct_hero_btn1_size}}px;
+          width: {{direct_hero_btn1_width}}px !important;
+          color: {{direct_hero_btn1_color}};
+          background-color: {{direct_hero_btn1_color_bg}};
+          ">{{ directButton1Text }}</a>
+    
+          <a href="{{ directButton2Url }}" class="button-primary btn2" style="
+          font-size: {{direct_hero_btn2_size}}px;
+          width: {{direct_hero_btn2_width}}px !important;
+          color: {{direct_hero_btn2_color}};
+          background-color: {{direct_hero_btn2_color_bg}};
+          ">{{ directButton2Text }}</a>
+        </div>
+        {% endif %}
+        <style>
+          .btn1:hover {
+            {%if direct_hero_btn1_color_hover != blank%}
+            color: {{direct_hero_btn1_color_hover}};
+            {% endif %}
+            {%if direct_hero_btn1_color_bg_hover != blank%}
+            background: {{direct_hero_btn1_color_bg_hover}};
+            {% endif %}
+          }
+
+          .btn2:hover {
+            {%if direct_hero_btn2_color_hover != blank%}
+            color: {{direct_hero_btn2_color_hover}};
+            {% endif %}
+            {%if direct_hero_btn2_color_bg_hover != blank%}
+            background: {{direct_hero_btn2_color_bg_hover}};
+            {% endif %}
+          }
+        </style>
+      </div>
       </div>
     {% endfor %}
+    
   {% endif %}
 </section> 
-
-  <div class="direct-hero-text">
-
-    {% if directIntro != 'blank' %}
-      <p class="table-subheading heroIntro text-center c-title text-white">
-        {{ directIntro }}
-      </p>
-    {% endif %}
-
-    {% if directTitle != 'blank' %}
-      <p class="table-heading heroTitle text-center c-title text-white">
-        {{ directTitle }}
-      </p>
-    {% endif %}
-
-    {% if directText != 'blank' %}
-      <p class="table-subheading heroText text-center c-title text-white">
-        {{ directText }}
-      </p>
-    {% endif %}
-    <div class="container">
-
-      <a href="{{ directButton1Url }}" class="button-primary">{{ directButton1Text }}</a>
-
-      <a href="{{ directButton2Url }}" class="button-primary">{{ directButton2Text }}</a>
-    </div>
-  </div>
-  <div class="direct-hero-image-container">
-    <figure>
-      {% render 'snippet-image'
-        , image: directImageSecond
-        , loadingLazy: 'false'
-        , class: 'direct-hero-image' %}
-    </figure>
-  </div>
-</section>
 <style>
 #{{ sectionID }}  .direct-hero-content_wrapper {
     display: flex;
-    height: 570px;
+    min-height: 570px;
+    height: 100%;
+    width: 100%;
+    width:{{container_width}};
+{% if container_bg_color != blank and container_bg_gradient == blank and container_bg_image == blank %}
+  background: {{container_bg_color}};
+{% endif %}
+{% if container_bg_gradient != blank and container_bg_image == blank %}
+  background: {{container_bg_gradient}};
+{% endif %}
+{% if container_bg_image != blank %}
+  background: url('{{container_bg_image}}');
+{% endif %}
+{% if container_padding_top_desktop != blank %}
+  padding-top: {{container_padding_top_desktop}}px;
+{% endif %}
+{% if container_padding_bottom_desktop != blank %}
+  padding-bottom: {{container_padding_bottom_desktop}}px;
+{% endif %}
+
   }
-  #{{ sectionID }}  .direct-hero-content_wrapper > div {
-    flex-basis: 33.33%;
+
+  #{{ sectionID }}  .direct-hero-block-container {
+    width: 33.33%;
+    display: flex;
+    overflow: hidden;
   }
   #{{ sectionID }} .direct-hero-text {
     padding: 20px;
-    background-color: #00126a;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+    background-position: center !important;
+    background-size: cover !important;
+    transition: transform 0.5s ease-in-out;
   }
-  #{{ sectionID }} .direct-hero-image-container figure {
+  #{{ sectionID }} .image-only:hover{
+    {% if section.settings.zoom_background == true %}
+    transform: scale(1.05);
+{% endif %}
+  }
+  #{{ sectionID }} .direct-hero-block-container figure {
     margin: 0;
     display: flex;
     height: 100%;
     overflow: hidden;
   }
-  .direct-hero-image-container figure > img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-}
 
-.direct-hero-image-container:hover figure > img {
-    transform: scale(1.05);
-}
 
   #{{ sectionID }} .heroIntro {
-    font-size: 18px;
     font-family: 'Montserrat'
     , sans-serif !important;
     text-transform: uppercase;
@@ -111,13 +251,11 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
   }
   #{{ sectionID }} .heroTitle {
     font-family: var(--hero-heading-font) !important;
-    font-size: 45px !important;
     font-weight: 700;
     padding: 10px 50px;
     line-height: 40px !important;
   }
   #{{ sectionID }} .heroText {
-    font-size: 17px;
     padding: 0 50px;
     font-weight: 400 !important;
     line-height: 22px;
@@ -125,11 +263,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
   }
   #{{ sectionID }} .button-primary {
     text-decoration: none;
-    min-width: 190px;
     padding: 10px 20px;
-    background-color: white;
-    color: #00126a;
-    font-size: 18px;
     border-radius: 30px;
     font-weight: 700;
     text-transform: uppercase;
@@ -140,17 +274,26 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
     transform: translate(0);
   
   }
-  #{{ sectionID }} .button-primary:hover {
-    background: #232323;
-    color: #fff;
-  }
   #{{ sectionID }} .container {
     display: flex;
   }
+  @media all and (max-width: 1440px) {
+    #{{ sectionID }} .container {
+    flex-direction: column;
+  } }
   @media all and (max-width: 992px) {
-    #{{ sectionID }} .direct-hero-image-container {
-      display: none;
+    #{{ sectionID }} .button-primary {
+      margin: 10px !important;
     }
+#{{ sectionID }}  .direct-hero-content_wrapper {
+  {% if container_padding_top_tablet != blank %}
+  padding-top: {{container_padding_top_tablet}}px;
+{% endif %}
+{% if container_padding_bottom_tablet != blank %}
+  padding-bottom: {{container_padding_bottom_tablet}}px;
+{% endif %}
+}
+
     #{{ sectionID }} .heroText {
       padding: 30px 50px !important;
     }
@@ -171,17 +314,217 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
     #{{ sectionID }}  .heroTitle {
       font-size: 28px;
     }
+    #{{ sectionID }}  .direct-hero-content_wrapper {
+  {% if container_padding_top_mobile != blank %}
+  padding-top: {{container_padding_top_mobile}}px;
+{% endif %}
+{% if container_padding_bottom_mobile != blank %}
+  padding-bottom: {{container_padding_bottom_mobile}}px;
+{% endif %}
+}
   }
 
 </style>
 {% schema %}
   {
-    "name": "Direct  Hero",
+    "name": "Direct  Hero - New",
+    "max_blocks": 4,
     "settings": [
       {
         "type": "text",
+        "id": "direct_custom_class",
+        "label": "Custom Class"
+      },  
+      {
+        "type": "select",
+        "id": "container_width",
+        "label": "Layout:",
+        "default": "100%",
+        "options": [
+            {
+                "value": "1170px",
+                "label": "Width(1170px)"
+            },
+            {
+                "value": "1770px",
+                "label": "Width(1770px)"
+            },
+            {
+                "value": "100%",
+                "label": "Full Width"
+            }
+        ]
+    },
+    {
+        "type": "color",
+        "id": "container_background_color",
+        "label": "Background Color"
+    },  
+    {
+        "type": "color_background",
+        "id": "container_background_gradient",
+        "label": "Background Gradient"
+    },
+    {
+        "type": "image_picker",
+        "id": "container_background_image",
+        "label": "Background Image"
+    },
+    {
+        "type":"header",
+        "content": "Spacing Top"
+    },  
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_desktop",
+        "label": "Desktop"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_tablet",
+        "label": "Tablet"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_mobile",
+        "label": "Mobile"
+    },
+    {
+        "type":"header",
+        "content": "Spacing Bottom"
+    },  
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_desktop",
+        "label": "Desktop"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_tablet",
+        "label": "Tablet"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_mobile",
+        "label": "Mobile"
+    },
+    {
+            "type": "checkbox",
+            "id": "zoom_background",
+            "label": "Zoom Background Image On Hover",
+            "default": true
+        }
+    ],
+    "presets": [
+      {
+        "name": "Direct Hero - New"
+      }
+    ],
+    "blocks": [
+     {
+       "name": "Large Image",
+       "type": "image",
+       "settings": [
+        {
+        "type": "text",
+        "id": "block_width",
+        "label": "Item Width",
+        "default": "33.33%",
+        "info": "Example: 50%"
+
+      },
+      {
+        "type": "range",
+        "id": "block_border_radius",
+        "label": "Item Border Radius",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_spacing_top",
+        "label": "Item Spacing Top",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_spacing_bottom",
+        "label": "Item Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+        {
+        "type": "text",
         "id": "direct_Intro",
         "label": "Hero Intro"
+      },
+      {
+        "type": "color",
+        "id": "direct_Intro_color",
+        "label": "Hero Intro Color"
+      },
+      {
+        "type": "range",
+        "id": "direct_Intro_font_size",
+        "label": "Hero Intro Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "direct_Intro_spacing_bottom",
+        "label": "Hero Intro Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
       },
       {
         "type": "text",
@@ -189,18 +532,64 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         "label": "Hero Title"
       },
       {
+        "type": "color",
+        "id": "direct_Title_color",
+        "label": "Hero Title Color"
+      },
+      {
+        "type": "range",
+        "id": "direct_Title_font_size",
+        "label": "Hero Title Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "direct_Title_spacing_bottom",
+        "label": "Hero Title Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
         "type": "textarea",
         "id": "direct_Text",
         "label": "Section Text"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_Text_color",
+        "label": "Hero Text Color"
+      },
+      {
+        "type": "range",
+        "id": "direct_Text_font_size",
+        "label": "Hero Text Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "direct_Text_spacing_bottom",
+        "label": "Hero Text Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
       },
       {
         "type": "image_picker",
-        "id": "direct_Image",
-        "label": "Section Image Left"
-      }, {
-        "type": "image_picker",
-        "id": "direct_Image_Second",
-        "label": "Section Image Right"
+        "id": "background_image",
+        "label": "Image"
       }, {
         "type": "text",
         "id": "direct_hero_btn1_text",
@@ -209,7 +598,48 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         "type": "url",
         "id": "direct_hero_btn1_url",
         "label": "Hero Button 1 URL"
-      }, {
+      },
+        {
+        "type": "range",
+        "id": "direct_hero_btn1_size",
+        "label": "Hero Button 1 Font Size",
+        "min": 16,
+        "max":60,
+        "default": 16,
+        "unit": "px"
+      }, 
+      {
+        "type": "range",
+        "id": "direct_hero_btn1_width",
+        "label": "Hero Button 1 Width",
+        "min": 160,
+        "max":500,
+        "default": 160,
+        "unit": "px",
+        "step": 5
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color",
+        "label": "Hero Button 1 Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color_bg",
+        "label": "Hero Button 1 Background Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color_hover",
+        "label": "Hero Button 1 Hover Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color_bg_hover",
+        "label": "Hero Button 1 Hover Background Color"
+      }, 
+
+      {
         "type": "text",
         "id": "direct_hero_btn2_text",
         "label": "Hero Button 2 Text"
@@ -217,13 +647,92 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         "type": "url",
         "id": "direct_hero_btn2_url",
         "label": "Hero Button 2 URL"
-      }
-
-    ],
-    "presets": [
+      },     
+       {
+        "type": "range",
+        "id": "direct_hero_btn2_size",
+        "label": "Hero Button 2 Font Size",
+        "min": 16,
+        "max":60,
+        "default": 16,
+        "unit": "px"
+      }, 
       {
-        "name": "Direct Hero"
+        "type": "range",
+        "id": "direct_hero_btn2_width",
+        "label": "Hero Button 2 Width",
+        "min": 160,
+        "max":500,
+        "default": 160,
+        "unit": "px",
+        "step": 5
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color",
+        "label": "Hero Button 2 Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color_bg",
+        "label": "Hero Button 2 Background Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color_hover",
+        "label": "Hero Button 2 Hover Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color_bg_hover",
+        "label": "Hero Button 2 Hover Background Color"
+      }, 
+      {
+            "type": "select",
+            "id": "align_items_h",
+            "label": "Horizontal Alignment",
+            "default": "center",
+            "options": [
+            {
+                "value": "flex-start",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "flex-end",
+                "label": "Right"
+            }]
+        },
+      {
+            "type": "select",
+            "id": "align_items_v",
+            "label": "Vertical Alignment",
+            "default": "flex-end",
+            "options": [
+            {
+                "value": "flex-start",
+                "label": "Top"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "flex-end",
+                "label": "Bottom"
+            }]
+        },
+     {
+        "type" : "color",
+            "id" : "direct_background_color",
+            "label": "Background Color"
+       
       }
-    ]
+       ]
+     }
+   ]
   }
 {% endschema %}

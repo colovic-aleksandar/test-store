@@ -26,19 +26,19 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
   </div>
   <div class="direct-hero-text">
 
-    {% if directIntro != 'blank' %}
+    {% if directIntro != blank %}
       <p class="table-subheading heroIntro text-center c-title text-white">
         {{ directIntro }}
       </p>
     {% endif %}
 
-    {% if directTitle != 'blank' %}
+    {% if directTitle != blank %}
       <p class="table-heading heroTitle text-center c-title text-white">
         {{ directTitle }}
       </p>
     {% endif %}
 
-    {% if directText != 'blank' %}
+    {% if directText != blank %}
       <p class="table-subheading heroText text-center c-title text-white">
         {{ directText }}
       </p>

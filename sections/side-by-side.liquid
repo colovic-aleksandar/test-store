@@ -22,19 +22,19 @@
           , class: 'image' %}
       </figure>
       <div>
-        {% if subheading != 'blank' %}
+        {% if subheading != blank %}
           <h2>
             {{ subheading }}
           </h2>
         {% endif %}
 
-        {% if heading != 'blank' %}
+        {% if heading != blank %}
           <div>
             {{ heading }}
           </div>
         {% endif %}
 
-        {% if sideText != 'blank' %}
+        {% if sideText != blank %}
           <p>
             {{ sideText }}
           </p>
@@ -49,14 +49,14 @@
   <div class="custom-background-section sale-container">
     <div class="flx-clmn sale" style="background-image: url('{{ background-second }}');">
       <div class="flx-clmn-wrapper">
-        {% if subheading-right != 'blank' %}
+        {% if subheading-right != blank %}
           <div class="">
             <h2 class="">
               {{ subheading-right }}
             </h2>
           </div>
         {% endif %}
-        {% if heading-right != 'blank' %}
+        {% if heading-right != blank %}
           <div>
             {{ heading-right }}
           </div>

@@ -475,11 +475,20 @@ body {
             $(elm).parents('.card-wrapper').find('.badges .badge').attr('data-badge',$(elm).attr('data-badge'));
         };
           });
+          const elements = document.querySelectorAll('.direct-hero-text');
+      if(elements) {
+        elements.forEach(element => {
+        if (element && element.children.length === 0) {
+          element.classList.add('image-only');
+        }
+      });
+      }
+
     </script>
 
   {% comment %} <script
-                                                                                                                                                                                                                type="text/javascript"
-                                                                                                                                                                                                                src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-                                                                                                          defer="defer"></script> {% endcomment %}
+                                                                                                                                                                                                                                        type="text/javascript"
+                                                                                                                                                                                                                                        src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+                                                                                                                      defer="defer"></script> {% endcomment %}
   </body>
 </html>

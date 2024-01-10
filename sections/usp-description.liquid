@@ -36,7 +36,7 @@
 
   <div class="direct-text">
 
-    {% if directIcon != 'blank' %}
+    {% if directIcon != blank %}
       <p class="table-subheading descriptionIcon text-center c-title text-white">
         {% render 'snippet-image'
           , image: directIcon
@@ -45,13 +45,13 @@
       </p>
     {% endif %}
 
-    {% if directTitle != 'blank' %}
+    {% if directTitle != blank %}
       <p class="table-heading descriptionTitle text-center c-title text-white">
         {{ directTitle }}
       </p>
     {% endif %}
 
-    {% if directText != 'blank' %}
+    {% if directText != blank %}
       <p class="table-subheading descriptionText text-center c-title text-white">
         {{ directText }}
       </p>
@@ -143,11 +143,8 @@
 
   .button-primary {
     text-decoration: none;
-    min-width: 280px;
+    width: 280px;
     padding: 20px !important;
-    background-color: white;
-    color: #00126a !important;
-    font-size: 16px !important;
     line-height: 16px;
     border-radius: 30px;
     font-weight: 700;
