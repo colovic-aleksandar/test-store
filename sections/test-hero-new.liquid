@@ -129,7 +129,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
         {% endif %}
     
         {% if directText != blank %}
-          <p class="table-subheading heroText text-center c-title text-white"
+          <p class="heroText text-center c-title"
           style=" 
             {% if direct_Text_color != blank %}
             color: {{direct_Text_color}};
@@ -165,7 +165,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
         </div>
         {% endif %}
         <style>
-          .hero-button-primary:hover {
+          .btn1:hover {
             {%if direct_hero_btn1_color_hover != blank %}
             color: {{direct_hero_btn1_color_hover}} !important;
             {% endif %}
@@ -174,7 +174,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
             {% endif %}
           }
 
-          .hero-button-primary:hover {
+          .btn2:hover {
             {%if direct_hero_btn2_color_hover != blank %}
             color: {{direct_hero_btn2_color_hover}} !important;
             {% endif %}
@@ -194,7 +194,6 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     display: flex;
     min-height: 570px;
     height: 100%;
-    width: 100%;
     width:{{container_width}};
 {% if container_bg_color != blank and container_bg_gradient == blank and container_bg_image == blank %}
   background: {{container_bg_color}};
@@ -215,15 +214,12 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
   }
 
   #{{ sectionID }}  .direct-hero-block-container {
-    width: 33.33%;
     display: flex;
     overflow: hidden;
   }
   #{{ sectionID }} .direct-hero-text {
     padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     width: 100%;
     background-position: center !important;
@@ -268,7 +264,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     font-weight: 700;
     text-transform: uppercase;
     font-family: var(--body-font);
-    margin: 30px 5px;
+    margin: 5px;
     text-align: center;
     transition: all .5s cubic-bezier(.25,.46,.45,.94);
     transform: translate(0);

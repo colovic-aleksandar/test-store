@@ -37,15 +37,7 @@ body {
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.16);
 }
 
-/* Text Colors */
-.text-black {
-    color: var(--color-black);
-}
 
-
-.text-white {
-    color: var(--color-white);
-}
 
 /* Bacground Colors */
 .bg-hero-gradient {
@@ -64,10 +56,6 @@ body {
 
 .bg-faq-gradient {
     background: linear-gradient(180deg, #DADEE6 0%, #EDE9E4 100%);
-}
-
-.bg-reduce-clicks {
-    background-color: var(--color-black);
 }
 
 /* Opacity */
@@ -149,23 +137,10 @@ body {
 }
 
 .table-heading {
-    color: var(--color-white);
-    font-family: var(--body-font);
-    font-size: 38px;
     font-style: normal;
-    font-weight: var(--font-regular);
-    line-height: 32px;
 }
 
 
-.table-subheading {
-    color: var(--color-white);
-    font-family: var(--body-font);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: var(--font-regular);
-    line-height: 20px;
-}
 
 
 .table-text {
@@ -201,10 +176,8 @@ body {
     font-style: normal;
     font-weight: var(--font-regular);
     line-height: 32px; /* 133.333% */
-    color: var(--color-black);
 }
 .cart-small-heading{
-    color: var(--color-black);
     font-family: var(--body-font);
     font-size: 18px;
     font-style: normal;
@@ -213,7 +186,6 @@ body {
     text-decoration: none;
 }
 .cart-text{
-    color: var(--color-black);
     font-family: var(--body-font);
     font-size: 16px;
     font-style: normal;
@@ -221,7 +193,6 @@ body {
     line-height: 22px; /* 137.5% */
 }
 .cart-button{
-    color: var(--color-white);
     font-family: var(--body-font);
     font-size: 20px;
     font-style: normal;
@@ -271,14 +242,10 @@ body {
         font-size: 2.4rem;
         line-height: 3.2rem;
     }
-    .table-heading {
-        font-size: 60px;
-        line-height: 60px;
-    }
-    .table-subheading {
-        font-size: 18px;
-        line-height: 20px;
-    }
+ 
+  .text-center {
+    text-align: center;
+  }
     .table-text {
         font-size: 24px;
         line-height: 32px;
@@ -298,8 +265,6 @@ body {
     justify-content: center;
     font-size: 1.6rem;
     font-weight: var(--font-regular);
-    color: var(--color-white);
-    background-color: var(--color-blue);
     height: 5.6rem;
     border-radius: 5.6rem;
     text-decoration: none;
@@ -315,7 +280,6 @@ body {
 
     font-size: 1.6rem;
     font-weight: var(--font-medium);
-    background-color: transparent;
     border: 1px solid var(--color-white);
     box-sizing: border-box;
     height: 5.6rem;
@@ -333,9 +297,6 @@ body {
 }
 
 
-.text-center {
-    text-align: center;
-}
 
 
 .text-right {

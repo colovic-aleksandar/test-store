@@ -1,6 +1,9 @@
 {{ 'base-test.css' | asset_url | stylesheet_tag }}
 
 {% liquid
+
+  assign sectionID = 'shopify-section-' | append: section.id 
+  assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
   assign directIntro = section.settings.direct_Intro
   assign directTitle = section.settings.direct_Title
   assign directText = section.settings.direct_Text
@@ -10,9 +13,10 @@
   assign directButton1Url = section.settings.direct_hero_btn1_url
   assign directButton2Text = section.settings.direct_hero_btn2_text
   assign directButton2Url = section.settings.direct_hero_btn2_url
+  
 %}
 
-<section class="direct-text-img-content_wrapper">
+<section id="{{ divID}}"  class="direct-text-img-content_wrapper">
   <div class="direct-text-img-image-container">
     <figure>
       {% render 'snippet-image'
@@ -51,14 +55,14 @@
 </section>
 
 <style>
-  .direct-text-img-content_wrapper {
+  #{{ sectionID }}  .direct-text-img-content_wrapper {
     display: flex;
     height: 570px;
   }
-  .direct-text-img-content_wrapper > div {
+  #{{ sectionID }}  .direct-text-img-content_wrapper > div {
     width: 100%;
   }
-  .direct-text-img-text {
+  #{{ sectionID }}  .direct-text-img-text {
     padding: 70px;
     background-color: #00126a;
     display: flex;
@@ -66,29 +70,29 @@
     align-items: center;
     flex-direction: column;
   }
-  .direct-text-img-image-container figure {
+  #{{ sectionID }}  .direct-text-img-image-container figure {
     margin: 0;
     display: flex;
     height: 100%;
     overflow: hidden;
   }
-  .direct-text-img-image-container figure > img {
+  #{{ sectionID }}  .direct-text-img-image-container figure > img {
     width: 100%;
     height: auto;
     object-fit: cover;
     transition: all 1s;
   }
-  .direct-text-img-image-container figure > img:hover {
+  #{{ sectionID }}  .direct-text-img-image-container figure > img:hover {
     transform: scale(1.1);
   }
-  .heroIntro {
+ #{{ sectionID }}   .heroIntro {
     font-size: 18px;
     font-family: 'Montserrat'
     , sans-serif !important;
     text-transform: uppercase;
     letter-spacing: -1;
   }
-  .heroTitle {
+  #{{ sectionID }}  .heroTitle {
     font-family: 'Montserrat'
     , sans-serif !important;
     font-size: 48px;
@@ -96,7 +100,7 @@
     line-height: 50px !important;
     text-transform: uppercase;
   }
-  .heroText {
+  #{{ sectionID }}  .heroText {
     font-size: 17px;
     font-weight: 300 !important;
     font-family: 'Montserrat'
@@ -105,14 +109,14 @@
     width: 76%;
     margin: 0 auto 30px;
   }
-  .text-button-wrapper {
+  #{{ sectionID }}  .text-button-wrapper {
     max-width: 667px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .cti.button {
+  #{{ sectionID }}  .cti.button {
     text-decoration: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -123,7 +127,7 @@
     font-family: 'Montserrat'
     , sans-serif;
   }
-  .cti.button-primary {
+  #{{ sectionID }}  .cti.button-primary {
     background-color: white;
     border: 1px solid white;
     color: #000;
@@ -131,50 +135,50 @@
     transition: all 1s;
   }
 
-  .cti.button-primary:hover {
+  #{{ sectionID }}  .cti.button-primary:hover {
     color: white;
     background-color: #232323;
     border: 1px solid #232323;
   }
-  .cti.button-secondary {
+  #{{ sectionID }}  .cti.button-secondary {
     background: transparent;
     border: 1px solid white;
     color: white;
     min-width: 200px;
   }
 
-  .button,
-  .button::before,
-  .button::after,
-  .button:hover,
-  .button:hover:after {
+  #{{ sectionID }}  .button,
+ #{{ sectionID }}   .button::before,
+#{{ sectionID }}    .button::after,
+ #{{ sectionID }}   .button:hover,
+#{{ sectionID }}   .button:hover:after {
     box-shadow: none !important;
   }
-  .container {
+ #{{ sectionID }}   .container {
     display: flex;
   }
   @media all and (max-width: 991px) {
-    .direct-text-img-content_wrapper {
+   #{{ sectionID }}   .direct-text-img-content_wrapper {
       max-height: 100%;
     }
-    .direct-text-img-image-container {
+  #{{ sectionID }}    .direct-text-img-image-container {
       display: none;
     }
-    .heroTitle {
+   #{{ sectionID }}   .heroTitle {
       font-size: 32px;
     }
   }
   @media all and (max-width: 768px) {
-    .container {
+  #{{ sectionID }}    .container {
       display: inline-block;
     }
-    .direct-text-img-text {
+   #{{ sectionID }}   .direct-text-img-text {
       padding: 20px 0;
     }
-    .button-primary {
+   #{{ sectionID }}   .button-primary {
       margin: 10px;
     }
-    .heroTitle {
+   #{{ sectionID }}   .heroTitle {
       font-size: 28px;
     }
   }
