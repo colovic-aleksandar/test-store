@@ -1,75 +1,322 @@
 {{ 'base-test.css' | asset_url | stylesheet_tag }}
 {% liquid
+  assign sectionID = 'shopify-section-' | append: section.id
+  assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
+  assign customClass = section.settings.direct_custom_class
+  assign container_width = section.settings.container_width
+  assign container_bg_color = section.settings.container_background_color
+  assign container_bg_gradient = section.settings.container_background_gradient
+  assign container_bg_image = section.settings.container_background_image | img_url: 'master'
+  assign container_padding_top_desktop = section.settings.container_padding_top_desktop
+  assign container_padding_top_tablet = section.settings.container_padding_top_tablet
+  assign container_padding_top_mobile = section.settings.container_padding_top_mobile
+  assign placeholder = '//aleksandar-colovic.myshopify.com/cdn/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+  assign placeholderV2 = '//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+  assign container_padding_bottom_desktop = section.settings.container_padding_bottom_desktop
+  assign container_padding_bottom_tablet = section.settings.container_padding_bottom_tablet
+  assign container_padding_bottom_mobile = section.settings.container_padding_bottom_mobile
   assign directHelpHeading = section.settings.direct_heading
   assign directHelpSubHeading = section.settings.direct_subheading
   assign directHelpMobile = section.settings.direct_mobile
+  assign heading_font_size_desktop = section.settings.heading_font_size_desktop
+  assign heading_font_size_mobile = section.settings.heading_font_size_mobile
+  assign heading_padding_bottom_mobile = section.settings.heading_padding_bottom_mobile
+  assign heading_padding_bottom_desktop = section.settings.heading_padding_bottom_desktop
+  assign subheading_font_size_desktop = section.settings.subheading_font_size_desktop
+  assign subheading_font_size_mobile = section.settings.subheading_font_size_mobile
+  assign subheading_padding_bottom_mobile = section.settings.subheading_padding_bottom_mobile
+  assign subheading_padding_bottom_desktop = section.settings.subheading_padding_bottom_desktop
+  assign number_font_size_desktop = section.settings.number_font_size_desktop
+  assign number_font_size_mobile = section.settings.number_font_size_mobile
+  assign number_padding_bottom_mobile = section.settings.number_padding_bottom_mobile
+  assign number_padding_bottom_desktop = section.settings.number_padding_bottom_desktop
+  assign heading_color = section.settings.heading_color
+  assign subheading_color = section.settings.subheading_color
+  assign number_color = section.settings.number_color
+  assign align_items = section.settings.align_items
+  assign grid_gap = section.settings.grid_gap
+  assign item_spacing_top = section.settings.item_spacing_top
+  assign item_spacing_bottom = section.settings.item_spacing_bottom
+  assign item_spacing_horizontal = section.settings.item_spacing_horizontal
+  assign item_border_radius = section.settings.item_border_radius
+  assign item_hover_animation = section.settings.item_hover_animation
+  assign item_hover_shadow = section.settings.item_hover_shadow
 %}
 
-<section class="direct-help-wrapper">
+<section id="{{ divID}}" class="{% if customClass != blank %} {{customClass}}  {% endif %} direct-help-wrapper">
   <div class="direct-help-heading">
-    <p class="helpHeading">{{ directHelpHeading }}</p>
-    <span class="helpSubheading">{{ directHelpSubHeading }}</span>
-    <a href="tel:{{ directHelpMobile }}" class="helpMobile">{{ directHelpMobile }}</a>
+    <p class="helpHeading">
+      {{ directHelpHeading }}</p>
+    <span class="helpSubheading">
+      {{ directHelpSubHeading }}</span>
+    <a href="tel:{{ directHelpMobile }}" class="helpMobile">
+      {{ directHelpMobile }}</a>
   </div>
   <div class="direct-help-section">
     {% if section.blocks.size > 0 %}
+      {% assign count = 0 %}
+      {% for block in section.blocks %}
+        {% assign count = count | plus: 1 %}
+      {% endfor %}
       {% for block in section.blocks %}
         {% liquid
           assign directHelpImage = block.settings.direct_image
           assign directHelpText = block.settings.direct_help_text
+          assign block_background_color = block.settings.block_background_color
+          assign block_border_color = block.settings.block_border_color
+          assign icon_type = block.settings.icon_type
+          assign icon = block.settings.icon
+          assign icon_width = block.settings.icon_width
+          assign icon_height = block.settings.icon_height
+          assign icon_spacing_bottom = block.settings.icon_spacing_bottom
+          assign icon_color = block.settings.icon_color
+
+          assign title = block.settings.title
+          assign title_font_size = block.settings.title_font_size
+          assign title_font_size_mobile = block.settings.title_font_size_mobile
+          assign title_color = block.settings.title_color
+          assign title_font_weight = block.settings.title_font_weight
+          assign title_spacing_bottom = block.settings.title_spacing_bottom
+          assign title_spacing_bottom_mobile = block.settings.title_spacing_bottom_mobile
+
+          assign description = block.settings.description
+          assign description_font_size = block.settings.description_font_size
+          assign description_font_size_mobile = block.settings.description_font_size_mobile
+          assign description_color = block.settings.description_color
+          assign description_line_height = block.settings.description_line_height
+          assign description_spacing_bottom = block.settings.description_spacing_bottom
+
+          assign button_text = block.settings.button_text
+          assign button_url = block.settings.button_url
+          assign button_style = block.settings.button_style
+          assign button_font_weight = block.settings.button_font_weight
+          assign button_underline = block.settings.button_underline
+          assign button_color = block.settings.button_color
+          assign button_border_color = block.settings.button_border_color
+          assign button_background_color = block.settings.button_background_color
+          assign button_background_gradient_color = block.settings.button_background_gradient_color
+          assign button_color_hover = block.settings.button_color_hover
+          assign button_border_color_hover = block.settings.button_border_color_hover
+          assign button_background_color_hover = block.settings.button_background_color_hover
+          assign button_background_gradient_color_hover = block.settings.button_background_gradient_color_hover
         %}
-
-
-        <div class="direct-help-item">
+        <div class="direct-help-item" style=" 
+        {% if block_background_color  != blank%}
+        --block-background-color: {{block_background_color}};
+        {% endif %}
+        {% if block_border_color  != blank%}
+        --block-border-color: {{block_border_color }};
+        {% endif %}
+        width: calc((100% / {{count}}) - ({{grid_gap}}px *{{count}}));">
           <div class="direct-help-text">
             <div class="direct-help-icon-container">
-              <figure>
-                {% render 'snippet-image'
-                  , image: directHelpImage
-                  , loadingLazy: 'false'
-                  , class: 'direct-help-icon ' %}
-              </figure>
-            </div>
-            <div class="direct-help-text-container">
-              {{ directHelpText }}</div>
 
+              {% if icon_type == 'image' %}
+                <figure>
+                  {% render 'snippet-image'
+                    , image: directHelpImage
+                    , loadingLazy: 'false'
+                    , class: 'direct-help-icon ' %}
+
+                </figure>
+              {% elsif icon_type == 'text' %}
+                <figure style="
+                    {% if icon_color  != blank%}
+                    --icon-color:{{ icon_color }};
+                    {% endif %}
+                    
+                    --icon-height:{{ icon_height | append: 'px' }};
+                    --icon-width:{{ icon_width | append: 'px' }};
+                    --icon-spacing-bottom:{{ icon_spacing_bottom | append: 'px' }};
+                    
+                      ">
+                  {{ icon }}
+                </figure>
+              {% endif %}
+            </div>
+            <div class="direct-help-text-container" style="
+            --title-font-size: {{title_font_size |  append: 'px'}};
+            --title-font-size-mobile: {{title_font_size_mobile |  append: 'px'}};
+            --title-color: {{ title_color }};
+            --title-font-weight: {{title_font_weight }};
+            --title-spacing-bottom:{{ title_spacing_bottom | append: 'px' }};
+            --title-spacing-bottom-mobile:{{ title_spacing_bottom_mobile | append: 'px' }};">
+              {{ directHelpText }}</div>
           </div>
+          {% if description != blank %}
+            <div class="direct-help-description-container" style="
+            --description-font-size: {{description_font_size |  append: 'px'}};
+            --description-font-size-mobile: {{description_font_size_mobile |  append: 'px'}};
+            --description-color: {{ description_color }};
+            --description-line-height: {{description_line_height | append: 'px' }};
+            --description-spacing-bottom:{{ description_spacing_bottom | append: 'px' }};
+            ">
+              {{ description }}</div>
+          {% endif %}
+          {% if button_text != blank %}
+            <div class="direct-help-button-container">
+              <a href="{{button_url}}" style="
+              {% if button_style == "style2" %}
+                text-transform: uppercase;
+                border: 1px solid black;
+              {% endif %}
+              {% if button_underline == false %}
+                --button-underline: none;
+                {% else %}
+                --button-underline: underline;
+                {% endif %}
+              --button-font-weight: {{button_font_weight}};
+              --button-color: {{button_color}};
+              --button-border-color: {{button_border_color}};
+              --button-background-color: {{button_background_color}};
+              {% if button_background_gradient_color != blank %}
+                --button-background-color:{{button_background_gradient_color}};
+              {% endif %}
+              --button-color-hover: {{button_color_hover}};
+              --button-border-color-hover: {{button_border_color_hover}};
+              --button-background-color-hover: {{button_background_color_hover}};
+              {% if button_background_gradient_color_hover != blank %}
+                --button-background-color-hover:{{button_background_gradient_color_hover}};
+                
+              {% endif %}
+
+              ">
+                {{ button_text }}</a>
+
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     {% endif %}
   </div>
-
 </section>
-
-
 <style>
   .direct-help-wrapper {
-    margin: 100px 0;
-    background: #f7f7f7;
-    padding-top: 45px;
-    padding-bottom: 90px;
+    height: 100%;
+    width: {{ container_width }};
+    {% if container_bg_color != blank and container_bg_gradient == blank and container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
+      background: {{ container_bg_color }};
+    {% endif %}
+    {% if container_bg_gradient != blank and  container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
+      background: {{ container_bg_gradient }};
+    {% endif %}
+    {% if container_bg_image != placeholder and  container_bg_image != placeholderV2 %}
+      {% if container_bg_image != blank %}
+        background: url('{{container_bg_image}}');
+      {% endif %}
+    {% endif %}
+    {% if container_padding_top_desktop != blank %}
+      padding-top: {{ container_padding_top_desktop }}px;
+    {% endif %}
+    {% if container_padding_bottom_desktop != blank %}
+      padding-bottom: {{ container_padding_bottom_desktop }}px;
+    {% endif %}
+
+  }
+
+  @media all and (max-width: 992px) {
+    .direct-help-wrapper {
+      {% if container_padding_top_tablet != blank %}
+        padding-top: {{ container_padding_top_tablet }}px;
+      {% endif %}
+      {% if container_padding_bottom_tablet != blank %}
+        padding-bottom: {{ container_padding_bottom_tablet }}px;
+      {% endif %}
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    .direct-help-wrapper {
+      {% if container_padding_top_mobile != blank %}
+        padding-top: {{ container_padding_top_mobile }}px;
+      {% endif %}
+      {% if container_padding_bottom_mobile != blank %}
+        padding-bottom: {{ container_padding_bottom_mobile }}px;
+      {% endif %}
+    }
+
+    .helpHeading {
+      {% if heading_font_size_mobile  != blank %}
+        font-size: {{ heading_font_size_mobile }}px;
+      {% endif %}
+      {% if heading_padding_bottom_mobile != blank %}
+        padding-top: {{ heading_padding_bottom_mobile }}px;
+      {% endif %}
+
+    }
+    .helpSubheading {
+      {% if subheading_font_size_mobile  != blank %}
+        font-size: {{ subheading_font_size_mobile }}px;
+      {% endif %}
+      {% if subheading_padding_bottom_mobile != blank %}
+        padding-top: {{ subheading_padding_bottom_mobile }}px;
+      {% endif %}
+
+    }
+
+    .helpMobile {
+      {% if number_font_size_mobile  != blank %}
+        font-size: {{ number_font_size_mobile }}px;
+      {% endif %}
+      {% if number_padding_bottom_mobile != blank %}
+        padding-top: {{ number_padding_bottom_mobile }}px;
+      {% endif %}
+    }
   }
   .direct-help-heading {
-    text-align: center;
+
     font-weight: 700;
-    color: #000;
+    {% if align_items == 'flex-start' %}
+      text-align: left;
+    {% elsif align_items == 'center' %}
+      text-align: center;
+    {% else %}
+      text-align: right;
+    {% endif %}
+  }
+  .helpSubheading {
+    {% if  subheading_color != blank %}
+      color: {{ subheading_color }};
+    {% endif %}
+    {% if subheading_padding_bottom_desktop != blank %}
+      padding-top: {{ subheading_padding_bottom_desktop }}px;
+    {% endif %}
+    {% if subheading_font_size_desktop  != blank %}
+      font-size: {{ subheading_font_size_desktop }}px;
+    {% endif %}
+  }
+  .helpMobile {
+    text-decoration: none;
+    margin-left: 10px;
+    {% if  number_color != blank %}
+      color: {{ number_color }};
+    {% endif %}
+    {% if number_padding_bottom_desktop != blank %}
+      padding-top: {{ number_padding_bottom_desktop }}px;
+    {% endif %}
+    {% if number_font_size_desktop  != blank %}
+      font-size: {{ number_font_size_desktop }}px;
+    {% endif %}
   }
   .helpHeading {
-    font-size: 32px;
+    {% if  heading_color != blank %}
+      color: {{ heading_color }};
+    {% endif %}
+    {% if heading_padding_bottom_desktop != blank %}
+      padding-top: {{ heading_padding_bottom_desktop }}px;
+    {% endif %}
+    {% if heading_font_size_desktop  != blank %}
+      font-size: {{ heading_font_size_desktop }}px;
+    {% endif %}
     margin: 0;
     text-transform: capitalize;
     font-family: var(--hero-heading-font);
   }
   .helpSubheading,
   .helpMobile {
-    font-size: 24px;
     font-family: var(--hero-heading-font);
   }
-  .helpMobile {
-    color: #003e82;
-    text-decoration: none;
-    margin-left: 10px;
-  }
+
   .direct-help-text {
     display: flex;
     align-items: center;
@@ -94,17 +341,69 @@
     align-items: center;
     padding: 50px 150px;
     flex-wrap: wrap;
-    gap: 20px
   }
   .direct-help-item {
     text-align: center;
     overflow: hidden;
-    width: 32%;
-    background: #fff;
-    border: 1px solid #003e82;
-    padding: 20px 30px;
+    background: var(--block-background-color);
+    border: 1px solid var(--block-border-color);
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    transition: all 0.4s;
+    {% if item_border_radius != blank %}
+      border-radius: {{ item_border_radius }}px;
+    {% endif %}
+    {% if item_spacing_horizontal != blank %}
+      padding-left: {{ item_spacing_horizontal }}px;
+      padding-right: {{ item_spacing_horizontal }}px;
+    {% endif %}
+
+    {% if  item_spacing_top != blank %}
+      padding-top: {{ item_spacing_top }}px;
+    {% endif %}
+    {% if  item_spacing_bottom != blank %}
+      padding-bottom: {{ item_spacing_bottom }}px;
+    {% endif %}
+  }
+  .direct-help-item:hover {
+    {% if item_hover_animation != false %}
+      transform: translateY(-10px);
+    {% endif %}
+    {% if item_hover_shadow != false %}
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    {% endif %}
+  }
+  .direct-help-item figure svg {
+    fill: var(--icon-color);
+    width: var(--icon-width);
+    height: var(--icon-height);
+    bottom: var(--icon-spacing-bottom);
+    right: 15px;
+    position: relative;
+  }
+  .direct-help-description-container {
+    font-size: var(--description-font-size);
+    color: var(--description-color);
+    line-height: var(--description-line-height);
+    padding-bottom: var(--description-spacing-bottom);
+  }
+
+  .direct-help-button-container a {
+
+    text-decoration: var(--button-underline-hover);
+    font-weight: var(--button-font-weight);
+    color: var(--button-color);
+    border-color: var(--button-border-color) !important;
+    background: var(--button-background-color);
+    padding: 5px 10px;
+  }
+  .direct-help-button-container a:hover {
+    color: var(--button-color-hover);
+    border-color: var(--button-border-color-hover);
+    background: var(--button-background-color-hover);
   }
   .direct-logo-product-name {
     font-family: var(--hero-heading-font);
@@ -126,6 +425,10 @@
   .direct-help-text-container {
     font-size: 18px;
     text-transform: capitalize;
+    color: var(--title-color);
+    font-weight: var(--title-font-weight);
+    font-size: var(--title-font-size);
+    padding-bottom: var(--title-spacing-bottom)
   }
   @media (max-width: 1314px) {
     .direct-help-section {
@@ -137,78 +440,635 @@
       padding: 30px;
     }
     .direct-help-item {
-      width: 100%;
+      width: 100% !important;
+      margin-top: 20px;
     }
   }
   @media (max-width: 768px) {
+    .direct-help-description-container {
+      font-size: var(--description-font-size-mobile);
+    }
     .direct-help-item {
       display: flex;
       justify-content: center;
     }
+    .direct-help-text-container {
+      font-size: var(--title-font-size-mobile);
+      padding-bottom: var(--title-spacing-bottom-mobile)
+    }
   }
   .direct-logo-product-name {
     font-size: 18px;
+
   }
-}
-@media all and (max-width: 480px) {
-  .direct-help-item {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  @media all and (max-width: 480px) {
+    .direct-help-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .direct-help-item .direct-logo-image-container {
+      align-self: center;
+    }
   }
-  .direct-help-item .direct-logo-image-container {
-    align-self: center;
-  }
-}
 </style>
 {% schema %}
 
   {
     "name": "Direct Help Section",
+    "max_blocks": 4,
     "settings": [
-
       {
         "type": "text",
+        "id": "direct_custom_class",
+        "label": "Custom Class"
+      },
+      {
+        "type": "select",
+        "id": "container_width",
+        "label": "Layout:",
+        "default": "100%",
+        "options": [
+          {
+            "value": "1170px",
+            "label": "Width(1170px)"
+          }, {
+            "value": "1770px",
+            "label": "Width(1770px)"
+          }, {
+            "value": "100%",
+            "label": "Full Width"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "container_background_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "color_background",
+        "id": "container_background_gradient",
+        "label": "Background Gradient"
+      }, {
+        "type": "image_picker",
+        "id": "container_background_image",
+        "label": "Background Image"
+      }, {
+        "type": "header",
+        "content": "Spacing Top"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_desktop",
+        "label": "Desktop"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_tablet",
+        "label": "Tablet"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_mobile",
+        "label": "Mobile"
+      }, {
+        "type": "header",
+        "content": "Spacing Bottom"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_desktop",
+        "label": "Desktop"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_tablet",
+        "label": "Tablet"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_mobile",
+        "label": "Mobile"
+      }, {
+        "type": "text",
         "id": "direct_heading",
-        "label": "Help Section Heading"
+        "label": "Help Item Heading"
+      }, {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Title Color"
+      }, {
+        "type": "range",
+        "min": 12,
+        "max": 64,
+        "default": 16,
+        "unit": "px",
+        "step": 1,
+        "id": "heading_font_size_desktop",
+        "label": "Title Font Size"
+      }, {
+        "type": "range",
+        "min": 12,
+        "max": 64,
+        "default": 16,
+        "unit": "px",
+        "step": 1,
+        "id": "heading_font_size_mobile",
+        "label": "Title Font Size Mobile"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "heading_padding_bottom_desktop",
+        "label": "Title Margin Bottom"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "heading_padding_bottom_mobile",
+        "label": "Title Margin Bottom Mobile"
       }, {
         "type": "text",
         "id": "direct_subheading",
-        "label": "Help Section Subeading"
+        "label": "Help Item Subheading"
+      }, {
+        "type": "color",
+        "id": "subheading_color",
+        "label": "Subheading Color"
+      }, {
+        "type": "range",
+        "min": 12,
+        "max": 64,
+        "default": 16,
+        "unit": "px",
+        "step": 1,
+        "id": "subheading_font_size_desktop",
+        "label": "Subheading Font Size"
+      }, {
+        "type": "range",
+        "min": 12,
+        "max": 64,
+        "default": 16,
+        "unit": "px",
+        "step": 1,
+        "id": "subheading_font_size_mobile",
+        "label": "Subheading Font Size Mobile"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "subheading_padding_bottom_desktop",
+        "label": "Subheading Margin Bottom"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "subheading_padding_bottom_mobile",
+        "label": "Subheading Margin Bottom Mobile"
       }, {
         "type": "text",
         "id": "direct_mobile",
-        "label": "Help Section Mobile"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "help",
-        "name": "Help Item",
-        "settings": [
+        "label": "Help Item Phone Number"
+      }, {
+        "type": "color",
+        "id": "number_color",
+        "label": "Phone Number Color"
+      }, {
+        "type": "range",
+        "min": 12,
+        "max": 64,
+        "default": 16,
+        "unit": "px",
+        "step": 1,
+        "id": "number_font_size_desktop",
+        "label": "Phone Number Font Size"
+      }, {
+        "type": "range",
+        "min": 12,
+        "max": 64,
+        "default": 16,
+        "unit": "px",
+        "step": 1,
+        "id": "number_font_size_mobile",
+        "label": "Phone Number Font Size Mobile"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "number_padding_bottom_desktop",
+        "label": "Phone Number Margin Bottom"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "number_padding_bottom_mobile",
+        "label": "Phone Number Margin Bottom Mobile"
+      }, {
+        "type": "header",
+        "content": "Settings Block"
+      }, {
+        "type": "checkbox",
+        "id": "item_hover_shadow",
+        "label": "Enable Hover Box Shadow",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "item_hover_animation",
+        "label": "Enable Hover Effect Top",
+        "default": false
+      }, {
+        "type": "select",
+        "id": "align_items",
+        "label": "Align Items",
+        "default": "center",
+        "options": [
           {
-            "type": "text",
-            "id": "direct_help_text",
-            "label": "Help Item Text"
+            "value": "flex-start",
+            "label": "Left"
           }, {
-            "type": "image_picker",
-            "id": "direct_image",
-            "label": "Help Item Icon"
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "flex-end",
+            "label": "Right"
           }
         ]
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 50,
+        "default": 20,
+        "unit": "px",
+        "step": 1,
+        "id": "item_spacing_top",
+        "label": "Item Spacing Top"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 50,
+        "default": 20,
+        "unit": "px",
+        "step": 1,
+        "id": "item_spacing_bottom",
+        "label": "Item Spacing Bottom"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px",
+        "step": 1,
+        "id": "item_spacing_horizontal",
+        "label": "Item Spacing Left/Right"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 50,
+        "default": 20,
+        "unit": "px",
+        "step": 1,
+        "id": "item_border_radius",
+        "label": "Item Border Radius"
+      }, {
+        "type": "range",
+        "min": 0,
+        "max": 50,
+        "default": 20,
+        "unit": "px",
+        "step": 1,
+        "id": "grid_gap",
+        "label": "Grid Gap"
       }
     ],
-    "max_blocks": 6,
     "presets": [
       {
         "name": "Direct Help Section"
       }
+    ],
+    "blocks": [
+      {
+        "name": "Help Item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Settings block"
+          },
+          {
+            "type": "color",
+            "id": "block_background_color",
+            "label": "Background Color"
+          },
+          {
+            "type": "color",
+            "id": "block_border_color",
+            "label": "Border Color"
+          },
+          {
+            "type": "radio",
+            "id": "icon_type",
+            "label": "Use image or text for icon?",
+            "options": [
+              {
+                "value": "text",
+                "label": "text"
+              }, {
+                "value": "image",
+                "label": "image"
+              }
+            ],
+            "default": "image"
+          }, {
+            "type": "image_picker",
+            "id": "direct_image",
+            "label": "Help Item Icon"
+          }, {
+            "type": "textarea",
+            "id": "icon",
+            "label": "Icon",
+            "info": "Go to this link [Find your Icon](https://fontawesome.com/v5.15/icons?d=gallery&p=2). Find the icon you want, then copy the SVG code and paste it here."
+          }, {
+            "type": "range",
+            "min": 1,
+            "max": 100,
+            "default": 25,
+            "unit": "px",
+            "step": 1,
+            "id": "icon_width",
+            "label": "Icon Width"
+          }, {
+            "type": "range",
+            "min": 1,
+            "max": 100,
+            "default": 25,
+            "unit": "px",
+            "step": 1,
+            "id": "icon_height",
+            "label": "Icon Height"
+          }, {
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "default": 25,
+            "unit": "px",
+            "step": 1,
+            "id": "icon_spacing_bottom",
+            "label": "Icon Spacing Bottom"
+          }, {
+            "type": "color",
+            "id": "icon_color",
+            "label": "Icon Color"
+          }, {
+            "type": "text",
+            "id": "direct_help_text",
+            "label": "Item Title"
+          }, {
+            "type": "range",
+            "min": 8,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "title_font_size",
+            "label": "Title Font Size"
+          }, {
+            "type": "range",
+            "min": 8,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "title_font_size_mobile",
+            "label": "Title Font Size Mobile"
+          }, {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title Color"
+          }, {
+            "type": "select",
+            "id": "title_font_weight",
+            "label": "Title Font Weight",
+            "options": [
+              {
+                "value": "400",
+                "label": "Regular"
+              },
+              {
+                "value": "500",
+                "label": "Medium"
+              },
+              {
+                "value": "600",
+                "label": "Semi Bold"
+              },
+              {
+                "value": "700",
+                "label": "Bold"
+              }, {
+                "value": "800",
+                "label": "Bolder"
+              }, {
+                "value": "900",
+                "label": "Black"
+              }
+            ],
+            "default": "400"
+          }, {
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "title_spacing_bottom",
+            "label": "Title Spacing Bottom"
+          }, {
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "title_spacing_bottom_mobile",
+            "label": "Title Spacing Bottom Mobile"
+          }, {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          }, {
+            "type": "range",
+            "min": 8,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "description_font_size",
+            "label": "Description Font Size"
+          }, {
+            "type": "range",
+            "min": 8,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "description_font_size_mobile",
+            "label": "Description Font Size Mobile"
+          }, {
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "description_line_height",
+            "label": "Description Line Height"
+          }, {
+            "type": "range",
+            "min": 0,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "step": 1,
+            "id": "description_spacing_bottom",
+            "label": "Description Spacing Bottom"
+          }, {
+            "type": "color",
+            "id": "description_color",
+            "label": "Description Color"
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button Link"
+          }, {
+            "type": "select",
+            "id": "button_style",
+            "label": "Button Style",
+            "options": [
+              {
+                "value": "style1",
+                "label": "Style 1"
+              }, {
+                "value": "style2",
+                "label": "Style 2"
+              }
+            ]
+          }, {
+            "type": "select",
+            "id": "button_font_weight",
+            "label": "Button Font Weight",
+            "options": [
+              {
+                "value": "400",
+                "label": "Regular"
+              },
+              {
+                "value": "500",
+                "label": "Medium"
+              },
+              {
+                "value": "600",
+                "label": "Semi Bold"
+              },
+              {
+                "value": "700",
+                "label": "Bold"
+              }, {
+                "value": "800",
+                "label": "Bolder"
+              }, {
+                "value": "900",
+                "label": "Black"
+              }
+            ],
+            "default": "400"
+          }, {
+            "type": "checkbox",
+            "id": "button_underline",
+            "label": "Enable Button Underline?",
+            "default": false
+          }, {
+            "type": "color",
+            "id": "button_color",
+            "label": "Color"
+          }, {
+            "type": "color",
+            "id": "button_border_color",
+            "label": "Border Color"
+          }, {
+            "type": "color",
+            "id": "button_background_color",
+            "label": "Background Color"
+          }, {
+            "type": "color_background",
+            "id": "button_background_gradient_color",
+            "label": "Background Gradient"
+          }, {
+            "type": "color",
+            "id": "button_color_hover",
+            "label": "Hover / Active Color"
+          }, {
+            "type": "color",
+            "id": "button_border_color_hover",
+            "label": "Hover / Active Border Color"
+          }, {
+            "type": "color",
+            "id": "button_background_color_hover",
+            "label": "Hover / Active Background Color"
+          }, {
+            "type": "color_background",
+            "id": "button_background_gradient_color_hover",
+            "label": "Hover / Active Background Gradient"
+          }
+
+        ]
+      }
     ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

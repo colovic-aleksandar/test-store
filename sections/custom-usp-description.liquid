@@ -15,50 +15,50 @@
   assign container_padding_bottom_desktop = section.settings.container_padding_bottom_desktop
   assign container_padding_bottom_tablet = section.settings.container_padding_bottom_tablet
   assign container_padding_bottom_mobile = section.settings.container_padding_bottom_mobile
-  assign usp_type = section.settings.usp_type
-  assign usp_title = section.settings.usp_title
-  assign usp_title_color = section.settings.usp_title_color
-  assign usp_title_font_size = section.settings.usp_title_font_size
-  assign usp_title_font_size_mobile = section.settings.usp_title_font_size_mobile
-  assign usp_title_margin_bottom = section.settings.usp_title_margin_bottom
-  assign usp_description = section.settings.usp_description
-  assign usp_description_color = section.settings.usp_description_color
-  assign usp_description_font_size = section.settings.usp_description_font_size
-  assign usp_description_font_size_mobile = section.settings.usp_description_font_size_mobile
-  assign usp_description_margin_bottom = section.settings.usp_description_margin_bottom
-  assign usp_button = section.settings.usp_button
-  assign usp_button_color = section.settings.usp_button_color
-  assign usp_button_background_color = section.settings.usp_button_background_color
-  assign usp_button_font_size = section.settings.usp_button_font_size
-  assign usp_button_spacing_top = section.settings.usp_button_spacing_top
-  assign usp_button_link = section.settings.usp_button_link
-  assign usp_items_per_row = section.settings.usp_items_per_row
-  assign usp_items_gap = section.settings.usp_items_gap
-  assign usp_enable_dots = section.settings.usp_enable_dots
-  assign usp_enable_arrows = section.settings.usp_enable_arrows
-  assign usp_arrows_layout = section.settings.usp_arrows_layout
-  assign usp_arrows_color = section.settings.usp_arrows_color
-  assign usp_arrows_background_color = section.settings.usp_arrows_background_color
-  assign usp_arrows_border_color = section.settings.usp_arrows_border_color
-  assign usp_arrows_hover_color = section.settings.usp_arrows_hover_color
-  assign usp_arrows_hover_background_color = section.settings.usp_arrows_hover_background_color
-  assign usp_arrows_hover_border_color = section.settings.usp_arrows_hover_border_color
-  assign usp_items_per_row_mobile = section.settings.usp_items_per_row_mobile
+  assign usp_description_type = section.settings.usp_description_type
+  assign usp_description_title = section.settings.usp_description_title
+  assign usp_description_title_color = section.settings.usp_description_title_color
+  assign usp_description_title_font_size = section.settings.usp_description_title_font_size
+  assign usp_description_title_font_size_mobile = section.settings.usp_description_title_font_size_mobile
+  assign usp_description_title_margin_bottom = section.settings.usp_description_title_margin_bottom
+  assign usp_description_description = section.settings.usp_description_description
+  assign usp_description_description_color = section.settings.usp_description_description_color
+  assign usp_description_description_font_size = section.settings.usp_description_description_font_size
+  assign usp_description_description_font_size_mobile = section.settings.usp_description_description_font_size_mobile
+  assign usp_description_description_margin_bottom = section.settings.usp_description_description_margin_bottom
+  assign usp_description_button = section.settings.usp_description_button
+  assign usp_description_button_color = section.settings.usp_description_button_color
+  assign usp_description_button_background_color = section.settings.usp_description_button_background_color
+  assign usp_description_button_font_size = section.settings.usp_description_button_font_size
+  assign usp_description_button_spacing_top = section.settings.usp_description_button_spacing_top
+  assign usp_description_button_link = section.settings.usp_description_button_link
+  assign usp_description_items_per_row = section.settings.usp_description_items_per_row
+  assign usp_description_items_gap = section.settings.usp_description_items_gap
+  assign usp_description_enable_dots = section.settings.usp_description_enable_dots
+  assign usp_description_enable_arrows = section.settings.usp_description_enable_arrows
+  assign usp_description_arrows_layout = section.settings.usp_description_arrows_layout
+  assign usp_description_arrows_color = section.settings.usp_description_arrows_color
+  assign usp_description_arrows_background_color = section.settings.usp_description_arrows_background_color
+  assign usp_description_arrows_border_color = section.settings.usp_description_arrows_border_color
+  assign usp_description_arrows_hover_color = section.settings.usp_description_arrows_hover_color
+  assign usp_description_arrows_hover_background_color = section.settings.usp_description_arrows_hover_background_color
+  assign usp_description_arrows_hover_border_color = section.settings.usp_description_arrows_hover_border_color
+  assign usp_description_items_per_row_mobile = section.settings.usp_description_items_per_row_mobile
 %}
 
-<div class="usp-text">
-  {% if usp_title != blank %}
-    <p class="usp_title">
-      {{ usp_title }}
+<div class="usp_description-text">
+  {% if usp_description_title != blank %}
+    <p class="usp_description_title">
+      {{ usp_description_title }}
     </p>
   {% endif %}
-  {% if usp_description != blank %}
-    <p class="usp_description">
-      {{ usp_description }}
+  {% if usp_description_description != blank %}
+    <p class="usp_description_description">
+      {{ usp_description_description }}
     </p>
   {% endif %}
 </div>
-<div id="{{ divID}}" class="{% if customClass != blank %} {{customClass}}  {% endif %} direct-usp-section {% if usp_type == "slider" %} slider {% endif %}">
+<div id="{{ divID}}" class="{% if customClass != blank %} {{customClass}}  {% endif %} direct-usp_description-section {% if usp_description_type == "slider" %} slider {% endif %}">
   {% assign count = 0 %}
   {% for block in section.blocks %}
     {% assign count = count | plus: 1 %}
@@ -66,7 +66,7 @@
   {% if section.blocks.size > 0 %}
     {% for block in section.blocks %}
       {% liquid
-        assign directUspImage = block.settings.direct_image
+        assign directImage = block.settings.direct_image
         assign directProductText = block.settings.direct_product_text
         assign block_spacing_bottom = block.settings.block_spacing_bottom
         assign block_enable_border = block.settings.block_enable_border
@@ -83,13 +83,13 @@
 
       %}
       <div
-        id="direct-usp-item"
-        data-arrows="{{usp_enable_arrows}}"
-        data-dots="{{usp_enable_dots}}"
-        data-ipr="{{usp_items_per_row}}"
-        data-ipr-mobile="{{usp_items_per_row_mobile}}"
+        id="direct-usp_description-item"
+        data-arrows="{{usp_description_enable_arrows}}"
+        data-dots="{{usp_description_enable_dots}}"
+        data-ipr="{{usp_description_items_per_row}}"
+        data-ipr-mobile="{{usp_description_items_per_row_mobile}}"
         data-count="{{count}}"
-        class="direct-usp-item"
+        class="direct-usp_description-item"
         style="
         --block_border_color_hover: {{block_border_color_hover}};
         --block_title_color_hover: {{block_title_color_hover}};
@@ -110,7 +110,7 @@
         ">
           <figure>
             {% render 'snippet-image'
-              , image: directUspImage
+              , image: directImage
               , loadingLazy: 'false'
               , class: 'direct-hero-image' %}
           </figure>
@@ -135,10 +135,10 @@
     {% endfor %}
   {% endif %}
 </div>
-<div class="usp_button_wrapper">
-  {% if usp_button != blank %}
-    <a class="usp_button" href="{{usp_button_link}}">
-      {{ usp_button }}</a>
+<div class="usp_description_button_wrapper">
+  {% if usp_description_button != blank %}
+    <a class="usp_description_button" href="{{usp_description_button_link}}">
+      {{ usp_description_button }}</a>
   {% endif %}
 </div>
 
@@ -148,25 +148,25 @@
   defer></script>
 <script>
     function updateSlider() {
-        var slider = document.querySelector('.direct-usp-section.slider');
+        var slider = document.querySelector('.direct-usp_description-section.slider');
         if (!slider) {
             return;
         }
         var slidesToShow = 6;
         var slidesToScroll = 3;
-        var directUspItem = document.getElementById('direct-usp-item');
+        var directItem = document.getElementById('direct-usp_description-item');
         var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        var swiperDots = directUspItem.getAttribute('data-dots');
+        var swiperDots = directItem.getAttribute('data-dots');
         if (screenWidth > 991) {
-          if (directUspItem && directUspItem.hasAttribute('data-ipr') ) {
-              slidesToShow = directUspItem.getAttribute('data-ipr');
+          if (directItem && directItem.hasAttribute('data-ipr') ) {
+              slidesToShow = directItem.getAttribute('data-ipr');
             swiperDots=false;
     }
 
         } else if (screenWidth > 765 && screenWidth <= 991) {
             slidesToShow = 3;
         } else if (screenWidth <= 765) {
-            slidesToShow = directUspItem.getAttribute('data-ipr-mobile');
+            slidesToShow = directItem.getAttribute('data-ipr-mobile');
             slidesToScroll = 2;
         }
         console.log(slidesToShow)
@@ -197,10 +197,11 @@
 
 <style>
   #{{ sectionID }}
-    .shopify-section:has(> .direct-usp-section) {
+    .shopify-section:has(> .direct-usp_description-section) {
       overflow: hidden;
     }
-   #{{ sectionID }}  .direct-usp-section {
+   #{{ sectionID }}  .direct-usp_description-section {
+
     display: flex;
     height: 100%;
     max-width: {{ container_width }};
@@ -224,29 +225,29 @@
     {% endif %}
   
   }
-     .usp_title {
-    {% if usp_title_color != blank %}
-      color: {{usp_title_color}};
+     .usp_description_title {
+    {% if usp_description_title_color != blank %}
+      color: {{usp_description_title_color}};
     {% endif %}
-    {% if usp_title_font_size != blank %}
-      font-size: {{usp_title_font_size}}px;
+    {% if usp_description_title_font_size != blank %}
+      font-size: {{usp_description_title_font_size}}px;
     {% endif %}
-    {% if usp_title_margin_bottom != blank %}
-      margin-bottom: {{usp_title_margin_bottom}}px;
+    {% if usp_description_title_margin_bottom != blank %}
+      margin-bottom: {{usp_description_title_margin_bottom}}px;
     {% endif %}
     width:100%;
     display: flex;
     justify-content: center;
   }
-    .usp_description {
-    {% if usp_description_color != blank %}
-      color: {{usp_title_color}};
+    .usp_description_description {
+    {% if usp_description_description_color != blank %}
+      color: {{usp_description_title_color}};
     {% endif %}
-    {% if usp_description_font_size != blank %}
-      font-size: {{usp_description_font_size}}px;
+    {% if usp_description_description_font_size != blank %}
+      font-size: {{usp_description_description_font_size}}px;
     {% endif %}
-    {% if usp_description_margin_bottom != blank %}
-      margin-bottom: {{usp_description_margin_bottom}}px;
+    {% if usp_description_description_margin_bottom != blank %}
+      margin-bottom: {{usp_description_description_margin_bottom}}px;
     {% endif %}
     width:100%;
     display: flex;
@@ -255,40 +256,41 @@
   #{{ sectionID }} .slick-initialized .slick-slide {
     display: flex;
   }
-    #{{ sectionID }} .direct-usp-item .direct-image-container figure {
+    #{{ sectionID }} .direct-usp_description-item .direct-image-container figure {
     margin: 0;
     display: flex;
     height: 100%;
   }
-    #{{ sectionID }} .direct-usp-item .direct-image-container figure > img {
+    #{{ sectionID }} .direct-usp_description-item .direct-image-container figure > img {
     width: 100%;
     height: auto;
     object-fit: cover;
   }
-    #{{ sectionID }} .direct-usp-section {
+    #{{ sectionID }} .direct-usp_description-section {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
   
   }
-   #{{ sectionID }}  .direct-usp-item {
+   #{{ sectionID }}  .direct-usp_description-item {
     display: flex;
     flex-direction: column;
     align-items: center;
   
-    padding: 0 calc({{usp_items_gap}}px/2);
-   
+    padding: 0 calc({{usp_description_items_gap}}px/2);
+    {% if section.settings.usp_description_enable_border == true %}
+    border-right: 1px solid white;
+    {% endif %}
   }
    #{{ sectionID }}  .direct-image-container {
-    {% if usp_type == "slider" %} 
+    {% if usp_description_type == "slider" %} 
   
       {% endif %}
-      {% if usp_type == "grid" %} 
+      {% if usp_description_type == "grid" %} 
     max-width: 500px;
     width: 100%;
       {% endif %}
-    aspect-ratio: 1;
   }
   
     #{{ sectionID }} .direct-image-container img {
@@ -308,7 +310,7 @@
     text-align: center;
   }
   @media all and (max-width: 992px) {
-      #{{ sectionID }} .direct-usp-section {
+      #{{ sectionID }} .direct-usp_description-section {
       {% if container_padding_top_tablet != blank %}
           padding-top: {{container_padding_top_tablet}}px;
       {% endif %}
@@ -316,15 +318,15 @@
           padding-bottom: {{container_padding_bottom_tablet}}px;
       {% endif %}
       }
-      #{{ sectionID }}   .direct-usp-item {
-        {% if usp_type == "grid" %}
+      #{{ sectionID }}   .direct-usp_description-item {
+        {% if usp_description_type == "grid" %}
         width: 33.33% !important;
         font-size: 13px;
       {% endif %}
       }
     }
   @media (max-width: 768px) {
-    #{{ sectionID }} .direct-usp-section {
+    #{{ sectionID }} .direct-usp_description-section {
           {% if container_padding_top_mobile != blank %}
               padding-top: {{container_padding_top_mobile}}px;
           {% endif %}
@@ -332,13 +334,13 @@
               padding-bottom: {{container_padding_bottom_mobile}}px;
           {% endif %}
       }
-       .usp_title {
-        {% if usp_title_font_size_mobile != blank %}
-          font-size: {{usp_title_font_size_mobile}}px;
+       .usp_description_title {
+        {% if usp_description_title_font_size_mobile != blank %}
+          font-size: {{usp_description_title_font_size_mobile}}px;
           {% endif %}
-      } .usp_description {
-        {% if usp_description_font_size_mobile != blank %}
-          font-size: {{usp_description_font_size_mobile}}px;
+      } .usp_description_description {
+        {% if usp_description_description_font_size_mobile != blank %}
+          font-size: {{usp_description_description_font_size_mobile}}px;
           {% endif %}
       }
     #{{ sectionID }}   .direct-image-container {
@@ -350,64 +352,64 @@
       text-align: center;
     }
   }
-    .usp_button_wrapper {
-    {% if usp_button_spacing_top != blank %}
-      margin-top: {{usp_button_spacing_top}}px;
+    .usp_description_button_wrapper {
+    {% if usp_description_button_spacing_top != blank %}
+      margin-top: {{usp_description_button_spacing_top}}px;
     {% endif %}
     display:flex;
     justify-content: center;
     text-align: center;
     width: 100%;
   }
-    .usp_button {
+    .usp_description_button {
   
   text-decoration: none;
-    {% if usp_button_color != blank %}
-      color: {{usp_button_color}};
+    {% if usp_description_button_color != blank %}
+      color: {{usp_description_button_color}};
       {% else %}
       color: black;
     {% endif %}
   
-    {% if usp_button_background_color != blank %}
-      background: {{usp_button_background_color}};
+    {% if usp_description_button_background_color != blank %}
+      background: {{usp_description_button_background_color}};
       padding: 10px 30px;
       border-radius: 3px;
     {% endif %}
   
   
   
-    {% if usp_button_font_size != blank %}
-      font-size: {{usp_button_font_size}}px;
+    {% if usp_description_button_font_size != blank %}
+      font-size: {{usp_description_button_font_size}}px;
     {% endif %}
   }
-    .usp_button:hover {
+    .usp_description_button:hover {
     opacity: 0.8;
   }
   
    #{{ sectionID }}  .slick-arrow{
 
-  fill: {{usp_arrows_color}};
+  fill: {{usp_description_arrows_color}};
     width: 30px;
     order: 1;
     margin-top: 30px;
     position: relative;
     z-index: 1;
-    {% if usp_enable_arrows != true %}
+    {% if usp_description_enable_arrows != true %}
       display: none;
       {% endif %}
-      {% if usp_arrows_layout == 'style2' %}
+      {% if usp_description_arrows_layout == 'style2' %}
         position: absolute;
         top: 25%;
         {% endif %}
   }
    #{{ sectionID }}  .next-arrow {
-    {% if usp_arrows_layout == 'style2' %}
+    {% if usp_description_arrows_layout == 'style2' %}
         right: 10px;
         {% endif %}
   }
 
    #{{ sectionID }}  .prev-arrow {
-    {% if usp_arrows_layout == 'style2' %}
+    {% if usp_description_arrows_layout == 'style2' %}
         left: 10px;
         {% endif %}
   }
@@ -416,23 +418,23 @@
   
    #{{ sectionID }}  .slick-arrow:hover {
     cursor: pointer;
-    fill: {{usp_arrows_hover_color}}
+    fill: {{usp_description_arrows_hover_color}}
   }
    #{{ sectionID }}  .slick-arrow::before {
     content:'';
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: {{usp_arrows_background_color}};
+    background-color: {{usp_description_arrows_background_color}};
     position: absolute;
     z-index: -1;
     bottom: 0px;
-    border: 1px solid {{usp_arrows_border_color}}
+    border: 1px solid {{usp_description_arrows_border_color}}
   }
    #{{ sectionID }}  .slick-arrow:hover::before{
-  background-color: {{usp_arrows_hover_background_color}};
+  background-color: {{usp_description_arrows_hover_background_color}};
   {% if block_enable_border == true %}
-  border: 1px solid {{usp_arrows_hover_border_color}}
+  border: 1px solid {{usp_description_arrows_hover_border_color}}
   {% endif %}
 
   }
@@ -447,7 +449,7 @@
   }
 
 
-        #{{ sectionID }}   #direct-usp-item:hover .direct-product-name {
+        #{{ sectionID }}   #direct-usp_description-item:hover .direct-product-name {
           color: var(--block_title_color_hover) !important;
 
         }
@@ -459,7 +461,7 @@
   </style>
   {% schema %}
     {
-      "name": "Direct  USP",
+      "name": "Direct  USP & Description",
       "settings": [
         {
           "type": "text",
@@ -560,7 +562,7 @@
         }, 
         {
           "type": "select",
-          "id": "usp_type",
+          "id": "usp_description_type",
           "label": "Layout",
           "options": [
           {
@@ -575,18 +577,18 @@
       },
       {
           "type": "text",
-          "id": "usp_title",
+          "id": "usp_description_title",
           "label": "Section Title"
         }, 
         {
           "type": "color",
-          "id": "usp_title_color",
-          "label": "Usp Title Color"
+          "id": "usp_description_title_color",
+          "label": " Title Color"
         },
         {
           "type": "range",
-          "id": "usp_title_font_size",
-          "label": "Usp Title Font Size",
+          "id": "usp_description_title_font_size",
+          "label": " Title Font Size",
           "default": 18,
           "min":12,
           "max": 60,
@@ -595,8 +597,8 @@
         },      
         {
           "type": "range",
-          "id": "usp_title_font_size_mobile",
-          "label": "Usp Title Font Size Mobile",
+          "id": "usp_description_title_font_size_mobile",
+          "label": " Title Font Size Mobile",
           "default": 18,
           "min":12,
           "max": 60,
@@ -605,8 +607,8 @@
         },
         {
           "type": "range",
-          "id": "usp_title_margin_bottom",
-          "label": "Usp Title Margin Bottom",
+          "id": "usp_description_title_margin_bottom",
+          "label": " Title Margin Bottom",
           "default": 0,
           "min":0,
           "max": 50,
@@ -615,18 +617,18 @@
         },
         {
           "type": "textarea",
-          "id": "usp_description",
+          "id": "usp_description_description",
           "label": "Section Description"
         }, 
         {
           "type": "color",
-          "id": "usp_description_color",
-          "label": "Usp Description Color"
+          "id": "usp_description_description_color",
+          "label": " Description Color"
         },
         {
           "type": "range",
-          "id": "usp_description_font_size",
-          "label": "Usp Description Font Size",
+          "id": "usp_description_description_font_size",
+          "label": " Description Font Size",
           "default": 18,
           "min":12,
           "max": 60,
@@ -635,8 +637,8 @@
         },
         {
           "type": "range",
-          "id": "usp_description_font_size_mobile",
-          "label": "Usp Description Font Size Mobile",
+          "id": "usp_description_description_font_size_mobile",
+          "label": " Description Font Size Mobile",
           "default": 18,
           "min":12,
           "max": 60,
@@ -645,8 +647,8 @@
         },
         {
           "type": "range",
-          "id": "usp_description_margin_bottom",
-          "label": "Usp description Margin Bottom",
+          "id": "usp_description_description_margin_bottom",
+          "label": " description Margin Bottom",
           "default": 0,
           "min":0,
           "max": 50,
@@ -657,23 +659,23 @@
   
         {
           "type": "text",
-          "id": "usp_button",
+          "id": "usp_description_button",
           "label": "Section Button"
         }, 
         {
           "type": "color",
-          "id": "usp_button_color",
-          "label": "Usp Button Color"
+          "id": "usp_description_button_color",
+          "label": " Button Color"
         },      
         {
           "type": "color",
-          "id": "usp_button_background_color",
-          "label": "Usp Button Background Color"
+          "id": "usp_description_button_background_color",
+          "label": " Button Background Color"
         },
         {
           "type": "range",
-          "id": "usp_button_font_size",
-          "label": "Usp Button Font Size",
+          "id": "usp_description_button_font_size",
+          "label": " Button Font Size",
           "default": 18,
           "min":12,
           "max": 60,
@@ -683,8 +685,8 @@
   
         {
           "type": "range",
-          "id": "usp_button_spacing_top",
-          "label": "Usp Button Spacing Top",
+          "id": "usp_description_button_spacing_top",
+          "label": " Button Spacing Top",
           "default": 0,
           "min":0,
           "max": 50,
@@ -693,14 +695,14 @@
         },
         {
           "type": "text",
-          "id": "usp_button_link",
+          "id": "usp_description_button_link",
           "label": "Button Link",
           "placeholder": "Paste a link or search"
         },
         {
           "type": "range",
-          "id": "usp_items_gap",
-          "label": "Usp Items Gap",
+          "id": "usp_description_items_gap",
+          "label": " Items Gap",
           "default": 0,
           "min":0,
           "max": 50,
@@ -709,7 +711,7 @@
         },
         {
           "type": "select",
-          "id": "usp_items_per_row",
+          "id": "usp_description_items_per_row",
           "label": "Items Per Row",
           "options": [
           {
@@ -740,19 +742,25 @@
       },
       {
         "type": "checkbox",
-        "id":"usp_enable_arrows",
+        "id":"usp_description_enable_arrows",
         "label": "Enable Arrows?",
         "default": false
       },
       {
         "type": "checkbox",
-        "id":"usp_enable_dots",
+        "id":"usp_description_enable_border",
+        "label": "Enable Border?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id":"usp_description_enable_dots",
         "label": "Enable Dots?",
         "default": true
       },
       {
           "type": "select",
-          "id": "usp_arrows_layout",
+          "id": "usp_description_arrows_layout",
           "label": "Arrows Layout",
           "options": [
           {
@@ -767,37 +775,37 @@
       },
       {
           "type": "color",
-          "id": "usp_arrows_color",
-          "label": "Usp Arrow Color"
+          "id": "usp_description_arrows_color",
+          "label": " Arrow Color"
         }, 
         {
           "type": "color",
-          "id": "usp_arrows_background_color",
+          "id": "usp_description_arrows_background_color",
           "label": "Arrow Background Color"
         }, 
         {
           "type": "color",
-          "id": "usp_arrows_border_color",
+          "id": "usp_description_arrows_border_color",
           "label": "Arrow Border Color"
         }, 
         {
           "type": "color",
-          "id": "usp_arrows_hover_color",
+          "id": "usp_description_arrows_hover_color",
           "label": "Arrow Hover Color"
         }, 
         {
           "type": "color",
-          "id": "usp_arrows_hover_background_color",
+          "id": "usp_description_arrows_hover_background_color",
           "label": "Arrow Hover Background Color"
         }, 
         {
           "type": "color",
-          "id": "usp_arrows_hover_border_color",
+          "id": "usp_description_arrows_hover_border_color",
           "label": "Arrow Hover Border Color"
         },
         {
           "type": "select",
-          "id": "usp_items_per_row_mobile",
+          "id": "usp_description_items_per_row_mobile",
           "label": "Items Per Row Mobile",
           "options": [
           {
@@ -817,8 +825,8 @@
       ],
       "blocks": [
         {
-          "type": "usp",
-          "name": "USP ITEM",
+          "type": "usp_description",
+          "name": "USP & Description ITEM",
           "settings": [
            {
               "type": "image_picker",
@@ -949,7 +957,7 @@
       "max_blocks": 6,
       "presets": [
         {
-          "name": "Direct USP"
+          "name": "Direct USP & Description"
         }
       ]
     }
