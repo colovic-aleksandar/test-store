@@ -144,7 +144,7 @@ endif
             <p>{{ block.settings.second_txt }}</p>
             
             </a>
-            <a class="contact-link"href="{{block.settings.third_link}}">
+            <a class="contact-link location-address"href="{{block.settings.third_link}}">
               <img src="{{block.settings.third_icon  |  image_url }}" alt="">
             <p>{{ block.settings.third_txt }}</p>
             </a>
@@ -258,8 +258,7 @@ endif
     font-size: 20px;
     margin: 0;
     padding: 0;
-    color;
-    #cfcfcf;
+    color: #cfcfcf;
     font-weight: 400;
   }
 
@@ -338,6 +337,9 @@ endif
   .contact-us-wrapper a {
 
   line-height: 55px;
+  }
+  .contact-us-wrapper .location-address {
+    line-height: 30px !important;
   }
   .contact-us-wrapper p{
     text-transform: none;
