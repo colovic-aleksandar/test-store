@@ -1,0 +1,883 @@
+{% liquid 
+assign show_extra_infomation = false
+assign show_copyright = section.settings.show_copyright
+assign show_payment = section.settings.show_payment
+
+if show_copyright or show_payment
+    assign show_extra_infomation = true
+endif
+
+if show_extra_infomation
+    assign show_footer_bottom = true
+endif
+
+%}
+<div class="footer">
+  <div class="footer-wrapper">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'top-part' %}
+          <div class="footer-top" style=" --custom-width:{{block.settings.custom_width}}; --margin-bottom: {{block.settings.margin_bottom | append: 'px'}}; --margin-top: {{block.settings.margin_top |append: 'px'}};">
+
+            <div class="heading-wrapper">
+              {% if block.settings.heading_text %}
+                <h2 class="heading">
+                  {{ block.settings.heading_text }}
+                </h2>
+              {% endif %}
+              {% if block.settings.description_text %}
+                <p class="description">
+                  {{ block.settings.description_text }}
+                </p>
+              {% endif %}
+            </div>
+            <div class="email-wrapper">
+              {% form 'customer' %}
+                <div class="email">
+                  <input
+                    type="email"
+                    name="contact[email]"
+                    placeholder="Email" />
+                </div>
+
+                <div class="submit">
+                  <input
+                  id="submit"
+                  type="image"
+                  src="{{block.settings.img_send |  image_url  }}"
+                  width="25px"
+                  height="25px"
+                  
+                  value="Sign up" />
+                </div>
+                
+              {% endform %}
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+
+    <div class="footer-links-part">
+
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'img_social_icons' %}
+          {%- assign image_bl = block.settings.image_block -%}
+
+            <div class="socials" style=" --custom-width:{{block.settings.custom_width}}">
+              <img
+                src="{{ image_bl |  image_url  }}"
+                width="400"
+                height="500"
+                loading="eager"
+                alt="{{image_bl.alt}}"
+                class="big-image">
+                <ul class="links" style=" --custom-width:{{block.settings.custom_width}}">
+                  {% for link in block.settings.foo-links.links %}
+                    <li>
+                      <a href="{{ link.url }}">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              <div class="social-icons-wrapper">
+                <ul class="list-unstyled list-social clearfix" role="list"><li class="list-social__item">
+                  <a href="https://www.facebook.com/DirectPoolSupplies" class="link link--text list-social__link icon-facebook"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon icon-facebook"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg><span class="visually-hidden">Facebook</span>
+                  </a>
+              </li><li class="list-social__item">
+                  <a href="https://www.instagram.com/directpoolsupplies/" class="link link--text list-social__link icon-instagram"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" aria-hidden="true" focusable="false" role="presentation" class="icon icon-instagram">
+      <g>
+          <path d="M256,152c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z M256,152   c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z M437,0H75C33.6,0,0,33.6,0,75v362   c0,41.4,33.6,75,75,75h362c41.4,0,75-33.6,75-75V75C512,33.6,478.4,0,437,0z M256,392c-74.399,0-135-60.601-135-135   c0-74.401,60.601-135,135-135s135,60.599,135,135C391,331.399,330.399,392,256,392z M421,122c-16.5,0-30-13.5-30-30s13.5-30,30-30   s30,13.5,30,30S437.5,122,421,122z M256,152c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z    M256,152c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z M256,152c-57.9,0-105,47.1-105,105   s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z"></path>
+      </g>
+  </svg><span class="visually-hidden">Instagram</span>
+                  </a>
+              </li><li class="list-social__item">
+                  <a href="https://www.pinterest.com/poolshop/" class="link link--text list-social__link icon-pinterest"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pinterest" viewBox="0 0 17 18">
+     <path d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z">
+  </path></svg>
+  <span class="visually-hidden">Pinterest</span>
+                  </a>
+              </li><li class="list-social__item">
+                  <a href="https://www.youtube.com/user/directpoolsupplies" class="link link--text list-social__link icon-youtube"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-youtube" viewBox="0 0 100 70">
+    <path d="M98 11c2 7.7 2 24 2 24s0 16.3-2 24a12.5 12.5 0 01-9 9c-7.7 2-39 2-39 2s-31.3 0-39-2a12.5 12.5 0 01-9-9c-2-7.7-2-24-2-24s0-16.3 2-24c1.2-4.4 4.6-7.8 9-9 7.7-2 39-2 39-2s31.3 0 39 2c4.4 1.2 7.8 4.6 9 9zM40 50l26-15-26-15v30z">
+  </path></svg>
+  <span class="visually-hidden">YouTube</span>
+                  </a>
+              </li><li class="list-social__item">
+                  <a href="https://twitter.com/poolshop" class="link link--text list-social__link icon-twitter"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-twitter" viewBox="0 0 18 15">
+      <path d="M17.64 2.6a7.33 7.33 0 01-1.75 1.82c0 .05 0 .13.02.23l.02.23a9.97 9.97 0 01-1.69 5.54c-.57.85-1.24 1.62-2.02 2.28a9.09 9.09 0 01-2.82 1.6 10.23 10.23 0 01-8.9-.98c.34.02.61.04.83.04 1.64 0 3.1-.5 4.38-1.5a3.6 3.6 0 01-3.3-2.45A2.91 2.91 0 004 9.35a3.47 3.47 0 01-2.02-1.21 3.37 3.37 0 01-.8-2.22v-.03c.46.24.98.37 1.58.4a3.45 3.45 0 01-1.54-2.9c0-.61.14-1.2.45-1.79a9.68 9.68 0 003.2 2.6 10 10 0 004.08 1.07 3 3 0 01-.13-.8c0-.97.34-1.8 1.03-2.48A3.45 3.45 0 0112.4.96a3.49 3.49 0 012.54 1.1c.8-.15 1.54-.44 2.23-.85a3.4 3.4 0 01-1.54 1.94c.74-.1 1.4-.28 2.01-.54z">
+  </path></svg>
+  <span class="visually-hidden">Twitter</span>
+                  </a>
+              </li></ul>
+              </div>
+            </div>
+      {% endcase %}
+    {% endfor %}
+
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'links' %}
+          <ul class="links" style=" --custom-width:{{block.settings.custom_width}}">
+            {% for link in block.settings.foo-links.links %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+      {% endcase %}
+    {% endfor %}
+
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'contact-us' %}
+          <div class="contact-us-wrapper" style=" --custom-width:{{block.settings.custom_width}}">
+          <a class="contact-link"href="tel:{{block.settings.first_link}}">
+            <img src="{{block.settings.first_icon  |  image_url }} " alt="">
+          <p>{{ block.settings.first_txt }}</p>
+          </a>
+            <a class="contact-link"href="mailto:{{block.settings.second_link}}">
+              <img src="{{block.settings.second_icon  |  image_url }}" alt="">
+            <p>{{ block.settings.second_txt }}</p>
+            
+            </a>
+            <a class="contact-link"href="{{block.settings.third_link}}">
+              <img src="{{block.settings.third_icon  |  image_url }}" alt="">
+            <p>{{ block.settings.third_txt }}</p>
+            </a>
+          </div>
+      {% endcase %}
+    {% endfor %}
+
+    </div>
+
+    {%- if show_extra_infomation -%}
+      <div class="footer__content-bottom">
+          <div class="container">
+              <div class="footer__bottom">
+                  <div class="footer-block__bottom footer__content-newsletter">
+                      {% if block_newsletter != blank %}
+                      <div class="footer-block__newsletter">
+                          {%- if block_newsletter.settings.heading != blank -%}
+                              <h2 class="footer-block__heading">
+                                  {{- block_newsletter.settings.heading | escape -}}
+                              </h2>
+                          {%- endif -%}
+                          {%- if block_newsletter.settings.subtext != blank -%}
+                              <div class="footer-block__subheading rte">
+                                  {{ block_newsletter.settings.subtext }}
+                              </div>
+                          {%- endif -%}
+                          {% render 'block-newsletter-footer', block: block_newsletter %}
+                      </div>
+                      {% endif %}
+                      {%- if section.settings.show_social -%}
+                          <div class="footer-block__list-social">
+                              <div class="item clearfix">
+                                  {% render 'halo-social-media-icons' %}
+                              </div>
+                          </div>
+                      {%- endif -%}
+                  </div>
+                  <div class="footer-block__bottom {% unless section.settings.enable_layout_grid %}not_flex{% endunless %}">
+                      {%- if show_copyright -%}
+                          <div class="footer__column-item footer__copyright">
+                              <small class="copyright__content">{{ section.settings.copyright_content }}</small>
+                          </div>
+                      {%- endif -%}
+                      <div class="footer__column footer__column--info">
+                          {%- if show_payment -%}
+                              <div class="footer__column-item footer__payment">
+                                  <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+                                  <ul class="list list-payment clearfix" role="list">
+                                      {%- if section.settings.payment_type == 'default' -%}
+                                          {% comment %}
+                                          {% assign enabled_payment_types = 'visa,master,american_express,paypal' | remove: ' ' | split: ',' %}
+                                          {% endcomment %}
+                                          {%- for type in shop.enabled_payment_types -%}
+                                              <li class="list-payment__item">
+                                                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                                              </li>
+                                          {%- endfor -%}
+                                      {%- else -%}
+                                          {% assign payment_string = 'visa,master,maestro,american_express,apple_pay,bitcoin,dankort,diners_club,discover,paypal,dogecoin,dwolla,forbrugsforeningen,jcb,litecoin,afterpay,google_pay,ideal,klarna,klarna-pay-later,shopify_pay,sofort' %}
+                                          {% assign methods = payment_string | split: ',' %}
+                                          {%- for method in methods -%}
+                                              {%- assign show_current_method = method | prepend: 'show_payment_' -%}
+                                              {% if section.settings[show_current_method] %}
+                                                  <li class="list-payment__item {{method}}">
+                                                      {{ method | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                                                  </li>
+                                                  {% endif %}
+                                          {%- endfor -%}
+                                      {%- endif -%}
+                                  </ul>
+                              </div>
+                          {%- endif -%}
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  {%- endif -%}
+  </div>
+</div>
+<style>
+  .footer * {
+    font-family: 'Montserrat'
+    , sans-serif;
+    color: white;
+  }
+  .footer {
+    width: 100%;
+    padding: 0 20px;
+    background: #00126a;
+  }
+  .footer-wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--margin-bottom);
+    padding-top: var(--margin-top);
+
+  }
+  .footer h2.heading {
+    font-weight: 700;
+    font-size: 37px;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+  .footer p {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color;
+    #cfcfcf;
+    font-weight: 400;
+  }
+
+  .email-wrapper {
+    flex-basis: 40%;
+    position: relative;
+  }
+  .email input[type="email"] {
+    width: 100%;
+    padding: 12px 20px 30px 0;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+  }
+  .email input[type="email"]::placeholder {
+    color: white;
+    font-size: 19px;
+  }
+  #submit {
+    position: absolute;
+    top: 25%;
+    right: 0;
+  }
+  .big-image {
+    max-width: 235px;
+    margin-bottom: 75px;
+    width: 100%;
+    max-height: 235px;
+    height: 100%;
+  }
+  .footer-links-part {
+    display: flex;
+  }
+  .socials {
+      width: calc(var(--custom-width) * 100%);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .list-social__item {
+    margin: 0 10px 0 0;
+    display: inline-flex;
+    align-items: center;
+  }
+  .list-social__link {
+    display: block;
+    position: relative;
+    width: 100%;
+    line-height: 1;
+    font-size: 0;
+    letter-spacing: 0;
+    border-radius: 50%;
+    padding: 12px;
+    background-color: #fff;
+  }
+  .list-social__item svg {
+    width: 11px;
+    height: 11px;
+  }
+  .links{
+      width: calc(var(--custom-width) * 100%);
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .footer-links-part ul.links li, .contact-us-wrapper p {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 55px;
+    list-style-type: none;
+  }
+  .contact-us-wrapper p{
+    text-transform: none;
+  }
+  ul.links li a {
+    text-decoration: none;
+  }
+  .contact-us-wrapper {
+      width: calc(var(--custom-width) * 100%);
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-link {
+    display: flex;
+    text-decoration: none;
+  }
+  .contact-link img {
+    max-width: 20px;
+    margin-right: 20px;
+  }
+  .list-payment {
+    font-size: 0;
+    letter-spacing: 0;
+}
+
+.list-payment__item{
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 0px 5px 15px;
+}
+
+.list-payment__item img{
+    max-height: 24px;
+}
+
+.list-payment__item .icon{
+    width: auto;
+    height: 32px;
+    fill: currentColor;
+    stroke: transparent;
+}
+
+.list-payment__item:last-child{
+    margin-right: 0;
+}
+
+@media (max-width: 767px) {
+    .list-payment {
+        text-align: center;
+        padding: 0;
+        margin-top: 20px;
+    }
+}
+</style>
+{% schema %}
+  {
+    "name": "Footer",
+    "tag": "section",
+    "class": "slideshow",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Footer Top"
+      },
+      {
+        "type": "checkbox",
+        "id": "border_top",
+        "label": "Enable Border Top?"
+      },
+      {
+        "type": "color",
+        "id": "footer_border_top_color",
+        "label":"Border Top Color"
+      },
+      {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px",
+        "step": 5,
+        "id": "margin_top",
+        "label": "Margin Top"
+      },
+      {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px",
+        "step": 5,
+        "id": "margin_bottom",
+        "label": "Margin Bottom"
+      },
+      {
+        "type": "color",
+        "id": "footer_background_color",
+        "label":"Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_background_image",
+        "label":"Background Image: Upload Image"
+      },          {
+        "type": "select",
+        "id": "align_text",
+        "label": "Align Text",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "footer_title_color",
+        "label":"Title Color"
+      },
+      {
+        "type": "color",
+        "id": "footer_link_color",
+        "label":"Link Color"
+      },
+      {
+        "type": "color",
+        "id": "footer_link_color_hover",
+        "label":"Link Hover Color"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_media_icon",
+        "label": "Enable Social Media Icons?"
+      },     
+      {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px",
+        "step": 5,
+        "id": "social_icons_margin_top",
+        "label": "Social Icons Margin Top"
+      },
+      {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px",
+        "step": 5,
+        "id": "social_icons_width",
+        "label": "Social Icons Width"
+      },
+      {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px",
+        "step": 5,
+        "id": "social_icons_height",
+        "label": "Social Icons Height"
+      },
+      {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 20,
+        "unit": "px",
+        "step": 5,
+        "id": "social_icons_margin_right",
+        "label": "Social Icons Margin Right"
+      },
+      {
+        "type": "header",
+        "content": "Footer Bottom"
+      },
+      {
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "default": 20,
+            "unit": "px",
+            "step": 5,
+            "id": "copy_padding_top",
+            "label": "Padding Top"
+          },
+          {
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "default": 20,
+            "unit": "px",
+            "step": 5,
+            "id": "copy_padding_bottom",
+            "label": "Padding bottom"
+          },
+      {
+        "type": "checkbox",
+        "id": "copy_border_top",
+        "label": "Enable Border Top?"
+      },
+      {
+        "type": "color",
+        "id": "copy_border_top_color",
+        "label":"Border Top Color"
+      },
+      {
+        "type": "color",
+        "id": "copy_title_color",
+        "label":"Text Color"
+      },
+      {
+        "type": "color",
+        "id": "copy_background_color",
+        "label":"Backgrond Color"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_copyright",
+        "label": "Enable Copyright?"
+      },
+      {
+        "type":"textarea",
+        "id":"copy_text",
+        "label":"Content"
+      },
+      {
+        "type": "header",
+        "content": "Payment"
+    },
+    {
+        "id": "show_payment",
+        "type": "checkbox",
+        "default": true,
+        "label": "Show Payment"
+    },
+    {
+        "type": "range",
+        "id": "payment_margin_top",
+        "label": "Margin Top",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default":0
+    },
+    {
+        "id": "heading_payment",
+        "type": "text",
+        "label": "Heading Payment"
+    },
+    {
+        "type": "select",
+        "id": "payment_type",
+        "label": "Payment type",
+        "default": "custom",
+        "options": [
+        {
+            "value": "default",
+            "label": "default"
+        },
+        {
+            "value": "custom",
+            "label": "custom"
+        }],
+        "info": "When you choose Default, to add payment icons, go to your payments settings."
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_visa",
+        "label": "Visa"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_master",
+        "label": "Master"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_maestro",
+        "label": "Maestro"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_american_express",
+        "label": "American Express"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_apple_pay",
+        "label": "Apple Pay"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_bitcoin",
+        "label": "Bitcoin"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_dankort",
+        "label": "Dankort"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_diners_club",
+        "label": "Diners Club"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_discover",
+        "label": "Discover"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_paypal",
+        "label": "Paypal"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_dogecoin",
+        "label": "Dogecoin"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_dwolla",
+        "label": "Dwolla"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_forbrugsforeningen",
+        "label": "Forbrugsforeningen"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_jcb",
+        "label": "JCB"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_litecoin",
+        "label": "Litecoin"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_afterpay",
+        "label": "Afterpay"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_google_pay",
+        "label": "Googlepay"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_ideal",
+        "label": "Ideal"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_klarna",
+        "label": "Klarna"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_klarna-pay-later",
+        "label": "Klarnapay Later"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_shopify_pay",
+        "label": "Shopifypay"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_payment_sofort",
+        "label": "Sofort"
+    }
+    ],
+    "blocks": [
+      {
+        "name": "Top Part",
+        "type": "top-part",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "custom_width",
+            "label": "Custom Width",
+            "info": "Custom width for Desktop (Unit %)"
+          },
+          {
+            "type": "text",
+            "id": "heading_text",
+            "label": "Heading"
+          }, {
+            "type": "text",
+            "id": "description_text",
+            "label": "Description"
+          },
+          {
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "default": 20,
+            "unit": "px",
+            "step": 5,
+            "id": "margin_top",
+            "label": "Margin Top"
+          },
+          {
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "default": 20,
+            "unit": "px",
+            "step": 5,
+            "id": "margin_bottom",
+            "label": "Margin Bottom"
+          },
+          {
+            "type": "image_picker",
+            "id": "img_send",
+            "label": "Image Send Icon"
+          }
+        ]
+      }, {
+        "name": "Image with Socials icons",
+        "type": "img_social_icons",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "custom_width",
+            "label": "Custom Width",
+            "info": "Custom width for Desktop (Unit %)"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_block",
+            "label": "Image block"
+          },
+          {
+            "type": "link_list",
+            "id": "foo-links",
+            "label": "Menu"
+          }
+        ]
+      }, {
+        "name": "Links",
+        "type": "links",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "text",
+            "id": "custom_width",
+            "label": "Custom Width",
+            "info": "Custom width for Desktop (Unit %)"
+          },
+          {
+            "type": "link_list",
+            "id": "foo-links",
+            "label": "Menu"
+          }
+        ]
+      }, {
+        "name": "Contact Us",
+        "type": "contact-us",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "custom_width",
+            "label": "Custom Width",
+            "info": "Custom width for Desktop (Unit %)"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "textarea",
+            "id": "first_txt",
+            "label": "First text"
+          },
+          {
+            "type": "image_picker",
+            "id": "first_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "url",
+            "id": "first_link",
+            "label": "Link"
+          },
+           {
+            "type": "textarea",
+            "id": "second_txt",
+            "label": "Second text"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "second_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "url",
+            "id": "second_link",
+            "label": "Link"
+          },
+          {
+            "type": "textarea",
+            "id": "third_txt",
+            "label": "Third text"
+          },
+          {
+            "type": "image_picker",
+            "id": "third_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "url",
+            "id": "third_link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Footer (New)"
+      }
+    ]
+  }
+{% endschema %}
