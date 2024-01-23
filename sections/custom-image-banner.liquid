@@ -16,8 +16,6 @@ assign container_padding_bottom_desktop = section.settings.container_padding_bot
 assign container_padding_bottom_tablet = section.settings.container_padding_bottom_tablet
 assign container_padding_bottom_mobile = section.settings.container_padding_bottom_mobile
 %}
-
-
 <section id="{{ divID}}" class="direct-hero-content_wrapper {% if customClass != blank %} {{customClass}}  {% endif %}">
   {% if section.blocks.size > 0 %}
     <link rel="stylesheet" href="{{ 'component-custom-image-banner-block.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -83,7 +81,6 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                         , class: 'direct-hero-image' %}
                     </figure>
                 </div>
-
                 <div class="small_image_item_wrapper" style="
                     {% if block.settings.enable_item_2 == false  %} display: none; {% endif %}
                     width:{{ block.settings.si_item_2_width}};
@@ -128,7 +125,6 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                         , class: 'direct-hero-image' %}
                     </figure>
                 </div>
-
                 <div class="small_image_item_wrapper" style="
                     {% if block.settings.enable_item_3 == false  %} display: none; {% endif %}
                     width:{{ block.settings.si_item_3_width}};
@@ -173,7 +169,6 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                         , class: 'direct-hero-image' %}
                     </figure>
                 </div>
-
                 <div class="small_image_item_wrapper" style="
                     {% if block.settings.enable_item_4 == false  %} display: none; {% endif %}
                     width:{{ block.settings.si_item_4_width}};
@@ -219,9 +214,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                     </figure>
                 </div>
             </div>
-            
         {% endcase %}
-
   {% endfor %}
   </div>
       {% for block in section.blocks  %}
@@ -408,23 +401,22 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     height: 100%;
     width:{{container_width}};
     {% if container_bg_color != blank and container_bg_gradient == blank and container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
-    background: {{ container_bg_color }};
-  {% endif %}
-  {% if container_bg_gradient != blank and  container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
-    background: {{ container_bg_gradient }};
-  {% endif %}
-  {% if container_bg_image != placeholder and  container_bg_image != placeholderV2 %}
-    {% if container_bg_image != blank %}
-      background: url('{{container_bg_image}}');
+        background: {{ container_bg_color }};
     {% endif %}
-  {% endif %}
-  {% if container_padding_top_desktop != blank %}
-    padding-top: {{ container_padding_top_desktop }}px;
-  {% endif %}
-  {% if container_padding_bottom_desktop != blank %}
-    padding-bottom: {{ container_padding_bottom_desktop }}px;
-  {% endif %}
-
+    {% if container_bg_gradient != blank and  container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
+        background: {{ container_bg_gradient }};
+    {% endif %}
+    {% if container_bg_image != placeholder and  container_bg_image != placeholderV2 %}
+        {% if container_bg_image != blank %}
+            background: url('{{container_bg_image}}');
+        {% endif %}
+    {% endif %}
+    {% if container_padding_top_desktop != blank %}
+        padding-top: {{ container_padding_top_desktop }}px;
+    {% endif %}
+    {% if container_padding_bottom_desktop != blank %}
+        padding-bottom: {{ container_padding_bottom_desktop }}px;
+    {% endif %}
   }
 
   #{{ sectionID }}  .direct-hero-block-container {
@@ -432,14 +424,17 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     overflow: hidden;
     width: var(--content-wrapper-width);
   }
+
   #blockItemWrapper {
     height: 50%;
     gap: var(--block-grid-gap);
   }
+
   #blockContainer {
     display: flex;
     flex-direction: column;
   }
+
   #{{ sectionID }} .direct-hero-text {
     padding: 20px;
     display: flex;
@@ -449,16 +444,19 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     background-size: cover !important;
     transition: transform 0.5s ease-in-out;
   }
+
   #{{ sectionID }} .image-only:hover{
     {% if section.settings.zoom_background == true %}
-    transform: scale(1.05);
-{% endif %}
+        transform: scale(1.05);
+    {% endif %}
   }
+
   #{{ sectionID }} .direct-hero-block-container figure {
     margin: 0;
     display: flex;
     overflow: hidden;
   }
+
 .small_image_item_wrapper{
     display: flex;
     justify-content: space-evenly;
@@ -472,18 +470,21 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     text-transform: uppercase;
     opacity: 0.95;
   }
+
   #{{ sectionID }} .heroTitle {
     font-family: var(--hero-heading-font) !important;
     font-weight: 700;
     padding: 10px 50px;
     line-height: 40px !important;
   }
+
   #{{ sectionID }} .heroText {
     padding: 0 50px;
     font-weight: 400 !important;
     line-height: 22px;
     font-family: 'Montserrat',sans-serif;
   }
+
   #{{ sectionID }} .hero-button-primary {
     text-decoration: none;
     padding: 10px 20px;
@@ -495,52 +496,48 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     text-align: center;
     transition: all .5s cubic-bezier(.25,.46,.45,.94);
     transform: translate(0);
-  
   }
+
   #{{ sectionID }} .container {
     display: flex;
   }
-  @media all and (max-width: 1440px) {
+@media all and (max-width: 1440px) {
     #{{ sectionID }} .container {
     flex-direction: column;
   } }
-  @media all and (max-width: 992px) {
-
-
-#{{ sectionID }} .direct-hero-block-container,
-#{{ sectionID }} div#blockContainer,
-#{{ sectionID }} .text-button-wrapper,
-#{{ sectionID }} .small_image_item_wrapper
-{
-    width: 100% !important;
-}
-
-#{{ sectionID }} .small_image_item_wrapper {
-    padding: 30px;
-}
-
-#{{ sectionID }} section#\32 1755650146582custom_image_banner_LxNq9R {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-figure {
-    justify-content: flex-end;
-}
-    #{{ sectionID }} .hero-button-primary {
-      margin: 10px !important;
+@media all and (max-width: 992px) {
+    #{{ sectionID }} .direct-hero-block-container,
+    #{{ sectionID }} div#blockContainer,
+    #{{ sectionID }} .text-button-wrapper,
+    #{{ sectionID }} .small_image_item_wrapper
+    {
+        width: 100% !important;
     }
-#{{ sectionID }}  .direct-hero-content_wrapper {
-  {% if container_padding_top_tablet != blank %}
-  padding-top: {{container_padding_top_tablet}}px;
-{% endif %}
-{% if container_padding_bottom_tablet != blank %}
-  padding-bottom: {{container_padding_bottom_tablet}}px;
-{% endif %}
 
-}
+    #{{ sectionID }} .small_image_item_wrapper {
+        padding: 30px;
+    }
 
+    #{{ sectionID }} section#\32 1755650146582custom_image_banner_LxNq9R {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    figure {
+        justify-content: flex-end;
+    }
+    #{{ sectionID }} .hero-button-primary {
+        margin: 10px !important;
+    }
+    #{{ sectionID }}  .direct-hero-content_wrapper {
+        {% if container_padding_top_tablet != blank %}
+            padding-top: {{container_padding_top_tablet}}px;
+        {% endif %}
+        {% if container_padding_bottom_tablet != blank %}
+            padding-bottom: {{container_padding_bottom_tablet}}px;
+        {% endif %}
+
+    }
     #{{ sectionID }} .heroText {
       padding: 30px 50px !important;
     }
@@ -562,13 +559,13 @@ figure {
       font-size: 28px;
     }
     #{{ sectionID }}  .direct-hero-content_wrapper {
-  {% if container_padding_top_mobile != blank %}
-  padding-top: {{container_padding_top_mobile}}px;
-{% endif %}
-{% if container_padding_bottom_mobile != blank %}
-  padding-bottom: {{container_padding_bottom_mobile}}px;
-{% endif %}
-}
+        {% if container_padding_top_mobile != blank %}
+            padding-top: {{container_padding_top_mobile}}px;
+        {% endif %}
+        {% if container_padding_bottom_mobile != blank %}
+            padding-bottom: {{container_padding_bottom_mobile}}px;
+        {% endif %}
+    }
   }
 .block_item_wrapper {
     display: flex;
@@ -597,19 +594,6 @@ figure {
     margin: 0;
 }
 </style>
-
-<style>
-    var(--block-grid-gap);
-    var(--block-title-font-size);
-    var(--block-title-font-size-mobile);
-    var(--block-title-spacing-bottom);
-    var(--block-title-spacing-bottom-mobile);
-    var(--block-subtitle-font-size-mobile);
-    var(--block-subtitle-spacing-bottom);
-    var(--block-subtitle-spacing-bottom-mobile);
-    var(--block-btn-size);
-    var(--block-btn-width);
-    </style>
 <script>
 let blockItemWrapper = document.getElementById("blockItemWrapper");
 let blockContainer = document.getElementById("blockContainer");
