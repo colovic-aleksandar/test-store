@@ -10,7 +10,8 @@ assign container_bg_image = section.settings.container_background_image | img_ur
 assign container_padding_top_desktop = section.settings.container_padding_top_desktop
 assign container_padding_top_tablet = section.settings.container_padding_top_tablet
 assign container_padding_top_mobile = section.settings.container_padding_top_mobile
-
+assign placeholder = '//aleksandar-colovic.myshopify.com/cdn/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+assign placeholderV2 = '//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'  
 assign container_padding_bottom_desktop = section.settings.container_padding_bottom_desktop
 assign container_padding_bottom_tablet = section.settings.container_padding_bottom_tablet
 assign container_padding_bottom_mobile = section.settings.container_padding_bottom_mobile
@@ -195,21 +196,23 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     min-height: 570px;
     height: 100%;
     width:{{container_width}};
-{% if container_bg_color != blank and container_bg_gradient == blank and container_bg_image == blank %}
-  background: {{container_bg_color}};
-{% endif %}
-{% if container_bg_gradient != blank and container_bg_image == blank %}
-  background: {{container_bg_gradient}};
-{% endif %}
-{% if container_bg_image != blank %}
-  background: url('{{container_bg_image}}');
-{% endif %}
-{% if container_padding_top_desktop != blank %}
-  padding-top: {{container_padding_top_desktop}}px;
-{% endif %}
-{% if container_padding_bottom_desktop != blank %}
-  padding-bottom: {{container_padding_bottom_desktop}}px;
-{% endif %}
+    {% if container_bg_color != blank and container_bg_gradient == blank and container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
+    background: {{ container_bg_color }};
+  {% endif %}
+  {% if container_bg_gradient != blank and  container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
+    background: {{ container_bg_gradient }};
+  {% endif %}
+  {% if container_bg_image != placeholder and  container_bg_image != placeholderV2 %}
+    {% if container_bg_image != blank %}
+      background: url('{{container_bg_image}}');
+    {% endif %}
+  {% endif %}
+  {% if container_padding_top_desktop != blank %}
+    padding-top: {{ container_padding_top_desktop }}px;
+  {% endif %}
+  {% if container_padding_bottom_desktop != blank %}
+    padding-bottom: {{ container_padding_bottom_desktop }}px;
+  {% endif %}
 
   }
 

@@ -1,0 +1,1543 @@
+{{ 'base-test.css' | asset_url | stylesheet_tag }}
+{% liquid 
+assign sectionID = 'shopify-section-' | append: section.id 
+assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
+assign customClass = section.settings.direct_custom_class
+assign container_width = section.settings.container_width
+assign container_bg_color = section.settings.container_background_color
+assign container_bg_gradient = section.settings.container_background_gradient
+assign container_bg_image = section.settings.container_background_image | img_url: 'master'
+assign container_padding_top_desktop = section.settings.container_padding_top_desktop
+assign container_padding_top_tablet = section.settings.container_padding_top_tablet
+assign container_padding_top_mobile = section.settings.container_padding_top_mobile
+assign placeholder = '//aleksandar-colovic.myshopify.com/cdn/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+assign placeholderV2 = '//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'  
+assign container_padding_bottom_desktop = section.settings.container_padding_bottom_desktop
+assign container_padding_bottom_tablet = section.settings.container_padding_bottom_tablet
+assign container_padding_bottom_mobile = section.settings.container_padding_bottom_mobile
+%}
+
+
+<section id="{{ divID}}" class="direct-hero-content_wrapper {% if customClass != blank %} {{customClass}}  {% endif %}">
+  {% if section.blocks.size > 0 %}
+    <link rel="stylesheet" href="{{ 'component-custom-image-banner-block.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'component-custom-image-banner-block.css' | asset_url | stylesheet_tag }}</noscript>
+<div id="blockContainer" class="direct-hero-block-container"> 
+  {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'small_image' %}
+            {% liquid 
+            assign  si_item_image_1 = block.settings.si_item_image_1 | image_url: 'master'
+            assign  si_item_image_2 = block.settings.si_item_image_2 | image_url: 'master'
+            assign  si_item_image_3 = block.settings.si_item_image_3 | image_url: 'master'
+            assign  si_item_image_4 = block.settings.si_item_image_4 | image_url: 'master' %}
+ 
+            <div id="blockItemWrapper"class="block_item_wrapper"
+                data-wrapper-width= "{{block.settings.block_width}}" style="
+                --block-grid-gap: {{block.settings.block_grid_gap |  append: 'px'}};
+                --block-border-radius: {{ block.settings.block_border_radius | append: 'px' }};
+                --block-spacing-horizontal: {{block.settings.block_spacing_horizontal | append: 'px'}};
+                --block-spacing-vertical: {{block.settings.block_spacing_vertical | append: 'px' }};
+                ">
+                <div class="small_image_item_wrapper" style="
+                    {% if block.settings.enable_item_1 == false  %} display: none; {% endif %}
+                    width:{{ block.settings.si_item_1_width}};
+                    margin-bottom:{{block.settings.si_item_1_spacing_bottom}}px">
+                    <div class="text-button-wrapper">
+                        <p class="small_image_text" style="
+                          color:{{block.settings.si_item_title_color_1 }};
+                        --block-title-font-size: {{block.settings.block_title_font_size | append: 'px' }};
+                        --block-title-font-size-mobile: {{block.settings.block_title_font_size_mobile | append: 'px' }};
+                        --block-title-spacing-bottom: {{block.settings.block_title_spacing_bottom | append: 'px' }};
+                        --block-title-spacing-bottom-mobile: {{block.settings.block_title_spacing_bottom_mobile | append: 'px' }};
+                        ">{{block.settings.si_item_text_1}}</p>
+
+                        <p class="small_image_subtext" style="
+                        color:{{block.settings.si_item_subtitle_color_1 }};
+                        --block-subtitle-font-size-mobile: {{block.settings.block_subtitle_font_size_mobile | append: 'px' }};
+                        --block-subtitle-font-size: {{block.settings.block_subtitle_font_size | append: 'px' }};
+                        --block-subtitle-spacing-bottom: {{block.settings.block_subtitle_spacing_bottom | append: 'px' }};
+                        --block-subtitle-spacing-bottom-mobile: {{block.settings.block_subtitle_spacing_bottom_mobile | append: 'px' }};
+                        ">
+                            {{block.settings.si_item_subtext_1}}
+                        </p>
+                        <a href="{{block.settings.si_item_button_link_1}}" style="
+                        --block-btn-font-size: {{block.settings.block_btn_size |  append: 'px'}};
+                        --block-btn-width: {{block.settings.block_btn_width |  append: 'px'}};
+                        color: {{block.settings.si_item_button_color_1}};
+                        background:{{block.settings.si_item_button_background_color_1}};
+                        border: 1px solid {{block.settings.si_item_button_border_color_1}};
+                        "class="small_image_button">{{block.settings.button_text_1}}</a>
+                        <style>
+                            .small_image_button:hover {
+                                color: {{block.settings.si_item_button_color_1_hover}} !important;
+                                background:{{block.settings.si_item_button_background_color_1_hover}} !important;
+                                border: 1px solid {{block.settings.si_item_button_border_color_1_hover}} !important;
+                            }
+                        </style>
+                    </div>
+                    <figure>
+                        {% render 'snippet-image'
+                        , image: si_item_image_1 
+                        , loadingLazy: 'false'
+                        , class: 'direct-hero-image' %}
+                    </figure>
+                </div>
+
+                <div class="small_image_item_wrapper" style="
+                    {% if block.settings.enable_item_2 == false  %} display: none; {% endif %}
+                    width:{{ block.settings.si_item_2_width}};
+                    margin-bottom:{{block.settings.si_item_2_spacing_bottom}}px">
+                    <div class="text-button-wrapper">
+                        <p class="small_image_text" style="
+                          color:{{block.settings.si_item_title_color_2 }};
+                        --block-title-font-size: {{block.settings.block_title_font_size | append: 'px' }};
+                        --block-title-font-size-mobile: {{block.settings.block_title_font_size_mobile | append: 'px' }};
+                        --block-title-spacing-bottom: {{block.settings.block_title_spacing_bottom | append: 'px' }};
+                        --block-title-spacing-bottom-mobile: {{block.settings.block_title_spacing_bottom_mobile | append: 'px' }};
+                        ">{{block.settings.si_item_text_2}}</p>
+
+                        <p class="small_image_subtext" style="
+                        color:{{block.settings.si_item_subtitle_color_2 }};
+                        --block-subtitle-font-size-mobile: {{block.settings.block_subtitle_font_size_mobile | append: 'px' }};
+                        --block-subtitle-font-size: {{block.settings.block_subtitle_font_size | append: 'px' }};
+                        --block-subtitle-spacing-bottom: {{block.settings.block_subtitle_spacing_bottom | append: 'px' }};
+                        --block-subtitle-spacing-bottom-mobile: {{block.settings.block_subtitle_spacing_bottom_mobile | append: 'px' }};
+                        ">
+                            {{block.settings.si_item_subtext_2}}
+                        </p>
+                        <a href="{{block.settings.si_item_button_link_2}}" style="
+                        --block-btn-font-size: {{block.settings.block_btn_size |  append: 'px'}};
+                        --block-btn-width: {{block.settings.block_btn_width |  append: 'px'}};
+                        color: {{block.settings.si_item_button_color_2}};
+                        background:{{block.settings.si_item_button_background_color_2}};
+                        border: 2px solid {{block.settings.si_item_button_border_color_2}};
+                        "class="small_image_button">{{block.settings.button_text_2}}</a>
+                        <style>
+                            .small_image_button:hover {
+                                color: {{block.settings.si_item_button_color_2_hover}} !important;
+                                background:{{block.settings.si_item_button_background_color_2_hover}} !important;
+                                border: 2px solid {{block.settings.si_item_button_border_color_2_hover}} !important;
+                            }
+                        </style>
+                    </div>
+                    <figure>
+                        {% render 'snippet-image'
+                        , image: si_item_image_2 
+                        , loadingLazy: 'false'
+                        , class: 'direct-hero-image' %}
+                    </figure>
+                </div>
+
+                <div class="small_image_item_wrapper" style="
+                    {% if block.settings.enable_item_3 == false  %} display: none; {% endif %}
+                    width:{{ block.settings.si_item_3_width}};
+                    margin-bottom:{{block.settings.si_item_3_spacing_bottom}}px">
+                    <div class="text-button-wrapper">
+                        <p class="small_image_text" style="
+                          color:{{block.settings.si_item_title_color_3 }};
+                        --block-title-font-size: {{block.settings.block_title_font_size | append: 'px' }};
+                        --block-title-font-size-mobile: {{block.settings.block_title_font_size_mobile | append: 'px' }};
+                        --block-title-spacing-bottom: {{block.settings.block_title_spacing_bottom | append: 'px' }};
+                        --block-title-spacing-bottom-mobile: {{block.settings.block_title_spacing_bottom_mobile | append: 'px' }};
+                        ">{{block.settings.si_item_text_3}}</p>
+
+                        <p class="small_image_subtext" style="
+                        color:{{block.settings.si_item_subtitle_color_3 }};
+                        --block-subtitle-font-size-mobile: {{block.settings.block_subtitle_font_size_mobile | append: 'px' }};
+                        --block-subtitle-font-size: {{block.settings.block_subtitle_font_size | append: 'px' }};
+                        --block-subtitle-spacing-bottom: {{block.settings.block_subtitle_spacing_bottom | append: 'px' }};
+                        --block-subtitle-spacing-bottom-mobile: {{block.settings.block_subtitle_spacing_bottom_mobile | append: 'px' }};
+                        ">
+                            {{block.settings.si_item_subtext_3}}
+                        </p>
+                        <a href="{{block.settings.si_item_button_link_3}}" style="
+                        --block-btn-font-size: {{block.settings.block_btn_size |  append: 'px'}};
+                        --block-btn-width: {{block.settings.block_btn_width |  append: 'px'}};
+                        color: {{block.settings.si_item_button_color_3}};
+                        background:{{block.settings.si_item_button_background_color_3}};
+                        border: 3px solid {{block.settings.si_item_button_border_color_3}};
+                        "class="small_image_button">{{block.settings.button_text_3}}</a>
+                        <style>
+                            .small_image_button:hover {
+                                color: {{block.settings.si_item_button_color_3_hover}} !important;
+                                background:{{block.settings.si_item_button_background_color_3_hover}} !important;
+                                border: 3px solid {{block.settings.si_item_button_border_color_3_hover}} !important;
+                            }
+                        </style>
+                    </div>
+                    <figure>
+                        {% render 'snippet-image'
+                        , image: si_item_image_3 
+                        , loadingLazy: 'false'
+                        , class: 'direct-hero-image' %}
+                    </figure>
+                </div>
+
+                <div class="small_image_item_wrapper" style="
+                    {% if block.settings.enable_item_4 == false  %} display: none; {% endif %}
+                    width:{{ block.settings.si_item_4_width}};
+                    margin-bottom:{{block.settings.si_item_4_spacing_bottom}}px">
+                    <div class="text-button-wrapper">
+                        <p class="small_image_text" style="
+                          color:{{block.settings.si_item_title_color_4 }};
+                        --block-title-font-size: {{block.settings.block_title_font_size | append: 'px' }};
+                        --block-title-font-size-mobile: {{block.settings.block_title_font_size_mobile | append: 'px' }};
+                        --block-title-spacing-bottom: {{block.settings.block_title_spacing_bottom | append: 'px' }};
+                        --block-title-spacing-bottom-mobile: {{block.settings.block_title_spacing_bottom_mobile | append: 'px' }};
+                        ">{{block.settings.si_item_text_4}}</p>
+
+                        <p class="small_image_subtext" style="
+                        color:{{block.settings.si_item_subtitle_color_4 }};
+                        --block-subtitle-font-size-mobile: {{block.settings.block_subtitle_font_size_mobile | append: 'px' }};
+                        --block-subtitle-font-size: {{block.settings.block_subtitle_font_size | append: 'px' }};
+                        --block-subtitle-spacing-bottom: {{block.settings.block_subtitle_spacing_bottom | append: 'px' }};
+                        --block-subtitle-spacing-bottom-mobile: {{block.settings.block_subtitle_spacing_bottom_mobile | append: 'px' }};
+                        ">
+                            {{block.settings.si_item_subtext_4}}
+                        </p>
+                        <a href="{{block.settings.si_item_button_link_4}}" style="
+                        --block-btn-font-size: {{block.settings.block_btn_size |  append: 'px'}};
+                        --block-btn-width: {{block.settings.block_btn_width |  append: 'px'}};
+                        color: {{block.settings.si_item_button_color_4}};
+                        background:{{block.settings.si_item_button_background_color_4}};
+                        border: 4px solid {{block.settings.si_item_button_border_color_4}};
+                        "class="small_image_button">{{block.settings.button_text_4}}</a>
+                        <style>
+                            .small_image_button:hover {
+                                color: {{block.settings.si_item_button_color_4_hover}} !important;
+                                background:{{block.settings.si_item_button_background_color_4_hover}} !important;
+                                border: 4px solid {{block.settings.si_item_button_border_color_4_hover}} !important;
+                            }
+                        </style>
+                    </div>
+                    <figure>
+                        {% render 'snippet-image'
+                        , image: si_item_image_4 
+                        , loadingLazy: 'false'
+                        , class: 'direct-hero-image' %}
+                    </figure>
+                </div>
+            </div>
+            
+        {% endcase %}
+
+  {% endfor %}
+  </div>
+      {% for block in section.blocks  %}
+        {% case block.type %}
+        {% when 'large_image' %}
+        {% liquid
+            assign directIntro = block.settings.direct_Intro
+            assign directTitle = block.settings.direct_Title
+            assign directText = block.settings.direct_Text
+            assign directBackgroundColor = block.settings.direct_background_color
+            assign directButton1Text = block.settings.direct_hero_btn1_text
+            assign directButton1Url = block.settings.direct_hero_btn1_url
+            assign directButton2Text = block.settings.direct_hero_btn2_text
+            assign directButton2Url = block.settings.direct_hero_btn2_url
+            assign placeholder =  '//aleksandar-colovic.myshopify.com/cdn/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+            assign placeholderV2 = '//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+            assign block_width = block.settings.block_width
+            assign block_border_radius = block.settings.block_border_radius
+            assign block_spacing_top = block.settings.block_spacing_top
+            assign block_spacing_bottom = block.settings.block_spacing_bottom
+            assign align_items_v =  block.settings.align_items_v
+            assign align_items_h =  block.settings.align_items_h
+            assign direct_Intro_color = block.settings.direct_Intro_color
+            assign direct_Intro_font_size = block.settings.direct_Intro_font_size
+            assign direct_Intro_spacing_bottom = block.settings.direct_Intro_spacing_bottom
+            assign direct_Title_color = block.settings.direct_Title_color
+            assign direct_Title_font_size = block.settings.direct_Title_font_size
+            assign direct_Title_spacing_bottom = block.settings.direct_Title_spacing_bottom
+            assign direct_Text_color = block.settings.direct_Text_color
+            assign direct_Text_font_size = block.settings.direct_Text_font_size
+            assign direct_Text_spacing_bottom = block.settings.direct_Text_spacing_bottom
+            
+          assign direct_hero_btn1_size = block.settings.direct_hero_btn1_size
+          assign direct_hero_btn1_width = block.settings.direct_hero_btn1_width
+          assign direct_hero_btn1_color = block.settings.direct_hero_btn1_color
+          assign direct_hero_btn1_color_bg = block.settings.direct_hero_btn1_color_bg
+          assign direct_hero_btn1_color_hover = block.settings.direct_hero_btn1_color_hover
+          assign direct_hero_btn1_color_bg_hover = block.settings.direct_hero_btn1_color_bg_hover
+
+          assign direct_hero_btn2_size = block.settings.direct_hero_btn2_size
+          assign direct_hero_btn2_width = block.settings.direct_hero_btn2_width
+          assign direct_hero_btn2_color = block.settings.direct_hero_btn2_color
+          assign direct_hero_btn2_color_bg = block.settings.direct_hero_btn2_color_bg
+          assign direct_hero_btn2_color_hover = block.settings.direct_hero_btn2_color_hover
+          assign direct_hero_btn2_color_bg_hover = block.settings.direct_hero_btn2_color_bg_hover
+            %}
+
+        {% assign backgroundImage = block.settings.background_image | img_url: 'master'%}
+        {% assign introImage = block.settings.direct_intro_image | image_url: 'master'%}
+        
+      
+    <div class="direct-hero-block-container" style="{% if block_width !=blank %}width:{{block_width}};{% endif %}{% if block_border_radius != 0 %}border-radius: {{block_border_radius}}px;{% endif %}">
+        <div class="direct-hero-text"  style=" 
+          {% if directBackgroundColor != blank %}
+            background: {{directBackgroundColor}}; 
+            {% endif %}
+          {% if backgroundImage != placeholder and  backgroundImage != placeholderV2 %}
+            {% if backgroundImage != blank %}
+            background: url('{{backgroundImage}}');
+            {% endif %}
+
+          {% endif %}
+          {% if block_spacing_top !=blank %}
+            padding-top:{{block_spacing_top}}px;
+          {% endif %}
+          {% if block_spacing_bottom !=blank %}
+            padding-bottom:{{block_spacing_bottom}}px;
+          {% endif %}
+          justify-content: {{align_items_v}};
+          align-items: {{align_items_h}};
+          " >
+            {% if introImage %}
+                <figure style="justify-content: center; margin-bottom: 20px;">
+                    {% render 'snippet-image'
+                    , image: introImage
+                    , loadingLazy: 'false'
+                    , class: 'direct-hero-image' %}
+                </figure>
+            {% endif %}
+          {% if directIntro != blank  %}
+            <p class="table-subheading heroIntro text-center c-title text-white" style=" 
+              {% if direct_Intro_color != blank %}
+              color: {{direct_Intro_color}};
+              {% endif %}
+
+              
+              {% if direct_Intro_font_size != 0 %}
+              font-size: {{direct_Intro_font_size}}px;
+              {% endif %}
+              {% if direct_Intro_spacing_bottom != 0 %}
+              padding-bottom: {{direct_Intro_spacing_bottom}}px;
+              {% endif %}
+              ">
+              {{ directIntro }}
+            </p>
+          {% endif %}
+      
+          {% if directTitle != blank %}
+            <p class="table-heading heroTitle text-center c-title text-white"
+            style=" 
+              {% if direct_Title_color != blank %}
+              color: {{direct_Title_color}};
+              {% endif %}
+
+              {% if direct_Title_font_size != 0 %}
+              font-size: {{direct_Title_font_size}}px;
+              {% endif %}
+              {% if direct_Title_spacing_bottom != 0 %}
+              padding-bottom: {{direct_Title_spacing_bottom}}px;
+              {% endif %}
+              ">
+              {{ directTitle }}
+            </p>
+          {% endif %}
+      
+          {% if directText != blank %}
+            <p class="heroText text-center c-title"
+            style=" 
+              {% if direct_Text_color != blank %}
+              color: {{direct_Text_color}};
+              {% endif %}
+
+              {% if direct_Intro_font_size != 0 %}
+              font-size: {{direct_Text_font_size}}px;
+              {% endif %}
+              {% if direct_Intro_spacing_bottom != 0 %}
+              padding-bottom: {{direct_Text_spacing_bottom}}px;
+              {% endif %}
+              ">
+              {{ directText }}
+            </p>
+          {% endif %}
+          {% if directButton1Text != blank or directButton2Text != blank %}
+          <div class="container">
+      
+            <a href="{{ directButton1Url }}" class="hero-button-primary btn1"
+            style="
+            font-size: {{direct_hero_btn1_size}}px;
+            width: {{direct_hero_btn1_width}}px !important;
+            color: {{direct_hero_btn1_color}};
+            background-color: {{direct_hero_btn1_color_bg}};
+            ">{{ directButton1Text }}</a>
+      
+            <a href="{{ directButton2Url }}" class="hero-button-primary btn2" style="
+            font-size: {{direct_hero_btn2_size}}px;
+            width: {{direct_hero_btn2_width}}px !important;
+            color: {{direct_hero_btn2_color}};
+            background-color: {{direct_hero_btn2_color_bg}};
+            ">{{ directButton2Text }}</a>
+          </div>
+          {% endif %}
+          <style>
+            .btn1:hover {
+              {%if direct_hero_btn1_color_hover != blank %}
+              color: {{direct_hero_btn1_color_hover}} !important;
+              {% endif %}
+              {%if direct_hero_btn1_color_bg_hover != blank %}
+              background: {{direct_hero_btn1_color_bg_hover}} !important;
+              {% endif %}
+            }
+
+            .btn2:hover {
+              {%if direct_hero_btn2_color_hover != blank %}
+              color: {{direct_hero_btn2_color_hover}} !important;
+              {% endif %}
+              {%if direct_hero_btn2_color_bg_hover != blank %}
+              background: {{direct_hero_btn2_color_bg_hover}} !important;
+              {% endif %}
+            }
+          </style>
+        </div>
+
+    </div>
+        {% endcase %}
+      {% endfor %}
+
+
+    {% endif %}
+</section> 
+<style>
+#{{ sectionID }}  .direct-hero-content_wrapper {
+    display: flex;
+    min-height: 570px;
+    height: 100%;
+    width:{{container_width}};
+    {% if container_bg_color != blank and container_bg_gradient == blank and container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
+    background: {{ container_bg_color }};
+  {% endif %}
+  {% if container_bg_gradient != blank and  container_bg_image == placeholder or  container_bg_image == placeholderV2 %}
+    background: {{ container_bg_gradient }};
+  {% endif %}
+  {% if container_bg_image != placeholder and  container_bg_image != placeholderV2 %}
+    {% if container_bg_image != blank %}
+      background: url('{{container_bg_image}}');
+    {% endif %}
+  {% endif %}
+  {% if container_padding_top_desktop != blank %}
+    padding-top: {{ container_padding_top_desktop }}px;
+  {% endif %}
+  {% if container_padding_bottom_desktop != blank %}
+    padding-bottom: {{ container_padding_bottom_desktop }}px;
+  {% endif %}
+
+  }
+
+  #{{ sectionID }}  .direct-hero-block-container {
+    display: flex;
+    overflow: hidden;
+    width: var(--content-wrapper-width);
+  }
+  #blockItemWrapper {
+    height: 50%;
+    gap: var(--block-grid-gap);
+  }
+  #blockContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  #{{ sectionID }} .direct-hero-text {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-position: center !important;
+    background-size: cover !important;
+    transition: transform 0.5s ease-in-out;
+  }
+  #{{ sectionID }} .image-only:hover{
+    {% if section.settings.zoom_background == true %}
+    transform: scale(1.05);
+{% endif %}
+  }
+  #{{ sectionID }} .direct-hero-block-container figure {
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+  }
+.small_image_item_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
+  #{{ sectionID }} .heroIntro {
+    font-family: 'Montserrat'
+    , sans-serif !important;
+    text-transform: uppercase;
+    opacity: 0.95;
+  }
+  #{{ sectionID }} .heroTitle {
+    font-family: var(--hero-heading-font) !important;
+    font-weight: 700;
+    padding: 10px 50px;
+    line-height: 40px !important;
+  }
+  #{{ sectionID }} .heroText {
+    padding: 0 50px;
+    font-weight: 400 !important;
+    line-height: 22px;
+    font-family: 'Montserrat',sans-serif;
+  }
+  #{{ sectionID }} .hero-button-primary {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: var(--body-font);
+    margin: 5px;
+    text-align: center;
+    transition: all .5s cubic-bezier(.25,.46,.45,.94);
+    transform: translate(0);
+  
+  }
+  #{{ sectionID }} .container {
+    display: flex;
+  }
+  @media all and (max-width: 1440px) {
+    #{{ sectionID }} .container {
+    flex-direction: column;
+  } }
+  @media all and (max-width: 992px) {
+
+
+#{{ sectionID }} .direct-hero-block-container,
+#{{ sectionID }} div#blockContainer,
+#{{ sectionID }} .text-button-wrapper,
+#{{ sectionID }} .small_image_item_wrapper
+{
+    width: 100% !important;
+}
+
+#{{ sectionID }} .small_image_item_wrapper {
+    padding: 30px;
+}
+
+#{{ sectionID }} section#\32 1755650146582custom_image_banner_LxNq9R {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+figure {
+    justify-content: flex-end;
+}
+    #{{ sectionID }} .hero-button-primary {
+      margin: 10px !important;
+    }
+#{{ sectionID }}  .direct-hero-content_wrapper {
+  {% if container_padding_top_tablet != blank %}
+  padding-top: {{container_padding_top_tablet}}px;
+{% endif %}
+{% if container_padding_bottom_tablet != blank %}
+  padding-bottom: {{container_padding_bottom_tablet}}px;
+{% endif %}
+
+}
+
+    #{{ sectionID }} .heroText {
+      padding: 30px 50px !important;
+    }
+    #{{ sectionID }} .heroTitle {
+      font-size: 32px;
+    }
+  }
+  @media all and (max-width: 768px) {
+    #{{ sectionID }} .container {
+      flex-direction: column;
+    }
+    #{{ sectionID }} .direct-hero-text {
+      padding: 50px 0;
+    }
+    #{{ sectionID }}  .hero-button-primary {
+      margin: 10px;
+    }
+    #{{ sectionID }}  .heroTitle {
+      font-size: 28px;
+    }
+    #{{ sectionID }}  .direct-hero-content_wrapper {
+  {% if container_padding_top_mobile != blank %}
+  padding-top: {{container_padding_top_mobile}}px;
+{% endif %}
+{% if container_padding_bottom_mobile != blank %}
+  padding-bottom: {{container_padding_bottom_mobile}}px;
+{% endif %}
+}
+  }
+.block_item_wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border-radius: var(--block-border-radius);
+    padding: var(--block-spacing-horizontal) var(--block-spacing-vertical);
+}
+.small_image_text {
+    font-size: var(--block-title-font-size);
+    padding-bottom:  var(--block-title-spacing-bottom);
+}
+.small_image_subtext {
+    font-size: var(--block-subtitle-font-size);
+    padding-bottom:  var(--block-subtitle-spacing-bottom);
+}
+.small_image_button {
+    font-size: var(--block-btn-font-size);
+    width: var(--block-btn-width);
+}
+.text-button-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.text-button-wrapper p {
+    margin: 0;
+}
+</style>
+
+<style>
+    var(--block-grid-gap);
+    var(--block-title-font-size);
+    var(--block-title-font-size-mobile);
+    var(--block-title-spacing-bottom);
+    var(--block-title-spacing-bottom-mobile);
+    var(--block-subtitle-font-size-mobile);
+    var(--block-subtitle-spacing-bottom);
+    var(--block-subtitle-spacing-bottom-mobile);
+    var(--block-btn-size);
+    var(--block-btn-width);
+    </style>
+<script>
+let blockItemWrapper = document.getElementById("blockItemWrapper");
+let blockContainer = document.getElementById("blockContainer");
+let width;
+ if (blockItemWrapper.hasAttribute('data-wrapper-width') ) {
+         width = blockItemWrapper.getAttribute('data-wrapper-width');
+         console.log(width)
+         blockContainer.style.width = width;
+         
+    }
+</script>
+{% schema %}
+  {
+    "name": "Custom Image Banner - V2",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "direct_custom_class",
+        "label": "Custom Class"
+      },  
+      {
+        "type": "select",
+        "id": "container_width",
+        "label": "Layout:",
+        "default": "100%",
+        "options": [
+            {
+                "value": "1170px",
+                "label": "Width(1170px)"
+            },
+            {
+                "value": "1770px",
+                "label": "Width(1770px)"
+            },
+            {
+                "value": "100%",
+                "label": "Full Width"
+            }
+        ]
+    },
+    {
+        "type": "color",
+        "id": "container_background_color",
+        "label": "Background Color"
+    },  
+    {
+        "type": "color_background",
+        "id": "container_background_gradient",
+        "label": "Background Gradient"
+    },
+    {
+        "type": "image_picker",
+        "id": "container_background_image",
+        "label": "Background Image"
+    },
+    {
+        "type":"header",
+        "content": "Spacing Top"
+    },  
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_desktop",
+        "label": "Desktop"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_tablet",
+        "label": "Tablet"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_top_mobile",
+        "label": "Mobile"
+    },
+    {
+        "type":"header",
+        "content": "Spacing Bottom"
+    },  
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_desktop",
+        "label": "Desktop"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_tablet",
+        "label": "Tablet"
+    },
+    {
+        "type": "range",
+        "min":0,
+        "max": 30,
+        "default": 0,
+        "unit": "px",
+        "step": 1,
+        "id": "container_padding_bottom_mobile",
+        "label": "Mobile"
+    },
+    {
+            "type": "checkbox",
+            "id": "zoom_background",
+            "label": "Zoom Background Image On Hover",
+            "default": true
+        }
+    ],
+    "presets": [
+      {
+        "name": "Custom Image Banner - V2"
+      }
+    ],
+    "blocks": [
+     {
+       "name": "Large Image",
+       "type": "large_image",
+       "settings": [
+        {
+        "type": "text",
+        "id": "block_width",
+        "label": "Item Width",
+        "default": "33.33%",
+        "info": "Example: 50%"
+
+      },
+      {
+        "type": "range",
+        "id": "block_border_radius",
+        "label": "Item Border Radius",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_spacing_top",
+        "label": "Item Spacing Top",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_spacing_bottom",
+        "label": "Item Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "image_picker",
+        "id": "direct_intro_image",
+        "label": "Intro Image"
+      },
+        {
+        "type": "text",
+        "id": "direct_Intro",
+        "label": "Hero Intro"
+      },
+      {
+        "type": "color",
+        "id": "direct_Intro_color",
+        "label": "Hero Intro Color"
+      },
+      {
+        "type": "range",
+        "id": "direct_Intro_font_size",
+        "label": "Hero Intro Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "direct_Intro_spacing_bottom",
+        "label": "Hero Intro Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "text",
+        "id": "direct_Title",
+        "label": "Hero Title"
+      },
+      {
+        "type": "color",
+        "id": "direct_Title_color",
+        "label": "Hero Title Color"
+      },
+      {
+        "type": "range",
+        "id": "direct_Title_font_size",
+        "label": "Hero Title Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "direct_Title_spacing_bottom",
+        "label": "Hero Title Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "textarea",
+        "id": "direct_Text",
+        "label": "Section Text"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_Text_color",
+        "label": "Hero Text Color"
+      },
+      {
+        "type": "range",
+        "id": "direct_Text_font_size",
+        "label": "Hero Text Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "direct_Text_spacing_bottom",
+        "label": "Hero Text Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "direct_hero_btn1_text",
+        "label": "Hero Button 1 Text"
+      }, {
+        "type": "url",
+        "id": "direct_hero_btn1_url",
+        "label": "Hero Button 1 URL"
+      },
+        {
+        "type": "range",
+        "id": "direct_hero_btn1_size",
+        "label": "Hero Button 1 Font Size",
+        "min": 16,
+        "max":60,
+        "default": 16,
+        "unit": "px"
+      }, 
+      {
+        "type": "range",
+        "id": "direct_hero_btn1_width",
+        "label": "Hero Button 1 Width",
+        "min": 160,
+        "max":500,
+        "default": 160,
+        "unit": "px",
+        "step": 5
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color",
+        "label": "Hero Button 1 Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color_bg",
+        "label": "Hero Button 1 Background Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color_hover",
+        "label": "Hero Button 1 Hover Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn1_color_bg_hover",
+        "label": "Hero Button 1 Hover Background Color"
+      }, 
+
+      {
+        "type": "text",
+        "id": "direct_hero_btn2_text",
+        "label": "Hero Button 2 Text"
+      }, {
+        "type": "url",
+        "id": "direct_hero_btn2_url",
+        "label": "Hero Button 2 URL"
+      },     
+       {
+        "type": "range",
+        "id": "direct_hero_btn2_size",
+        "label": "Hero Button 2 Font Size",
+        "min": 16,
+        "max":60,
+        "default": 16,
+        "unit": "px",
+        "step": 1
+      }, 
+      {
+        "type": "range",
+        "id": "direct_hero_btn2_width",
+        "label": "Hero Button 2 Width",
+        "min": 160,
+        "max":500,
+        "default": 160,
+        "unit": "px",
+        "step": 5
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color",
+        "label": "Hero Button 2 Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color_bg",
+        "label": "Hero Button 2 Background Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color_hover",
+        "label": "Hero Button 2 Hover Text Color"
+      }, 
+      {
+        "type": "color",
+        "id": "direct_hero_btn2_color_bg_hover",
+        "label": "Hero Button 2 Hover Background Color"
+      }, 
+      {
+            "type": "select",
+            "id": "align_items_h",
+            "label": "Horizontal Alignment",
+            "default": "center",
+            "options": [
+            {
+                "value": "flex-start",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "flex-end",
+                "label": "Right"
+            }]
+        },
+      {
+            "type": "select",
+            "id": "align_items_v",
+            "label": "Vertical Alignment",
+            "default": "flex-end",
+            "options": [
+            {
+                "value": "flex-start",
+                "label": "Top"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "flex-end",
+                "label": "Bottom"
+            }]
+        },
+     {
+        "type" : "color",
+            "id" : "direct_background_color",
+            "label": "Background Color"
+       
+      }
+       ]
+     },
+     {
+       "name": "Small Image",
+       "type": "small_image",
+       "settings": [
+        {
+        "type": "text",
+        "id": "block_width",
+        "label": "Item Width",
+        "default": "33.33%",
+        "info": "Example: 50%"
+
+      },
+      {
+        "type": "range",
+        "id": "block_grid_gap",
+        "label": "Item Grid Gap",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_border_radius",
+        "label": "Item Border Radius",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_spacing_horizontal",
+        "label": "Item Spacing Left/Right",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_spacing_vertical",
+        "label": "Item Spacing Top/Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+
+      },
+      {
+        "type": "range",
+        "id": "block_title_font_size",
+        "label": "Title Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "block_title_spacing_bottom",
+        "label": "Title Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "block_title_spacing_bottom_mobile",
+        "label": "Title Spacing Bottom Mobile",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "block_subtitle_font_size",
+        "label": "Subtitle Font Size",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "block_subtitle_font_size_mobile",
+        "label": "Subtitle Font Size Mobile",
+        "default": 18,
+        "min":12,
+        "max": 60,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "block_subtitle_spacing_bottom",
+        "label": "Subtitle Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "block_subtitle_spacing_bottom_mobile",
+        "label": "Subtitle Spacing Bottom Mobile",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+        {
+        "type": "range",
+        "id": "block_btn_size",
+        "label": "Hero Button Font Size",
+        "min": 16,
+        "max":60,
+        "default": 16,
+        "unit": "px"
+      }, 
+      {
+        "type": "range",
+        "id": "block_btn_width",
+        "label": "Hero Button Width",
+        "min": 160,
+        "max":500,
+        "default": 160,
+        "unit": "px",
+        "step": 5
+      }, 
+      { "type": "header",
+        "content":"Item 1 Settings"
+      },
+      {
+        "type": "checkbox",
+        "default": true,
+        "label": "Enable Item 1?",
+        "id": "enable_item_1"
+      },
+      {
+        "type": "text",
+        "id": "si_item_1_width",
+        "label": "Item 1 Width"
+       },
+       {
+        "type": "range",
+        "id": "si_item_1_spacing_bottom",
+        "label": "Item 1 Spacing Bottom",
+        "default": 0,
+        "min":0,
+        "max": 30,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type":"image_picker",
+        "id":"si_item_image_1",
+        "label":"Image 1"
+       },
+       {
+        "type": "text",
+        "id": "si_item_text_1",
+        "label": "Text 1"
+       },
+       {
+        "type": "color",
+        "id": "si_item_title_color_1",
+        "label": "Title Color"
+       },
+       {
+        "type": "text",
+        "id":"si_item_subtext_1",
+        "label":"Description"
+       },
+       {
+        "type": "color",
+        "id": "si_item_subtitle_color_1",
+        "label": "Subtitle Color"
+       },
+       {
+        "type": "text",
+        "id":"button_text_1",
+        "label":"Button Text 1"
+       },
+       {
+        "type": "url",
+        "id": "si_item_button_link_1",
+        "label": "Button Url 1"
+      },
+      {
+        "type": "color",
+        "id": "si_item_button_color_1",
+        "label": "Button Color 1"
+       },
+       {
+        "type": "color",
+        "id": "si_item_button_border_color_1",
+        "label": "Button Border Color 1"
+       },
+       {
+        "type": "color",
+        "id": "si_item_button_background_color_1",
+        "label": "Button Background Color 1"
+       },
+       {
+        "type": "color",
+        "id": "si_item_button_color_1_hover",
+        "label": "Hover Button Color 1"
+       },
+       {
+        "type": "color",
+        "id": "si_item_button_border_color_1_hover",
+        "label": "Hover Button Border Color 1"
+       },
+       {
+        "type": "color",
+        "id": "si_item_button_background_color_1_hover",
+        "label": "Hover Button Background Color 1"
+       },
+       { "type": "header",
+"content":"Item 2 Settings"
+},
+{
+"type": "checkbox",
+"default": true,
+"label": "Enable Item 2?",
+"id": "enable_item_2"
+},
+{
+"type": "text",
+"id": "si_item_2_width",
+"label": "Item 2 Width"
+},
+{
+"type": "range",
+"id": "si_item_2_spacing_bottom",
+"label": "Item 2 Spacing Bottom",
+"default": 0,
+"min":0,
+"max": 30,
+"step": 2,
+"unit": "px"
+},
+{
+"type":"image_picker",
+"id":"si_item_image_2",
+"label":"Image 2"
+},
+{
+"type": "text",
+"id": "si_item_text_2",
+"label": "Text 2"
+},
+{
+"type": "color",
+"id": "si_item_title_color_2",
+"label": "Title Color"
+},
+{
+"type": "text",
+"id":"si_item_subtext_2",
+"label":"Description"
+},
+{
+"type": "color",
+"id": "si_item_subtitle_color_2",
+"label": "Subtitle Color"
+},
+{
+"type": "text",
+"id":"button_text_2",
+"label":"Button Text 2"
+},
+{
+"type": "url",
+"id": "si_item_button_link_2",
+"label": "Button Url 2"
+},
+{
+"type": "color",
+"id": "si_item_button_color_2",
+"label": "Button Color 2"
+},
+{
+"type": "color",
+"id": "si_item_button_border_color_2",
+"label": "Button Border Color 2"
+},
+{
+"type": "color",
+"id": "si_item_button_background_color_2",
+"label": "Button Background Color 2"
+},
+{
+"type": "color",
+"id": "si_item_button_color_2_hover",
+"label": "Hover Button Color 2"
+},
+{
+"type": "color",
+"id": "si_item_button_border_color_2_hover",
+"label": "Hover Button Border Color 2"
+},
+{
+"type": "color",
+"id": "si_item_button_background_color_2_hover",
+"label": "Hover Button Background Color 2"
+},
+{ "type": "header",
+"content":"Item 3 Settings"
+},
+{
+"type": "checkbox",
+"default": true,
+"label": "Enable Item 3?",
+"id": "enable_item_3"
+},
+{
+"type": "text",
+"id": "si_item_3_width",
+"label": "Item 3 Width"
+},
+{
+"type": "range",
+"id": "si_item_3_spacing_bottom",
+"label": "Item 3 Spacing Bottom",
+"default": 0,
+"min":0,
+"max": 30,
+"step": 3,
+"unit": "px"
+},
+{
+"type":"image_picker",
+"id":"si_item_image_3",
+"label":"Image 3"
+},
+{
+"type": "text",
+"id": "si_item_text_3",
+"label": "Text 3"
+},
+{
+"type": "color",
+"id": "si_item_title_color_3",
+"label": "Title Color"
+},
+{
+"type": "text",
+"id":"si_item_subtext_3",
+"label":"Description"
+},
+{
+"type": "color",
+"id": "si_item_subtitle_color_3",
+"label": "Subtitle Color"
+},
+{
+"type": "text",
+"id":"button_text_3",
+"label":"Button Text 3"
+},
+{
+"type": "url",
+"id": "si_item_button_link_3",
+"label": "Button Url 3"
+},
+{
+"type": "color",
+"id": "si_item_button_color_3",
+"label": "Button Color 3"
+},
+{
+"type": "color",
+"id": "si_item_button_border_color_3",
+"label": "Button Border Color 3"
+},
+{
+"type": "color",
+"id": "si_item_button_background_color_3",
+"label": "Button Background Color 3"
+},
+{
+"type": "color",
+"id": "si_item_button_color_3_hover",
+"label": "Hover Button Color 3"
+},
+{
+"type": "color",
+"id": "si_item_button_border_color_3_hover",
+"label": "Hover Button Border Color 3"
+},
+{
+"type": "color",
+"id": "si_item_button_background_color_3_hover",
+"label": "Hover Button Background Color 3"
+},
+{ "type": "header",
+"content":"Item 4 Settings"
+},
+{
+"type": "checkbox",
+"default": true,
+"label": "Enable Item 4?",
+"id": "enable_item_4"
+},
+{
+"type": "text",
+"id": "si_item_4_width",
+"label": "Item 4 Width"
+},
+{
+"type": "range",
+"id": "si_item_4_spacing_bottom",
+"label": "Item 4 Spacing Bottom",
+"default": 0,
+"min":0,
+"max": 40,
+"step": 4,
+"unit": "px"
+},
+{
+"type":"image_picker",
+"id":"si_item_image_4",
+"label":"Image 4"
+},
+{
+"type": "text",
+"id": "si_item_text_4",
+"label": "Text 4"
+},
+{
+"type": "color",
+"id": "si_item_title_color_4",
+"label": "Title Color"
+},
+{
+"type": "text",
+"id":"si_item_subtext_4",
+"label":"Description"
+},
+{
+"type": "color",
+"id": "si_item_subtitle_color_4",
+"label": "Subtitle Color"
+},
+{
+"type": "text",
+"id":"button_text_4",
+"label":"Button Text 4"
+},
+{
+"type": "url",
+"id": "si_item_button_link_4",
+"label": "Button Url 4"
+},
+{
+"type": "color",
+"id": "si_item_button_color_4",
+"label": "Button Color 4"
+},
+{
+"type": "color",
+"id": "si_item_button_border_color_4",
+"label": "Button Border Color 4"
+},
+{
+"type": "color",
+"id": "si_item_button_background_color_4",
+"label": "Button Background Color 4"
+},
+{
+"type": "color",
+"id": "si_item_button_color_4_hover",
+"label": "Hover Button Color 4"
+},
+{
+"type": "color",
+"id": "si_item_button_border_color_4_hover",
+"label": "Hover Button Border Color 4"
+},
+{
+"type": "color",
+"id": "si_item_button_background_color_4_hover",
+"label": "Hover Button Background Color 4"
+}
+      ]
+  }
+   ]
+}
+{% endschema %}

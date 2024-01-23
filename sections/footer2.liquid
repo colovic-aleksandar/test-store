@@ -12,8 +12,13 @@ if show_extra_infomation
 endif
 
 %}
-<div class="footer">
+<div class="footer"  style="
+{% if section.settings.border_top == true %}
+  border-top: 1px solid {{ section.settings.footer_border_top_color }};
+{% endif %}
+">
   <div class="footer-wrapper">
+
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'top-part' %}
@@ -154,78 +159,89 @@ endif
 
     </div>
 
-    {%- if show_extra_infomation -%}
-      <div class="footer__content-bottom">
-          <div class="container">
-              <div class="footer__bottom">
-                  <div class="footer-block__bottom footer__content-newsletter">
-                      {% if block_newsletter != blank %}
-                      <div class="footer-block__newsletter">
-                          {%- if block_newsletter.settings.heading != blank -%}
-                              <h2 class="footer-block__heading">
-                                  {{- block_newsletter.settings.heading | escape -}}
-                              </h2>
-                          {%- endif -%}
-                          {%- if block_newsletter.settings.subtext != blank -%}
-                              <div class="footer-block__subheading rte">
-                                  {{ block_newsletter.settings.subtext }}
-                              </div>
-                          {%- endif -%}
-                          {% render 'block-newsletter-footer', block: block_newsletter %}
-                      </div>
-                      {% endif %}
-                      {%- if section.settings.show_social -%}
-                          <div class="footer-block__list-social">
-                              <div class="item clearfix">
-                                  {% render 'halo-social-media-icons' %}
-                              </div>
+
+  </div>
+</div>
+{%- if show_extra_infomation -%}
+  <div class="footer__content-bottom">
+      <div class="container">
+          <div class="footer__bottom">
+              <div class="footer-block__bottom footer__content-newsletter">
+                  {% if block_newsletter != blank %}
+                  <div class="footer-block__newsletter">
+                      {%- if block_newsletter.settings.heading != blank -%}
+                          <h2 class="footer-block__heading">
+                              {{- block_newsletter.settings.heading | escape -}}
+                          </h2>
+                      {%- endif -%}
+                      {%- if block_newsletter.settings.subtext != blank -%}
+                          <div class="footer-block__subheading rte">
+                              {{ block_newsletter.settings.subtext }}
                           </div>
                       {%- endif -%}
+                      {% render 'block-newsletter-footer', block: block_newsletter %}
                   </div>
-                  <div class="footer-block__bottom {% unless section.settings.enable_layout_grid %}not_flex{% endunless %}">
-                      {%- if show_copyright -%}
-                          <div class="footer__column-item footer__copyright">
-                              <small class="copyright__content">{{ section.settings.copyright_content }}</small>
+                  {% endif %}
+                  {%- if section.settings.show_social -%}
+                      <div class="footer-block__list-social">
+                          <div class="item clearfix">
+                              {% render 'halo-social-media-icons' %}
+                          </div>
+                      </div>
+                  {%- endif -%}
+              </div>
+              <div class="footer-block__bottom {% unless section.settings.enable_layout_grid %}not_flex{% endunless %}">
+                  {%- if show_copyright -%}
+                      <div class="footer__column-item footer__copyright">
+                          <small class="copyright__content">{{ section.settings.copy_text }}</small>
+                      </div>
+                  {%- endif -%}
+                  <div class="footer__column footer__column--info">
+                      {%- if show_payment -%}
+                          <div class="footer__column-item footer__payment">
+                              <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+                              <ul class="list list-payment clearfix" role="list">
+                                  {%- if section.settings.payment_type == 'default' -%}
+                                      {% comment %}
+                                      {% assign enabled_payment_types = 'visa,master,american_express,paypal' | remove: ' ' | split: ',' %}
+                                      {% endcomment %}
+                                      {%- for type in shop.enabled_payment_types -%}
+                                          <li class="list-payment__item">
+                                              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                                          </li>
+                                      {%- endfor -%}
+                                  {%- else -%}
+                                      {% assign payment_string = 'visa,master,maestro,american_express,apple_pay,bitcoin,dankort,diners_club,discover,paypal,dogecoin,dwolla,forbrugsforeningen,jcb,litecoin,afterpay,google_pay,ideal,klarna,klarna-pay-later,shopify_pay,sofort' %}
+                                      {% assign methods = payment_string | split: ',' %}
+                                      {%- for method in methods -%}
+                                          {%- assign show_current_method = method | prepend: 'show_payment_' -%}
+                                          {% if section.settings[show_current_method] %}
+                                              <li class="list-payment__item {{method}}">
+                                                  {{ method | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                                              </li>
+                                              {% endif %}
+                                      {%- endfor -%}
+                                  {%- endif -%}
+                              </ul>
                           </div>
                       {%- endif -%}
-                      <div class="footer__column footer__column--info">
-                          {%- if show_payment -%}
-                              <div class="footer__column-item footer__payment">
-                                  <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-                                  <ul class="list list-payment clearfix" role="list">
-                                      {%- if section.settings.payment_type == 'default' -%}
-                                          {% comment %}
-                                          {% assign enabled_payment_types = 'visa,master,american_express,paypal' | remove: ' ' | split: ',' %}
-                                          {% endcomment %}
-                                          {%- for type in shop.enabled_payment_types -%}
-                                              <li class="list-payment__item">
-                                                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                                              </li>
-                                          {%- endfor -%}
-                                      {%- else -%}
-                                          {% assign payment_string = 'visa,master,maestro,american_express,apple_pay,bitcoin,dankort,diners_club,discover,paypal,dogecoin,dwolla,forbrugsforeningen,jcb,litecoin,afterpay,google_pay,ideal,klarna,klarna-pay-later,shopify_pay,sofort' %}
-                                          {% assign methods = payment_string | split: ',' %}
-                                          {%- for method in methods -%}
-                                              {%- assign show_current_method = method | prepend: 'show_payment_' -%}
-                                              {% if section.settings[show_current_method] %}
-                                                  <li class="list-payment__item {{method}}">
-                                                      {{ method | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                                                  </li>
-                                                  {% endif %}
-                                          {%- endfor -%}
-                                      {%- endif -%}
-                                  </ul>
-                              </div>
-                          {%- endif -%}
-                          
-                      </div>
+                      
                   </div>
               </div>
           </div>
       </div>
-  {%- endif -%}
   </div>
-</div>
+{%- endif -%}
+{% liquid 
+assign placeholder = '//aleksandar-colovic.myshopify.com/cdn/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+assign placeholderV2 = '//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c.gif'
+assign footer_bg_color = section.settings.footer_background_color
+assign footer_bg_gradient = section.settings.footer_background_gradient 
+assign footer_bg_image = section.settings.footer_background_image | img_url: 'master'
+assign copy_bg_color = section.settings.copy_background_color
+assign copy_bg_gradient = section.settings.copy_background_gradient 
+assign copy_bg_image = section.settings.copy_background_image | img_url: 'master'
+%}
 <style>
   .footer * {
     font-family: 'Montserrat'
@@ -234,10 +250,21 @@ endif
   }
   .footer {
     width: 100%;
-    padding: 0 20px;
-    background: #00126a;
+    padding-top:{{ section.settings.margin_top | append: 'px' }};
+    padding-bottom: {{ section.settings.margin_bottom | append: 'px' }};
+    {% if footer_bg_color != blank and footer_bg_gradient == blank and footer_bg_image == placeholder or  footer_bg_image == placeholderV2 %}
+      background: {{ footer_bg_color }};
+    {% endif %}
+    {% if footer_bg_gradient != blank and  footer_bg_image == placeholder or  footer_bg_image == placeholderV2 %}
+      background: {{ footer_bg_gradient }};
+    {% endif %}
+    {% if footer_bg_image != placeholder and  footer_bg_image != placeholderV2 %}
+      {% if footer_bg_image != blank %}
+        background: url('{{footer_bg_image }}');
+      {% endif %}
+    {% endif %}
   }
-  .footer-wrapper {
+  .footer-wrapper, .footer__bottom {
     max-width: 1500px;
     margin: 0 auto;
   }
@@ -253,16 +280,21 @@ endif
     font-size: 37px;
     margin-bottom: 30px;
     margin-top: 0;
+    color:  {{ section.settings.footer_title_color }};
   }
   .footer p {
     font-size: 20px;
     margin: 0;
     padding: 0;
-    color: #cfcfcf;
     font-weight: 400;
   }
-
-  .email-wrapper {
+  .footer a, .footer a * {
+    color:  {{ section.settings.footer_link_color }} !important;
+  }
+  .footer a:hover, .footer a:hover * {
+    color:  {{ section.settings.footer_link_color_hover }} !important;
+  }
+    .email-wrapper {
     flex-basis: 40%;
     position: relative;
   }
@@ -295,14 +327,21 @@ endif
   }
   .socials {
       width: calc(var(--custom-width) * 100%);
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: {{ section.settings.align_text }};
     display: flex;
     flex-direction: column;
     
   }
+  .list-social {
+    {% if section.settings.social_media_icon == false %}
+      display: none;
+    {% endif %}
+    margin-top: {{section.settings.social_icons_margin_top}}px;
+    margin-bottom: {{section.settings.social_icons_margin_bottom}}px;
+  }
   .list-social__item {
-    margin: 0 10px 0 0;
+    margin: 0 {{section.settings.social_icons_margin_right}}px 0 0;
     display: inline-flex;
     align-items: center;
   }
@@ -318,14 +357,14 @@ endif
     background-color: #fff;
   }
   .list-social__item svg {
-    width: 11px;
-    height: 11px;
+    width: {{section.settings.social_icons_width}}px;
+    height: {{section.settings.social_icons_height}}px;
   }
   .links{
       width: calc(var(--custom-width) * 100%);
       display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: {{ section.settings.align_text }};
     margin: 0;
   }
   .footer-links-part ul.links li, .contact-us-wrapper p {
@@ -346,12 +385,13 @@ endif
   }
   ul.links li a {
     text-decoration: none;
+    line-height: 55px;
   }
   .contact-us-wrapper {
       width: calc(var(--custom-width) * 100%);
       display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: {{ section.settings.align_text }};
   }
   .contact-link {
     display: flex;
@@ -389,6 +429,40 @@ endif
     margin-right: 0;
 }
 
+.footer__bottom {
+  width: 100%;
+}
+.footer-block__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+.footer__content-bottom {
+  padding-top: {{section.settings.copy_padding_top}}px;
+  padding-bottom: {{section.settings.copy_padding_bottom}}px;
+{% if section.settings.copy_border_top == true %}
+  border-top: 1px solid {{section.settings.copy_border_top_color}};
+{% endif %}
+  {% if copy_bg_color != blank and copy_bg_gradient == blank and copy_bg_image == placeholder or  copy_bg_image == placeholderV2 %}
+      background: {{ copy_bg_color }};
+    {% endif %}
+    {% if copy_bg_gradient != blank and  copy_bg_image == placeholder or  copy_bg_image == placeholderV2 %}
+      background: {{ copy_bg_gradient }};
+    {% endif %}
+    {% if copy_bg_image != placeholder and  copy_bg_image != placeholderV2 %}
+      {% if copy_bg_image != blank %}
+        background: url('{{copy_bg_image }}');
+      {% endif %}
+    {% endif %}
+}
+.footer__bottom small {
+  font-size: 16px;
+  line-height: 23px;
+  color: {{section.settings.copy_title_color}};
+  font-family: 'Montserrat', sans-serif;
+}
 @media (max-width: 767px) {
     .list-payment {
         text-align: center;
@@ -443,6 +517,11 @@ endif
         "label":"Background Color"
       },
       {
+        "type": "color_background",
+        "id": "footer_background_gradient",
+        "label":"Background Gradient"
+      },
+      {
         "type": "image_picker",
         "id": "footer_background_image",
         "label":"Background Image: Upload Image"
@@ -453,13 +532,13 @@ endif
         "default": "center",
         "options": [
           {
-            "value": "left",
+            "value": "flex-start",
             "label": "Left"
           }, {
             "value": "center",
             "label": "Center"
           }, {
-            "value": "right",
+            "value": "flex-end",
             "label": "Right"
           }
         ]
