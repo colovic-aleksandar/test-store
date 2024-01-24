@@ -375,54 +375,100 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         </ul>
     </nav>
 
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const dropdownItems = document.querySelectorAll(".dropdown-item");
+ document.addEventListener("DOMContentLoaded", function () {
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
 
-            dropdownItems.forEach((item) => {
-                item.addEventListener("mouseover", function () {
-                    showDropdown(item);
-                });
-
-                item.addEventListener("mouseout", function () {
-                    hideDropdown(item);
-                });
-            });
-
-            function showDropdown(item) {
-                const currentDropdown = item.querySelector(".mega-dropdown");
-                currentDropdown.style.display = "block";
-            }
-
-            function hideDropdown(item) {
-                const currentDropdown = item.querySelector(".mega-dropdown");
-                currentDropdown.style.display = "none";
-            }
-
-            const imageWrappers = document.querySelectorAll('.image-wrapper');
-
-            imageWrappers.forEach(wrapper => {
-                wrapper.addEventListener('mouseover', function () {
-                    const shopNow = wrapper.querySelector('.shop-now');
-                    if (shopNow) {
-                        shopNow.style.opacity = '0.8';
-                    }
-                });
-
-                wrapper.addEventListener('mouseout', function () {
-                    const shopNow = wrapper.querySelector('.shop-now');
-                    if (shopNow) {
-                        shopNow.style.opacity = '0';
-                    }
-                });
-            });
+    dropdownItems.forEach((item) => {
+        item.addEventListener("mouseover", function () {
+            showDropdown(item);
         });
 
+        item.addEventListener("mouseout", function () {
+            hideDropdown(item);
+        });
+    });
+
+    function showDropdown(item) {
+        const currentDropdown = item.querySelector(".mega-dropdown");
+        currentDropdown.style.display = "block";
+    }
+
+    function hideDropdown(item) {
+        const currentDropdown = item.querySelector(".mega-dropdown");
+        currentDropdown.style.display = "none";
+    }
+
+    const imageWrappers = document.querySelectorAll('.image-wrapper');
+
+    imageWrappers.forEach(wrapper => {
+        wrapper.addEventListener('mouseover', function () {
+            const shopNow = wrapper.querySelector('.shop-now');
+            if (shopNow) {
+                shopNow.style.opacity = '0.8';
+            }
+        });
+
+        wrapper.addEventListener('mouseout', function () {
+            const shopNow = wrapper.querySelector('.shop-now');
+            if (shopNow) {
+                shopNow.style.opacity = '0';
+            }
+        });
+    });
+
+    const megaMenu = document.querySelector('.mega-menu');
+    const navigationBar = document.querySelector('.navigation-bar');
+    let lastScrollTop = 0;
+
+    function handleScroll() {
+        const scrollPosition = window.scrollY;
+        const scrollDirection = (scrollPosition > lastScrollTop) ? 'down' : 'up';
+
+        // Determine whether to add or remove the 'fixed-menu' class after 50px of scroll
+        const shouldStick = scrollPosition > 50;
+
+        // Show or hide the mega-menu based on scroll direction
+        if (scrollDirection === 'up' || shouldStick) {
+            megaMenu.classList.remove('hidden-menu');
+            navigationBar.style.opacity = shouldStick ? '0' : '1'; // Hide the navigation bar after 50px
+        } else {
+            megaMenu.classList.add('hidden-menu');
+            navigationBar.style.opacity = '1'; // Show the navigation bar
+        }
+
+        // Add or remove the 'fixed-menu' class based on the scroll position
+        if (shouldStick) {
+            megaMenu.classList.add('fixed-menu');
+        } else {
+            megaMenu.classList.remove('fixed-menu');
+        }
+
+        // Update the last scroll position
+        lastScrollTop = scrollPosition;
+    }
+
+    window.addEventListener('scroll', handleScroll);
+});
 
     </script>
 
-
 <style>
+ 
+       .mega-menu {
+        width: 100%;
+        z-index: 1000;
+        background: #fff;
+        transition: top 0.5s;
+    }   .mega-menu.hidden-menu {
+        top: -100px;
+    }
+
+    .mega-menu.fixed-menu {
+        position: fixed;
+        top: 0;
+    }
 #{{ sectionID }}  .font-16 {
             font-size: 16px;
         }
@@ -585,6 +631,8 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
    #{{ sectionID }}     #menu-list {
             display: flex;
             justify-content: center;
+            margin: 0;
+            padding: 0;
         }
 
     #{{ sectionID }}    ul {
@@ -626,8 +674,23 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             color: black;
             text-decoration: none;
         }
+        .mega-menu {
+        width: 100%;
+        transition: top 0.3s;
+        z-index: 1000;
+        background-color: white;
+    }
 
-   #{{ sectionID }}     .mega-dropdown {
+    .mega-menu.hidden-menu {
+        top: -100px;
+    }
+
+    .mega-menu.fixed-menu {
+        position: fixed;
+        top: 0;
+    }
+
+#{{ sectionID }}     .mega-dropdown {
             position: fixed;
             width: 100%;
             max-width: 1500px;
@@ -647,6 +710,12 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             z-index: 99999;
         }
 
+/* Add a class to style the mega-dropdown when it's fixed */
+.mega-dropdown.fixed-dropdown {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Ensure full width when fixed */
+}
       #{{ sectionID }}  .link-part,
       #{{ sectionID }}  .image-part {
             float: left;

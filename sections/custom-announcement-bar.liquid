@@ -2,8 +2,8 @@
 assign sectionID = 'shopify-section-' | append: section.id 
 assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
 %}
- 
- <div id="{{ divID}}" class="custom-announcement-bar">
+ {% if section.settings.layout == "slider" %}
+ <div id="{{ divID}}" class="custom-announcement-bar announcement-slider">
         <div class="left-section">
             <div class="social-icons">
                 <div class="icon-wrapper">
@@ -50,23 +50,82 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                     </a>
                 </div>
             </div>
-            <div class="phone-number">1800 648 363</div>
+
+            <div class="phone-number">{{section.settings.phone-icon}}{{section.settings.phone-number}}</div>
         </div>
-        <div class="center-section">
+        <div id="centerSection" class="center-section" data-arrows="{{section.settings.enable_arrow}}">
             {% render 'center-announcement' %} 
 
         </div>
         <div class="right-section">
             <nav>
-                <a href="#">Locations</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
+                {% for link in section.settings.announcement-links.links %}
+                
+                      <a href="{{ link.url }}">
+                        {{ link.title }}
+                      </a>
+                 
+                  {% endfor %}
             </nav>
         </div>
+</div>
+{%  elsif section.settings.layout == "infinite" %} 
+    <div>
+        <div id="{{ divID }}" class="custom-announcement-bar announcement-slider">
+    <figure class="marquee announcement-bar"
+    {% assign count = 0 %}
+    {% for block in section.blocks %}
+        {% assign count = count | plus: 1 %}
+    {% endfor %}
+    data-count="{{count}}">
+    {% for block in section.blocks %}
+        <p class="announcement-text">
+            {{ block.settings.announcement_text }}</p>
+    {% endfor %}
+    </figure>
+</div>
     </div>
+    <style>
+        .announcement-text {
+            width: 100%;
+        }
+        #{{sectionID}}  .marquee {
+  overflow: hidden;
+  color: white;
+  display: block;
 
+  animation: SlideLeft 2s infinite linear;
+}
+    @keyframes SlideLeft {
+            0% {
+                transform: translate3d(0,0,0);
+            }
 
-
+            100% {
+                transform: translate3d(-100%,0,0);
+            }
+        }
+#{{sectionID}} .marquee {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex: 1;
+    border: none;
+    flex-wrap: nowrap;
+}
+#{{sectionID}} .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+    </style>
+{% endif %}
 
 
 <style>
@@ -75,9 +134,9 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #00126a;
-        color: #fff;
-        padding: 0 50px;
+        background-color:{{section.settings.ann_bg_color}};
+        color: {{section.settings.ann_color}};
+        padding: {{section.settings.ann_padding_top}}px 50px {{section.settings.ann_padding_bottom}}px;
         font-family: Montserrat, sans-serif;
     }
 
@@ -164,9 +223,14 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
     }
 
     #{{ sectionID }}  .phone-number {
-        display: block;
+        display: flex;
+        align-items: center;
     }
 
+ #{{ sectionID }}  .phone-number svg {
+    width: 21px;
+    margin-right: 10px;
+ }
     @media (max-width: 1400px) {
 
     #{{ sectionID }}   .social-icons {
@@ -197,6 +261,10 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
     #{{ sectionID }}   .announcement {
         width: 100%;
         text-align: center;
+        
+        font-size: {{section.settings.ann_font_size}}px;
+        font-style: {{section.settings.ann_font_style}};
+        font-weight:{{section.settings.ann_font_weight}};
       
     }
 
@@ -252,9 +320,13 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         text-decoration: none;
         margin-left: 20px;
     }
+ 
       </style>
  <script>
     let announcement = document.querySelector('.custom-announcement-bar');
+    let centerSection = document.getElementById('centerSection').getAttribute('data-arrows');
+    let arrows = centerSection === "true";
+    console.log(arrows)
     if(announcement) {
         $('.slider').slick({
                 infinite: true,
@@ -265,18 +337,164 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                 dots: false,
                 autoplay: true,
                 autoplaySpeed: 3000,
+                arrows: arrows,
                 nextArrow: '<div class="next-arrow"><svg viewBox="0 0 478.448 478.448" class="icon icon-chevron-right" id="icon-chevron-right"><g><g><polygon points="131.659,0 100.494,32.035 313.804,239.232 100.494,446.373 131.65,478.448 377.954,239.232"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>',
                 prevArrow: '<div class="prev-arrow"><svg viewBox="0 0 370.814 370.814" class="icon icon-chevron-left" id="icon-chevron-left"><g><g><polygon points="292.92,24.848 268.781,0 77.895,185.401 268.781,370.814 292.92,345.961 127.638,185.401"></polygon></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>',
             });
     }
-
-            
+   
 </script>
   {% schema %}
   {
     "name": "Custom Announcement ",
     "settings": [
-    ],
+        {
+            "type": "link_list",
+            "id": "announcement-links",
+            "label": "Menu"
+        },
+        {
+            "type": "textarea",
+            "id": "phone-number",
+            "label": "Phone Number"
+        },
+        {
+            "type": "textarea",
+            "id": "phone-icon",
+            "label": "Phone Icon"
+        },
+        {
+            "type": "select",
+            "id": "layout",
+            "label":"Layout",
+            "options": [
+                {
+                    "label":"Slider",
+                    "value": "slider"
+                },
+                {
+                    "label":"Inifinite Scroll",
+                    "value": "infinite"
+                }
+               
+            ]
+        },
+        {
+            "label":"Enable Arrow?",
+            "id": "enable_arrow",
+            "type": "checkbox"
+        },
+        {
+            "type":"color",
+            "id":"ann_color",
+            "label":"Color Text"
+        },        
+        {
+            "type":"color",
+            "id":"ann_bg_color",
+            "label":"Background Color"
+        },
+        {
+        "type": "range",
+        "min": 12,
+        "max": 64,
+        "default": 16,
+        "unit": "px",
+        "step": 1,
+        "id": "ann_font_size",
+        "label": "Font size"
+      },
+      {
+            "type": "select",
+            "id": "ann_font_style",
+            "label":"Font Style",
+            "options": [
+                {
+                    "label":"normal",
+                    "value": "Normal"
+                },
+                {
+                    "label":"italic",
+                    "value": "Italic"
+                },
+                {
+                    "label":"oblique",
+                    "value": "Oblique"
+                }
+               
+            ]
+        },
+      {
+            "type": "select",
+            "id": "ann_font_weight",
+            "label":"Font Weight",
+            "options": [
+                {
+                    "label":"400",
+                    "value": "Regular"
+                },
+                {
+                    "label":"700",
+                    "value": "Bold"
+                },
+                {
+                    "label":"900",
+                    "value": "Black"
+                }
+               
+            ]
+        },
+        {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 15,
+        "unit": "px",
+        "step": 5,
+        "id": "ann_padding_top",
+        "label": "Padding Top"
+      },
+      {
+        "type": "range",
+        "min": 0,
+        "max": 100,
+        "default": 15,
+        "unit": "px",
+        "step": 5,
+        "id": "ann_padding_bottom",
+        "label": "Padding Bottom"
+      }
+    ],     "blocks": [
+        {
+          "type": "usp_description",
+          "name": "Announcement",
+          "settings": [
+           {
+              "type": "text",
+              "id": "announcement_text",
+              "label": "Announcement Text"
+            },
+            {
+                "type": "textarea",
+              "id": "announcement_icon",
+              "label": "Announcement Icon"
+            },
+            {
+            "type":"color",
+            "id":"ann_color",
+            "label":"Color Text"
+        },        
+        {
+            "type":"color",
+            "id":"ann_bg_color",
+            "label":"Background Color"
+        }
+
+
+          ]
+        }
+      ],
+      "max_blocks": 6,
     "presets": [
       {
         "name": "Custom Announcement"
