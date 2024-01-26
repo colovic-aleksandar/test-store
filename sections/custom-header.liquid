@@ -4,7 +4,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
 %}
    
  <header id="{{ divID}}"class="navigation-bar">
-        {% if section.settings.show_search %}
+        {% if section.settings.show_search != blank %}
             <div class="left-section">
                 <form class="aa-Form" action="" novalidate="" role="search">
                     <div class="aa-InputWrapperPrefix"><label class="aa-Label" for="autocomplete-0-input"
@@ -41,7 +41,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
 
         <div class="middle-section">
             <a href="#" class="logo-link">
-                {% if section.settings.logo_image %}
+                {% if section.settings.logo_image  != blank%}
                 <figure class="logo-desktop"style="margin:0;">
                     {% render 'snippet-image'
                       , image: section.settings.logo_image
@@ -49,7 +49,8 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                       , class: 'direct-logo-icon ' %}
                   </figure>
                 {% endif %}
-                {% if section.settings.custom_logo %}
+                
+                {% if section.settings.custom_logo != blank %}
                     <style>
                         .logo-desktop {
                             display: none !important;
@@ -73,7 +74,6 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                         }
                     </style>
                     <div class="custom-logo">
-
                     {{section.settings.custom_logo}}
                     </div>
                 {% endif %}
@@ -99,7 +99,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                     {% endif %}
                 </span>
             </div>
-            {% if section.settings.show_customer %}
+            {% if section.settings.show_customer != blank %}
             <div class="icon profile-icon">
                 <figure style="margin:0;width:30px;">
                     {% render 'snippet-image'
@@ -109,7 +109,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                   </figure>
             </div>
             {% endif %}
-            {% if section.settings.show_cart %}
+            {% if section.settings.show_cart != blank %}
             <div class="icon cart-icon">
                 <figure style="margin:0;width:30px;">
                     {% render 'snippet-image'
@@ -124,7 +124,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
     </header>
     {% if section.settings.mega_menu == true %}
         <nav id="megaMenu" data-scroll-hide="{{section.settings.hide_on_scroll}}" data-sticky="{{section.settings.sticky_header}}"class="mega-menu">
-        {% if section.settings.logo_image_sticky %}    
+        {% if section.settings.logo_image_sticky != blank %}    
         <figure class="sticky-logo" style="justify-content:center;display:none;">
                 {% render 'snippet-image'
                   , image: section.settings.logo_image_sticky
@@ -148,20 +148,132 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                                         {% endif %}
                                     </ul>
                                 {% endfor %}  
-                                <div class="image-part">
-                                    <a class="image-wrapper" href="#">
-                                        <img src="https://www.directpoolsupplies.com.au/cdn/shop/files/Pool_algaecides.jpg?v=1690179421"
-                                            alt="Image 2" />
-                                        <p>Algaecides</p>
-                                        <span class="shop-now">Shop Now</span>
+                                {% assign link_title = link.title | downcase | handleize %}
+                                {% if link_title == "chemicals" %}
+                                    <div class="image-part">
+                                        <a class="image-wrapper" href="{{ section.settings.cmb_image_banner_1_url }}"><figure>
+                                            {% render 'snippet-image'
+                                            , image: section.settings.cmb_image_banner_1
+                                            , loadingLazy: 'false'
+                                            , class: 'megamenu-image' %}
+                                        <p>{{ section.settings.cmb_image_banner_1_text }}</p>
+                                        <span class="shop-now">{{ section.settings.cmb_image_banner_1_text_overlay }}</span>
                                     </a>
-                                    <a class="image-wrapper" href="#">
-                                        <img src="https://www.directpoolsupplies.com.au/cdn/shop/files/Iluka_spa_chemicals.png?v=1690179422"
-                                            alt="Image 2" />
-                                        <p>Iluka Spa Chemicals</p>
-                                        <span class="shop-now">Shop Now</span>
+                                        <a class="image-wrapper" href="{{section.settings.cmb_image_banner_2_url}}">
+                                                {% render 'snippet-image'
+                                                , image: section.settings.cmb_image_banner_2
+                                                , loadingLazy: 'false'
+                                                , class: 'megamenu-image' %}
+                                            <p>{{ section.settings.cmb_image_banner_2_text }}</p>
+                                            <span class="shop-now">{{ section.settings.cmb_image_banner_2_text_overlay }}</span>
+                                        </a>
+                                    </div> 
+                                {% endif %}
+                                {% if link_title == "pool-equipment" %}
+                                    <div class="image-part">
+                                        <a class="image-wrapper" href="{{ section.settings.pem_image_banner_1_url }}"><figure>
+                                            {% render 'snippet-image'
+                                            , image: section.settings.pem_image_banner_1
+                                            , loadingLazy: 'false'
+                                            , class: 'megamenu-image' %}
+                                        <p>{{ section.settings.pem_image_banner_1_text }}</p>
+                                        <span class="shop-now">{{ section.settings.pem_image_banner_1_text_overlay }}</span>
                                     </a>
-                                </div> 
+                                        <a class="image-wrapper" href="{{section.settings.pem_image_banner_2_url}}">
+                                                {% render 'snippet-image'
+                                                , image: section.settings.pem_image_banner_2
+                                                , loadingLazy: 'false'
+                                                , class: 'megamenu-image' %}
+                                            <p>{{ section.settings.pem_image_banner_2_text }}</p>
+                                            <span class="shop-now">{{ section.settings.pem_image_banner_2_text_overlay }}</span>
+                                        </a>
+                                    </div> 
+                                {% endif %}
+
+                                {% if link_title == "spa-equipment" %}
+                                    <div class="image-part">
+                                        <a class="image-wrapper" href="{{ section.settings.sem_image_banner_1_url }}"><figure>
+                                            {% render 'snippet-image'
+                                            , image: section.settings.sem_image_banner_1
+                                            , loadingLazy: 'false'
+                                            , class: 'megamenu-image' %}
+                                        <p>{{ section.settings.sem_image_banner_1_text }}</p>
+                                        <span class="shop-now">{{ section.settings.sem_image_banner_1_text_overlay }}</span>
+                                    </a>
+                                        <a class="image-wrapper" href="{{section.settings.sem_image_banner_2_url}}">
+                                                {% render 'snippet-image'
+                                                , image: section.settings.sem_image_banner_2
+                                                , loadingLazy: 'false'
+                                                , class: 'megamenu-image' %}
+                                            <p>{{ section.settings.sem_image_banner_2_text }}</p>
+                                            <span class="shop-now">{{ section.settings.sem_image_banner_2_text_overlay }}</span>
+                                        </a>
+                                    </div> 
+                                {% endif %}
+
+
+                                {% if link_title == "above-ground-pools" %}
+                                    <div class="image-part">
+                                        <a class="image-wrapper" href="{{ section.settings.agp_image_banner_1_url }}"><figure>
+                                            {% render 'snippet-image'
+                                            , image: section.settings.agp_image_banner_1
+                                            , loadingLazy: 'false'
+                                            , class: 'megamenu-image' %}
+                                        <p>{{ section.settings.agp_image_banner_1_text }}</p>
+                                        <span class="shop-now">{{ section.settings.agp_image_banner_1_text_overlay }}</span>
+                                    </a>
+                                        <a class="image-wrapper" href="{{section.settings.agp_image_banner_2_url}}">
+                                                {% render 'snippet-image'
+                                                , image: section.settings.agp_image_banner_2
+                                                , loadingLazy: 'false'
+                                                , class: 'megamenu-image' %}
+                                            <p>{{ section.settings.agp_image_banner_2_text }}</p>
+                                            <span class="shop-now">{{ section.settings.agp_image_banner_2_text_overlay }}</span>
+                                        </a>
+                                    </div> 
+                                {% endif %}
+
+                                {% if link_title == "accessories" %}
+                                    <div class="image-part">
+                                        <a class="image-wrapper" href="{{ section.settings.amb_image_banner_1_url }}"><figure>
+                                            {% render 'snippet-image'
+                                            , image: section.settings.amb_image_banner_1
+                                            , loadingLazy: 'false'
+                                            , class: 'megamenu-image' %}
+                                        <p>{{ section.settings.amb_image_banner_1_text }}</p>
+                                        <span class="shop-now">{{ section.settings.amb_image_banner_1_text_overlay }}</span>
+                                    </a>
+                                        <a class="image-wrapper" href="{{section.settings.amb_image_banner_2_url}}">
+                                                {% render 'snippet-image'
+                                                , image: section.settings.amb_image_banner_2
+                                                , loadingLazy: 'false'
+                                                , class: 'megamenu-image' %}
+                                            <p>{{ section.settings.amb_image_banner_2_text }}</p>
+                                            <span class="shop-now">{{ section.settings.amb_image_banner_2_text_overlay }}</span>
+                                        </a>
+                                    </div> 
+                                {% endif %}
+
+                                {% if link_title == "spare-parts" %}
+                                    <div class="image-part">
+                                        <a class="image-wrapper" href="{{ section.settings.spm_image_banner_1_url }}"><figure>
+                                            {% render 'snippet-image'
+                                            , image: section.settings.spm_image_banner_1
+                                            , loadingLazy: 'false'
+                                            , class: 'megamenu-image' %}
+                                        <p>{{ section.settings.spm_image_banner_1_text }}</p>
+                                        <span class="shop-now">{{ section.settings.spm_image_banner_1_text_overlay }}</span>
+                                    </a>
+                                        <a class="image-wrapper" href="{{section.settings.spm_image_banner_2_url}}">
+                                                {% render 'snippet-image'
+                                                , image: section.settings.spm_image_banner_2
+                                                , loadingLazy: 'false'
+                                                , class: 'megamenu-image' %}
+                                            <p>{{ section.settings.spm_image_banner_2_text }}</p>
+                                            <span class="shop-now">{{ section.settings.spm_image_banner_2_text_overlay }}</span>
+                                        </a>
+                                    </div> 
+                                {% endif %}
                             </ul>
 
                         {% endif %}
@@ -214,11 +326,11 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             // Check the scroll direction
             if (scrollTop > lastScrollTop) {
                 // Scrolling down
-                megaMenu.classList.remove('hidden-menu');
+                megaMenu.classList.add('hidden-menu');
             } else {
                 // Scrolling up
                 if(hideOnScroll) {
-                    megaMenu.classList.add('hidden-menu');
+                    megaMenu.classList.remove('hidden-menu');
                 }
             }
 
@@ -256,7 +368,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         padding-top: 20px;
     }
     .mega-menu.hidden-menu {
-        top: -100px ;
+        top: -300px ;
     }
 #{{ sectionID }}  .font-16 {
             font-size: 16px;
@@ -367,6 +479,9 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
      #{{ sectionID }}   .middle-section {
             flex: 1;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
 
@@ -558,6 +673,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             width: 100%;
             aspect-ratio: 9/6;
             object-fit: cover;
+            height: unset;
         }
 
      #{{ sectionID }}   .image-wrapper p {
@@ -583,7 +699,9 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             transition: ease all 0.3s;
             text-transform: uppercase;
         }
-
+        .image-wrapper:hover span {
+            opacity: 1 !important;
+        }
 
      #{{ sectionID }}   .dropdown-link-section li {
             position: initial;
@@ -909,16 +1027,16 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             "label":"Font Weight",
             "options": [
                 {
-                    "label":"400",
-                    "value": "Regular"
+                    "value":"400",
+                    "label": "Regular"
                 },
                 {
-                    "label":"700",
-                    "value": "Bold"
+                    "value":"700",
+                    "label": "Bold"
                 },
                 {
-                    "label":"900",
-                    "value": "Black"
+                    "value":"900",
+                    "label": "Black"
                 }
                
             ]
@@ -1174,6 +1292,64 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             "label": "Spa Equipment Menu Banners 2 Text Overlay",
             "id":"sem_image_banner_2_text_overlay"
         },
+
+
+
+        {
+            "type": "header",
+            "content":"Above Ground Pools"
+        },
+        {
+            "type": "paragraph",
+            "content":"Above Ground Pools 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "agp_image_banner_1",
+            "label":"Above Ground Pools 1"
+        },
+        {
+            "type":"url",
+            "id": "agp_image_banner_1_url",
+            "label": "Above Ground Pools 1 Link"
+        },
+        {
+            "type": "textarea",
+            "label": "Above Ground Pools 1 Text",
+            "id":"agp_image_banner_1_text"
+        },
+        {
+            "type": "text",
+            "label": "Above Ground Pools 1 Text Overlay",
+            "id":"agp_image_banner_1_text_overlay"
+        },
+
+        {
+            "type": "paragraph",
+            "content":"Above Ground Pools 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "agp_image_banner_2",
+            "label":"Above Ground Pools 2"
+        },
+        {
+            "type":"url",
+            "id": "agp_image_banner_2_url",
+            "label": "Above Ground Pools 2 Link"
+        },
+        {
+            "type": "textarea",
+            "label": "Above Ground Pools 2 Text",
+            "id":"agp_image_banner_2_text"
+        },
+        {
+            "type": "text",
+            "label": "Above Ground Pools 2 Text Overlay",
+            "id":"agp_image_banner_2_text_overlay"
+        },
+
+
 
         {
             "type": "header",
