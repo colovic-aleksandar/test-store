@@ -293,9 +293,7 @@
       color: {{ number_color }};
     {% endif %}
 
-    {% if number_padding_bottom_desktop != blank %}
-      padding-bottom: {{ number_padding_bottom_desktop }}px;
-    {% endif %}
+
     {% if number_font_size_desktop  != blank %}
       font-size: {{ number_font_size_desktop }}px;
     {% endif %}
@@ -342,6 +340,10 @@
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    {% if number_padding_bottom_desktop != blank %}
+      margin-top: {{ number_padding_bottom_desktop }}px;
+    {% endif %}
+    
   }
   .direct-help-item {
     text-align: center;
