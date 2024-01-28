@@ -140,7 +140,8 @@
             --title-color: {{ title_color }};
             --title-font-weight: {{title_font_weight }};
             --title-spacing-bottom:{{ title_spacing_bottom | append: 'px' }};
-            --title-spacing-bottom-mobile:{{ title_spacing_bottom_mobile | append: 'px' }};">
+            --title-spacing-bottom-mobile:{{ title_spacing_bottom_mobile | append: 'px' }};
+            line-height: 1.1;">
               {{ directHelpText }}</div>
           </div>
           {% if description != blank %}
@@ -428,7 +429,6 @@
     font-weight: var(--title-font-weight);
     font-size: var(--title-font-size);
     padding-bottom: var(--title-spacing-bottom);
-    line-height: 1.1;
   }
   @media (max-width: 1314px) {
     .direct-help-section {
