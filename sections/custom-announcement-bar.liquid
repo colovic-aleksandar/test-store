@@ -320,7 +320,14 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         text-decoration: none;
         margin-left: 20px;
     }
- 
+ @media all and (max-width: 768px) {
+    .right-section, .left-section {
+        display: none !important;
+    }
+    .center-section {
+        width: 100% !important;
+    }
+ }
       </style>
  <script>
     let announcement = document.querySelector('.custom-announcement-bar');

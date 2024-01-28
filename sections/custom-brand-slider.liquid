@@ -99,14 +99,16 @@
           {% if block_border_radius != blank %}
             border-radius: {{block_border_radius}}px;
           {% endif %}
-          {% if block_border_color != blank %}
-            border: 1px solid {{block_border_color}};
-          {% endif %}
+
         {% endif %}
         ">
 
-        <div class="direct-brand-image-container" style="
+        <a href="{{block.settings.block_link}}" class="direct-brand-image-container" style="
         margin-bottom: {{block_spacing_bottom}}px;
+        {% if block_border_color != blank %}
+            border: 1px solid {{block_border_color}};
+            border-radius: 10px;
+          {% endif %}
         ">
           <figure>
             {% render 'snippet-image'
@@ -114,13 +116,17 @@
               , loadingLazy: 'false'
               , class: 'direct-hero-image' %}
           </figure>
-        </div>
+        </a>
         {% if directProductText != blank %}
         <div class="direct-brand-name" style="
         font-size: {{block_title_font_size}}px;
         font-weight: {{block_title_font_weight}};
         {% if block_title_color != blank %}
           color: {{block_title_color}};
+        {% endif %}
+        {% if forloop.last %}
+          position: relative;
+          bottom: 150px;
         {% endif %}
         ">{{ directProductText }}</div>
         {% endif %}

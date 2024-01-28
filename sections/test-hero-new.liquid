@@ -301,6 +301,14 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     }
   }
   @media all and (max-width: 768px) {
+
+  #{{ sectionID }} .direct-hero-block-container:has(.image-only) {
+  display: none;
+}
+
+#{{ sectionID }} .direct-hero-block-container {
+  flex-basis: 100% !important;
+}
     #{{ sectionID }} .container {
       flex-direction: column;
     }
