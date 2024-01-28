@@ -58,7 +58,7 @@
     </p>
   {% endif %}
 </div>
-<div id="{{ divID}}" class="{% if customClass != blank %} {{customClass}}  {% endif %} direct-brand-section {% if brand_type == "slider" %} slider {% endif %}">
+<div id="{{ divID}}" style="padding: 50px 0" class="{% if customClass != blank %} {{customClass}}  {% endif %} direct-brand-section {% if brand_type == "slider" %} slider {% endif %}">
   {% assign count = 0 %}
   {% for block in section.blocks %}
     {% assign count = count | plus: 1 %}
