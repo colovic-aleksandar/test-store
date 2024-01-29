@@ -276,6 +276,52 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
   #{{ sectionID }} .container {
     display: flex;
   }
+  .collection_section_banner {
+    min-height: 212px;
+    gap: 20px;
+}
+
+.collection_section_banner  .direct-hero-text {
+    background-size: cover !important;
+    aspect-ratio: 235/99;
+}
+
+.collection_section_banner b {
+    background: #ffffffcc;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding: 0 10px;
+    font-family: Bebas Neue;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 5px;
+}
+
+.collection_section_banner  p.table-subheading.heroIntro.text-center.c-title.text-white {
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif !important;
+    font-size: 22px !important;
+    letter-spacing: 0;
+    line-height: 37px;
+    text-align: center;
+    height: 34px;
+    width: 179px;
+    background-color: #fd9e4ecc;
+    font-weight: 500;
+}
+
+.collection_section_banner  p.heroText.text-center.c-title {
+    margin-top: 5px;
+    padding: 0 !important;
+    text-align: left;
+}
+.collection_section_banner > .direct-hero-block-container:last-child p.heroText.text-center.c-title {
+
+   
+}
   @media all and (max-width: 1440px) {
     #{{ sectionID }} .container {
     flex-direction: column;
@@ -292,13 +338,10 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
   padding-bottom: {{container_padding_bottom_tablet}}px;
 {% endif %}
 }
-
-    #{{ sectionID }} .heroText {
-      padding: 30px 50px !important;
-    }
     #{{ sectionID }} .heroTitle {
       font-size: 32px;
     }
+    
   }
   @media all and (max-width: 768px) {
 
@@ -329,6 +372,13 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
   padding-bottom: {{container_padding_bottom_mobile}}px;
 {% endif %}
 }
+    .collection_section_banner {
+        flex-wrap: wrap;
+      }
+    .collection_section_banner .direct-hero-block-container {
+      width: 100%;
+    }
+
   }
 
 </style>
