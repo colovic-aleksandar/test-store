@@ -125,6 +125,9 @@ endif
       {% case block.type %}
         {% when 'links' %}
           <ul class="links" style=" --custom-width:{{block.settings.custom_width}}">
+          {% if block.settings.link_heading  != blank %}
+          <div class="link_heading"> {{block.settings.link_heading }}</div>
+          {% endif %}
             {% for link in block.settings.foo-links.links %}
               <li>
                 <a href="{{ link.url }}">
@@ -139,6 +142,9 @@ endif
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'contact-us' %}
+          {% if block.settings.heading != blank %}
+          <div class="link_heading"> {{block.settings.heading }}</div>
+          {% endif %}
           <div class="contact-us-wrapper" style=" --custom-width:{{block.settings.custom_width}}">
           <a class="contact-link"href="tel:{{block.settings.first_link}}">
             <img src="{{block.settings.first_icon  |  image_url }} " alt="">
@@ -202,9 +208,6 @@ endif
                               <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
                               <ul class="list list-payment clearfix" role="list">
                                   {%- if section.settings.payment_type == 'default' -%}
-                                      {% comment %}
-                                      {% assign enabled_payment_types = 'visa,master,american_express,paypal' | remove: ' ' | split: ',' %}
-                                      {% endcomment %}
                                       {%- for type in shop.enabled_payment_types -%}
                                           <li class="list-payment__item">
                                               {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
@@ -321,6 +324,15 @@ assign copy_bg_image = section.settings.copy_background_image | img_url: 'master
     width: 100%;
     max-height: 235px;
     height: 100%;
+  }
+  .link_heading {
+    border-bottom: 1px solid;
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    display: none;
+    cursor: pointer;
   }
   .footer-links-part {
     display: flex;
@@ -464,12 +476,116 @@ assign copy_bg_image = section.settings.copy_background_image | img_url: 'master
   font-family: 'Montserrat', sans-serif;
 }
 @media (max-width: 767px) {
+  ul.links {
+    padding: 0;
+}
+
+.footer {
+    padding: 20px;
+}
+  .link_heading {
+    display: block;
+    position: relative;
+  }
+  .links li {
+    display: none;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+  .link_heading.clicked ~ li {
+    display: block ;
+    opacity: 1;
+  }
     .list-payment {
         text-align: center;
         padding: 0;
         margin-top: 20px;
     }
+    .footer-top {
+    flex-wrap: wrap;
+    padding: 20px;
 }
+
+.email-wrapper {
+    flex-basis: 100%;
+}
+.social-icons-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.heading-wrapper {
+    max-width: 640px;
+}
+
+p.description {
+    font-weight: 300;
+}
+img.big-image {
+    height: initial;
+}
+
+.footer-links-part {
+    flex-wrap: wrap;
+}
+
+.footer-block__bottom.not_flex {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer__column-item.footer__copyright {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+ul.list.list-payment.clearfix {
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.contact-us-wrapper {
+    padding-left: 40px;
+    margin-top: 20px;
+}
+.socials {
+    margin-bottom: 50px;
+}
+
+.link_heading:before,
+.link_heading:after{
+        content: "";
+        position: absolute;
+        top: 24px;
+        right: 10px !important;
+        z-index: 2;
+        transform: translateY(-50%) rotate(0);
+        background-color: #c7c7c7;
+        transition: var(--anchor-transition);
+    }
+
+    .link_heading:before{
+        right: 15px !important;
+        width: 2px;
+        height: 12px;
+    }
+
+    .link_heading:after{
+        right: 0;
+        width: 12px;
+        height: 2px;
+    }
+
+    .link_heading.clicked:before{
+        transform: translateY(-50%) rotate(90deg);
+    }
+
+    .link_heading.clicked:after{
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
 </style>
 {% schema %}
   {
@@ -883,6 +999,11 @@ assign copy_bg_image = section.settings.copy_background_image | img_url: 'master
         "type": "links",
         "limit": 2,
         "settings": [
+          {
+            "type": "text",
+            "id": "link_heading",
+            "label": "Heading"
+          },
           {
             "type": "text",
             "id": "custom_width",

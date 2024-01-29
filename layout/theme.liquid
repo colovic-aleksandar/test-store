@@ -490,8 +490,13 @@ if(elements) {
     }
   });
 }
+var linkHeadings = document.querySelectorAll('.link_heading');
 
-
+  linkHeadings.forEach(function(linkHeading) {
+    linkHeading.addEventListener('click', function() {
+      this.classList.toggle('clicked');
+    });
+  });
     </script>
 
   {% comment %} <script

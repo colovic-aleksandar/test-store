@@ -77,12 +77,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
                     {{section.settings.custom_logo}}
                     </div>
                 {% endif %}
-                  <figure class="logo-mobile"style="margin:0;">
-                    {% render 'snippet-image'
-                      , image: section.settings.logo_image_mobile
-                      , loadingLazy: 'false'
-                      , class: 'direct-logo-icon ' %}
-                  </figure>
+
             </a>
         </div>
         <div class="right-section">
@@ -278,11 +273,80 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
 
                         {% endif %}
                     </li>
+    
                 {% endfor %}
             </ul>
         </nav>
+        
     {% endif %}
-    
+    <header id="main_header_mobile">
+        <div class="menu-icon">&#9776;</div>
+        <div class="logo">
+                         
+        {% if section.settings.custom_logo != blank %}
+            <style>
+                .logo-desktop {
+                    display: none !important;
+                }
+                .custom-logo {
+                    font-size: {{section.settings.logo_font_size}}px;
+                    font-weight: {{section.settings.logo_font_weight}};
+                    text-transform: {{section.settings.logo_text_transform}};
+                    color: {{section.settings.logo_color}}
+                }
+                .custom-logo svg {
+                    max-width: {{section.settings.custom_logo_width}}px;
+                    {% if section.settings.custom_logo_width_fixed %}
+                        width: {{section.settings.custom_logo_width_fixed}}px;
+                    {% endif %}
+                }
+                @media all and (max-width: 991px) {
+                    .custom-logo svg {
+                        width:{{section.settings.custom_logo_width_mobile}}px;
+                    }
+                }
+            </style>
+            <div class="custom-logo">
+            {{section.settings.custom_logo}}
+            </div>
+        {% endif %}
+            {% render 'snippet-image'
+              , image: section.settings.logo_image_mobile
+              , loadingLazy: 'false'
+              , class: 'direct-logo-icon-mobile ' %}
+        </div>
+        <div class="search-icon">
+            <div class="aa-InputWrapperPrefix"><label class="aa-Label" for="autocomplete-0-input"
+            id="autocomplete-0-label"><button class="aa-SubmitButton" type="submit" title="Submit"><svg
+                    class="aa-SubmitIcon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path
+                        d="M16.041 15.856c-0.034 0.026-0.067 0.055-0.099 0.087s-0.060 0.064-0.087 0.099c-1.258 1.213-2.969 1.958-4.855 1.958-1.933 0-3.682-0.782-4.95-2.050s-2.050-3.017-2.050-4.95 0.782-3.682 2.050-4.95 3.017-2.050 4.95-2.050 3.682 0.782 4.95 2.050 2.050 3.017 2.050 4.95c0 1.886-0.745 3.597-1.959 4.856zM21.707 20.293l-3.675-3.675c1.231-1.54 1.968-3.493 1.968-5.618 0-2.485-1.008-4.736-2.636-6.364s-3.879-2.636-6.364-2.636-4.736 1.008-6.364 2.636-2.636 3.879-2.636 6.364 1.008 4.736 2.636 6.364 3.879 2.636 6.364 2.636c2.125 0 4.078-0.737 5.618-1.968l3.675 3.675c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414z">
+                    </path>
+                </svg></button></label>
+    </div>
+        </div>
+        <div class="account-icon">
+                {% render 'snippet-image'
+                  , image: section.settings.account_image
+                  , loadingLazy: 'false'
+                  , class: 'direct-profile-icon ' %}
+        </div>
+        <div class="cart-icon">
+                {% render 'snippet-image'
+                  , image: section.settings.cart_image
+                  , loadingLazy: 'false'
+                  , class: 'direct-cart-icon ' %}
+        </div>
+        <span class="cart-count">0</span>
+    <div class="sidebar_mobile">
+        <div class="close-btn" onclick="closesidebar_mobile()">&#10006;</div>
+        {% for link in section.settings.menu.links %}
+            <li class="dropdown-item">
+                <a href="{{link.url}}">{{link.title}}</a>
+            </li>
+        {% endfor %}
+    </div>
+    </header>
     <script>
  document.addEventListener("DOMContentLoaded", function () {
 
@@ -323,12 +387,10 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             megaMenu.classList.add('fixed-menu');
             navigationBar.style.opacity = '0';
 
-            // Check the scroll direction
             if (scrollTop > lastScrollTop) {
-                // Scrolling down
                 megaMenu.classList.add('hidden-menu');
             } else {
-                // Scrolling up
+
                 if(hideOnScroll) {
                     megaMenu.classList.remove('hidden-menu');
                 }
@@ -340,7 +402,36 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
             navigationBar.style.opacity = '1';
             }
         });
+
+        
     });
+
+        // Mobile navigation
+
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidebar_mobile = document.querySelector('.sidebar_mobile');
+
+    menuIcon.addEventListener('click', () => {
+      sidebar_mobile.style.display = 'block';
+    });
+
+    function closesidebar_mobile() {
+      sidebar_mobile.style.display = 'none';
+    }
+
+    let prevScrollPos = window.pageYOffset;
+
+    window.onscroll = function() {
+      const currentScrollPos = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+        document.getElementById('main_header_mobile').style.top = '0';
+      } else {
+        document.getElementById('main_header_mobile').style.top = '-60px';
+      }
+
+      prevScrollPos = currentScrollPos;
+    };
            </script>
 
 <style>
@@ -731,23 +822,116 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
          }
          .direct-profile-icon,.direct-cart-icon, .direct-chat-icon {
             width: 30px !important;
+            height: auto;
             position: relative;
             right: 5px;
          }
+         #main_header_mobile {
+            background-color: white;
+            color: black;
+            padding: 5px 0;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+            transition: top 0.3s;
+        }
+
+     #main_header_mobile  .logo {
+      text-align: center;
+      flex-basis: 60%;
+    }
+
+     #main_header_mobile  nav {
+      display: flex;
+      flex-direction: row;
+    }
+
+     #main_header_mobile  nav a {
+      text-decoration: none;
+      color: #fff;
+      padding: 15px;
+    }
+
+    .sidebar_mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 4; 
+      padding-top: 60px;
+    }
+    .sidebar_mobile .dropdown-item {
+        display: flex !important;
+    }
+
+    .sidebar_mobile a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar_mobile .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 20px;
+      z-index: 5;
+    }
+    #main_header_mobile .menu-icon,
+    #main_header_mobile .search-icon,
+    #main_header_mobile .account-icon,
+    #main_header_mobile .cart-icon {
+      cursor: pointer;
+      font-size: 20px;
+      margin: 0 10px;
+    }
+
+ 
          @media all and (max-width: 991px) {
+      
             .logo-desktop{
                 display: none;
             }
-            .logo-mobile {
-                display: block;
+
+            .direct-logo-icon-mobile {
+                height: 40px;
+                width: auto;
             }
-            
-         }
-         @media all and (max-width: 768px) {
             .mega-menu {
                 display: none;
             }
+            #main_header_mobile {
+                display: flex;
+            }
+            .sidebar_mobile {
+                display: none;
+            }
+
+            #main_header_mobile nav {
+                display: none;
+            }
+
+            #main_header_mobile .menu-icon,
+            #main_header_mobile .search-icon {
+                order: -1;
+            }
+            #main_header_mobile .menu-icon {
+                font-size: 30px;
+                position: relative;
+                bottom: 2px;
+                margin-bottom: 0;
+            }
          }
+
 </style>
  {% schema %}
   {
