@@ -251,7 +251,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     , sans-serif;
     text-transform: uppercase;
     opacity: 0.95;
-    padding: 10px 50px;
+    padding: 10px
   }
   #{{ sectionID }} .heroTitle {
     font-family: var(--hero-heading-font) !important;
@@ -346,7 +346,9 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     #{{ sectionID }} .heroTitle {
       font-size: 32px;
     }
-    
+    #{{ sectionID }} .hero-text-wrapper p {
+      text-align: center;
+    }
   }
   @media all and (max-width: 768px) {
 
@@ -380,6 +382,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     .collection_section_banner .direct-hero-block-container {
       width: 100%;
     }
+
 
   }
 
