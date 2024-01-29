@@ -85,6 +85,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
           {% endif %}
 
         {% endif %}
+        
         {% if block_spacing_top !=blank %}
           padding-top:{{block_spacing_top}}px;
         {% endif %}
@@ -94,6 +95,8 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
         justify-content: {{align_items_v}};
         align-items: {{align_items_h}};
         " >
+
+    <div id="hero-text-wrapper">
         {% if directIntro != blank  %}
           <p class="table-subheading heroIntro text-center c-title text-white" style=" 
             {% if direct_Intro_color != blank %}
@@ -110,7 +113,6 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
             {{ directIntro }}
           </p>
         {% endif %}
-    <div id="hero-text-wrapper">
       {% if directTitle != blank %}
         <p class="table-heading heroTitle text-center c-title text-white"
         style=" 
