@@ -52,17 +52,17 @@
             "block_spacing_top": 0,
             "block_spacing_bottom": 0,
             "direct_Intro": "direct pool supplies",
-            "direct_Intro_color": "",
+            "direct_Intro_color": "#ffffff",
             "direct_Intro_font_size": 18,
             "direct_Intro_spacing_bottom": 0,
-            "direct_Title": "pool & spa equipment",
-            "direct_Title_color": "",
+            "direct_Title": "POOL & SPA EQUIPMENT",
+            "direct_Title_color": "#fffcfc",
             "direct_Title_font_size": 45,
-            "direct_Title_spacing_bottom": 0,
+            "direct_Title_spacing_bottom": 14,
             "direct_Text": "Welcome to Direct Pool Supplies, Australia's leading authority in pool and spa solutions. Offering competitive prices on a comprehensive range of trusted brands, we're your one-stop destination for all your pool and spa essentials",
-            "direct_Text_color": "",
+            "direct_Text_color": "#ffffff",
             "direct_Text_font_size": 18,
-            "direct_Text_spacing_bottom": 0,
+            "direct_Text_spacing_bottom": 30,
             "direct_hero_btn1_text": "shop pool",
             "direct_hero_btn1_url": "",
             "direct_hero_btn1_size": 16,
@@ -80,7 +80,7 @@
             "direct_hero_btn2_color_hover": "#ffffff",
             "direct_hero_btn2_color_bg_hover": "#121212",
             "align_items_h": "center",
-            "align_items_v": "flex-end",
+            "align_items_v": "center",
             "direct_background_color": "#012173"
           }
         },
@@ -145,363 +145,919 @@
         "zoom_background": true
       }
     },
-    "395ce8f6-cce3-4752-9159-309498138af7": {
-      "type": "test-hero",
-      "settings": {
-        "direct_Intro": "DIRECT POOL SUPPLIES",
-        "direct_Title": "Pool & Spa Equipment",
-        "direct_Text": "Welcome to Direct Pool Supplies, Australia's leading authority in pool and spa solutions. Offering competitive prices on a comprehensive range of trusted brands, we're your one-stop destination for all your pool and spa essentials",
-        "direct_Image": "shopify:\/\/shop_images\/Banner_Image_1_2x_1270x_e346a06d-3e99-4b57-bb7f-a5636b530da3.webp",
-        "direct_Image_Second": "shopify:\/\/shop_images\/Banner_Image_2_2x_1_1270x_20d85b9d-811c-4f5e-9714-43d4c7cc1804.webp",
-        "direct_hero_btn1_text": "",
-        "direct_hero_btn1_url": "",
-        "direct_hero_btn2_text": "",
-        "direct_hero_btn2_url": ""
-      }
-    },
-    "ac313d55-ff48-42b7-8efa-34e67e5f4c6b": {
+    "custom_usp_a68bme": {
       "type": "custom-usp",
       "blocks": {
-        "a23ded49-fb5b-4df7-8e5e-2679a637d9c9": {
+        "usp_CWkYxm": {
           "type": "usp",
           "settings": {
-            "direct_product_text": "pool equimpent",
-            "direct_image": "shopify:\/\/shop_images\/Pools_Equipment_Image_2x_570x_6c8ad264-f1b7-4bb0-a824-af0fa9635402.webp"
+            "direct_image": "shopify:\/\/shop_images\/Lighting_570x_f9a18300-3e50-4839-97f4-4104951bbbd6.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "POOL EQUIPMENT",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "9fe67e50-50e2-4f56-95eb-ab81efe6b0ca": {
+        "usp_XJCDVy": {
           "type": "usp",
           "settings": {
-            "direct_product_text": "lighting",
-            "direct_image": "shopify:\/\/shop_images\/Lighting_570x_f9a18300-3e50-4839-97f4-4104951bbbd6.webp"
+            "direct_image": "shopify:\/\/shop_images\/Spa_Equipment_Image_2x_570x_a84b22de-f69e-4f1b-abab-9acc99a10060.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "LIGHTNING",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 8,
+            "block_title_font_weight": "700",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "d0406aec-cc07-4fb6-80f5-89c207d2b392": {
+        "usp_W8RVJU": {
           "type": "usp",
           "settings": {
-            "direct_product_text": "spa equipment",
-            "direct_image": "shopify:\/\/shop_images\/Spa_Equipment_Image_2x_570x_a84b22de-f69e-4f1b-abab-9acc99a10060.webp"
+            "direct_image": "shopify:\/\/shop_images\/Pool_Accessories_570x_f70a9596-dc43-481f-991a-4c77d4eb4a90.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "SPA EQUIPMENT",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "600d5bf5-71d6-44fb-b136-5fa1ac58ebd3": {
+        "usp_AEP7EU": {
           "type": "usp",
           "settings": {
-            "direct_product_text": "accessories",
-            "direct_image": "shopify:\/\/shop_images\/Pool_Accessories_570x_f70a9596-dc43-481f-991a-4c77d4eb4a90.webp"
+            "direct_image": "shopify:\/\/shop_images\/Toys_570x_877540a3-70ab-4b43-99ce-50b0a2d3185d.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "ACCESSORIES",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "3e2a7eb0-11c2-40d4-b5a6-996916da32fb": {
+        "usp_V3pFYH": {
           "type": "usp",
           "settings": {
-            "direct_product_text": "spare parts",
-            "direct_image": "shopify:\/\/shop_images\/Spare_Parts_Image_2x_570x_57d66d15-6d5e-4f5b-bf7b-43a4f5f39578.webp"
+            "direct_image": "shopify:\/\/shop_images\/Pools_Equipment_Image_2x_570x_6c8ad264-f1b7-4bb0-a824-af0fa9635402.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "SPARE PARTS",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "eeba42ca-cd12-46ac-bd16-2d2aa2cddc06": {
+        "usp_FgVhrj": {
           "type": "usp",
           "settings": {
-            "direct_product_text": "pool toys",
-            "direct_image": "shopify:\/\/shop_images\/Toys_570x_877540a3-70ab-4b43-99ce-50b0a2d3185d.webp"
+            "direct_image": "shopify:\/\/shop_images\/Toys_570x_877540a3-70ab-4b43-99ce-50b0a2d3185d.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "POOL TOYS",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         }
       },
       "block_order": [
-        "a23ded49-fb5b-4df7-8e5e-2679a637d9c9",
-        "9fe67e50-50e2-4f56-95eb-ab81efe6b0ca",
-        "d0406aec-cc07-4fb6-80f5-89c207d2b392",
-        "600d5bf5-71d6-44fb-b136-5fa1ac58ebd3",
-        "3e2a7eb0-11c2-40d4-b5a6-996916da32fb",
-        "eeba42ca-cd12-46ac-bd16-2d2aa2cddc06"
+        "usp_CWkYxm",
+        "usp_XJCDVy",
+        "usp_W8RVJU",
+        "usp_AEP7EU",
+        "usp_V3pFYH",
+        "usp_FgVhrj"
       ],
       "settings": {
+        "direct_custom_class": "",
+        "container_width": "100%",
+        "container_background_color": "",
+        "container_background_gradient": "",
+        "container_padding_top_desktop": 30,
+        "container_padding_top_tablet": 0,
+        "container_padding_top_mobile": 0,
+        "container_padding_bottom_desktop": 30,
+        "container_padding_bottom_tablet": 0,
+        "container_padding_bottom_mobile": 0,
+        "usp_type": "slider",
+        "usp_title": "",
+        "usp_title_color": "",
+        "usp_title_font_size": 18,
+        "usp_title_font_size_mobile": 18,
+        "usp_title_margin_bottom": 0,
+        "usp_description": "",
+        "usp_description_color": "",
+        "usp_description_font_size": 18,
+        "usp_description_font_size_mobile": 18,
+        "usp_description_margin_bottom": 0,
+        "usp_button": "",
+        "usp_button_color": "",
+        "usp_button_background_color": "",
+        "usp_button_font_size": 18,
+        "usp_button_spacing_top": 0,
+        "usp_button_link": "",
+        "usp_items_gap": 0,
+        "usp_items_per_row": "6",
+        "usp_enable_arrows": false,
+        "usp_enable_dots": true,
+        "usp_arrows_layout": "style1",
+        "usp_arrows_color": "",
+        "usp_arrows_background_color": "",
+        "usp_arrows_border_color": "",
+        "usp_arrows_hover_color": "",
+        "usp_arrows_hover_background_color": "",
+        "usp_arrows_hover_border_color": "",
+        "usp_items_per_row_mobile": "2"
       }
     },
-    "157b7d98-7837-45e2-a55b-6e26a4b4a429": {
-      "type": "side-by-side",
-      "settings": {
-        "background_first": "shopify:\/\/shop_images\/HOMEPAGE_LEFT_-_ILUKA_1880x_c29ad359-743c-4c87-9273-addfe546c9bc.webp",
-        "subheading_text": "hot item",
-        "heading_text": "<b>iluka spa <\/b><br><b> chemicals<\/b>",
-        "side_text": "",
-        "button_text_left": "",
-        "button_link_left": "",
-        "background_second": "shopify:\/\/shop_images\/HOMEPAGE_RIGHT_-_ROBOT_1880x_d2a1d762-3d9a-49b1-a8df-227192f6f8f8.webp",
-        "subheading_text_right": "Essential",
-        "heading_right": "<b>pool cleaners <\/b><br><b> collection<\/b>",
-        "button_text_right": "",
-        "button_link_right": ""
-      }
-    },
-    "a5ef4251-f0d9-44ee-acbb-a47319bba267": {
-      "type": "logo-section",
+    "test_hero_new_MaX9pW": {
+      "type": "test-hero-new",
       "blocks": {
-        "77bb8bd3-a0c8-4a79-876d-730dfcb249c9": {
-          "type": "usp",
+        "image_YbnyG6": {
+          "type": "image",
           "settings": {
-            "direct_image": "shopify:\/\/shop_images\/waterco-logo_1570x_bbd54f8b-83ca-4ef3-a20a-cbf30f810e3f.webp",
-            "direct_blackwhite": false
+            "block_width": "50%",
+            "block_border_radius": 0,
+            "block_spacing_top": 0,
+            "block_spacing_bottom": 0,
+            "direct_Intro": "HOT ITEM",
+            "direct_Intro_color": "",
+            "direct_Intro_font_size": 36,
+            "direct_Intro_spacing_bottom": 0,
+            "direct_Title": "",
+            "direct_Title_color": "",
+            "direct_Title_font_size": 18,
+            "direct_Title_spacing_bottom": 0,
+            "direct_Text": "<b>ILUKA SPA<\/b> <br>  <b>CHEMICALS<\/b>",
+            "direct_Text_color": "",
+            "direct_Text_font_size": 18,
+            "direct_Text_spacing_bottom": 0,
+            "background_image": "shopify:\/\/shop_images\/HOMEPAGE_LEFT_-_ILUKA_1880x_c29ad359-743c-4c87-9273-addfe546c9bc.webp",
+            "direct_hero_btn1_text": "",
+            "direct_hero_btn1_url": "",
+            "direct_hero_btn1_size": 16,
+            "direct_hero_btn1_width": 160,
+            "direct_hero_btn1_color": "",
+            "direct_hero_btn1_color_bg": "",
+            "direct_hero_btn1_color_hover": "",
+            "direct_hero_btn1_color_bg_hover": "",
+            "direct_hero_btn2_text": "",
+            "direct_hero_btn2_url": "",
+            "direct_hero_btn2_size": 16,
+            "direct_hero_btn2_width": 160,
+            "direct_hero_btn2_color": "",
+            "direct_hero_btn2_color_bg": "",
+            "direct_hero_btn2_color_hover": "",
+            "direct_hero_btn2_color_bg_hover": "",
+            "align_items_h": "flex-start",
+            "align_items_v": "center",
+            "direct_background_color": ""
           }
         },
-        "c1031af5-1b50-4449-9e4a-3e43d6efad2e": {
-          "type": "usp",
+        "image_YWhiGe": {
+          "type": "image",
           "settings": {
-            "direct_image": "shopify:\/\/shop_images\/aquaquip-aq-blue-logo_1066x_59f95f73-2bce-421c-bba8-d43c89e94a10.webp",
-            "direct_blackwhite": false
+            "block_width": "50%",
+            "block_border_radius": 0,
+            "block_spacing_top": 0,
+            "block_spacing_bottom": 0,
+            "direct_Intro": "ESSENTIALS",
+            "direct_Intro_color": "",
+            "direct_Intro_font_size": 18,
+            "direct_Intro_spacing_bottom": 0,
+            "direct_Title": "",
+            "direct_Title_color": "",
+            "direct_Title_font_size": 18,
+            "direct_Title_spacing_bottom": 0,
+            "direct_Text": "<b>POOL CLEANERS<\/b> \n<br>\n<b>COLLECTION<\/b>",
+            "direct_Text_color": "",
+            "direct_Text_font_size": 18,
+            "direct_Text_spacing_bottom": 0,
+            "background_image": "shopify:\/\/shop_images\/HOMEPAGE_RIGHT_-_ROBOT_1880x_d2a1d762-3d9a-49b1-a8df-227192f6f8f8.webp",
+            "direct_hero_btn1_text": "",
+            "direct_hero_btn1_url": "",
+            "direct_hero_btn1_size": 16,
+            "direct_hero_btn1_width": 160,
+            "direct_hero_btn1_color": "",
+            "direct_hero_btn1_color_bg": "",
+            "direct_hero_btn1_color_hover": "",
+            "direct_hero_btn1_color_bg_hover": "",
+            "direct_hero_btn2_text": "",
+            "direct_hero_btn2_url": "",
+            "direct_hero_btn2_size": 16,
+            "direct_hero_btn2_width": 160,
+            "direct_hero_btn2_color": "",
+            "direct_hero_btn2_color_bg": "",
+            "direct_hero_btn2_color_hover": "",
+            "direct_hero_btn2_color_bg_hover": "",
+            "align_items_h": "flex-end",
+            "align_items_v": "center",
+            "direct_background_color": ""
           }
-        },
-        "4bb4c1e2-74be-45b4-bd0d-761fe704ce40": {
-          "type": "usp",
-          "settings": {
-            "direct_image": "shopify:\/\/shop_images\/Brand_Logo_3_2x_430x_7f6b56f3-9a02-4536-b961-ec09746e1a7b.jpg",
-            "direct_blackwhite": false
-          }
-        },
-        "ca6d6536-58e3-407e-b9d6-f1b0641ab901": {
-          "type": "usp",
+        }
+      },
+      "block_order": [
+        "image_YbnyG6",
+        "image_YWhiGe"
+      ],
+      "settings": {
+        "direct_custom_class": "collection_section_banner",
+        "container_width": "100%",
+        "container_background_color": "#ffffff",
+        "container_background_gradient": "",
+        "container_padding_top_desktop": 0,
+        "container_padding_top_tablet": 0,
+        "container_padding_top_mobile": 30,
+        "container_padding_bottom_desktop": 0,
+        "container_padding_bottom_tablet": 0,
+        "container_padding_bottom_mobile": 30,
+        "zoom_background": true
+      }
+    },
+    "custom_brand_slider_AzUiq7": {
+      "type": "custom-brand-slider",
+      "blocks": {
+        "brand_6hzEft": {
+          "type": "brand",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/intex_logo_270x_30bcfe9b-308f-4300-80d2-89d3bb3f7887.svg",
-            "direct_blackwhite": false
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "a914c19e-db1a-49c7-9f0a-775dbc14d6d9": {
-          "type": "usp",
-          "settings": {
-            "direct_image": "shopify:\/\/shop_images\/Lochlor_logo_270x_649e7d3d-59e0-418d-b17e-5032206b2e12.jpg",
-            "direct_blackwhite": false
-          }
-        },
-        "9dc3f8d0-2516-4bc6-b558-c6bc868be558": {
-          "type": "usp",
-          "settings": {
-            "direct_image": "shopify:\/\/shop_images\/Aquatight_198x_803259b4-ef5d-4913-93bc-9d04af4728f6.jpg",
-            "direct_blackwhite": false
-          }
-        },
-        "5759c0a3-e271-46c2-a82a-89b783d3a04f": {
-          "type": "usp",
-          "settings": {
-            "direct_image": "shopify:\/\/shop_images\/ZodiacLogo_2x_290x_41ca8126-4c8c-4244-a1be-b040e0e9b1a7.jpg",
-            "direct_blackwhite": false
-          }
-        },
-        "70cbc578-0502-4ae1-9d57-7ebf1f9ed7f8": {
-          "type": "usp",
+        "brand_7tPHMQ": {
+          "type": "brand",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/kreepy-krauly-logo-618C0AA709-seeklogo.com_290x_d358419d-6de5-446a-bae7-07de8928b1dc.jpg",
-            "direct_blackwhite": false
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "c3286eb4-492c-433e-aa9f-05cdcb9fffb9": {
-          "type": "usp",
+        "brand_mmXMWD": {
+          "type": "brand",
           "settings": {
-            "direct_image": "shopify:\/\/shop_images\/Abgal_220x_20315c53-b9eb-4ff6-8a29-b70b486714e7.jpg",
-            "direct_blackwhite": false
+            "direct_image": "shopify:\/\/shop_images\/Lochlor_logo_270x_649e7d3d-59e0-418d-b17e-5032206b2e12.jpg",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "5a668790-ac1a-4e41-9e47-a86f8aa4e75d": {
-          "type": "usp",
+        "brand_dhqcAQ": {
+          "type": "brand",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Aquatight_198x_803259b4-ef5d-4913-93bc-9d04af4728f6.jpg",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
+          }
+        },
+        "brand_LryqLP": {
+          "type": "brand",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/Brand_Logo_3_2x_430x_7f6b56f3-9a02-4536-b961-ec09746e1a7b.jpg",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
+          }
+        },
+        "brand_gafNwF": {
+          "type": "brand",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/ZodiacLogo_2x_290x_41ca8126-4c8c-4244-a1be-b040e0e9b1a7.jpg",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
+          }
+        },
+        "brand_4aeNmn": {
+          "type": "brand",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/Onga_198x_6eacc40e-6f68-4080-a423-bcfb2daf7211.jpg",
-            "direct_blackwhite": false
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "da2a74ae-635d-42ed-8054-71bb5210a7ea": {
-          "type": "usp",
+        "brand_WeTLrk": {
+          "type": "brand",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/Iluka_370x_fde1557e-af4f-474b-b593-2eec06e152a7.jpg",
-            "direct_blackwhite": false
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "f038b67b-8f86-4bd6-a8c6-61f7eea5f45f": {
-          "type": "usp",
+        "brand_67XiQ3": {
+          "type": "brand",
           "settings": {
-            "direct_blackwhite": false
+            "direct_image": "shopify:\/\/shop_images\/Abgal_220x_20315c53-b9eb-4ff6-8a29-b70b486714e7.jpg",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
+          }
+        },
+        "brand_pPTd43": {
+          "type": "brand",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/waterco-logo_1570x_bbd54f8b-83ca-4ef3-a20a-cbf30f810e3f.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
+          }
+        },
+        "brand_3GPzEE": {
+          "type": "brand",
+          "settings": {
+            "direct_image": "shopify:\/\/shop_images\/aquaquip-aq-blue-logo_1066x_59f95f73-2bce-421c-bba8-d43c89e94a10.webp",
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
+          }
+        },
+        "brand_WK7PyN": {
+          "type": "brand",
+          "settings": {
+            "block_spacing_bottom": 20,
+            "block_enable_border": true,
+            "block_border_radius": 31,
+            "block_border_color": "#242833",
+            "block_border_color_hover": "",
+            "direct_product_text": "SHOP ALL BRANDS",
+            "block_title_font_size": 16,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "400",
+            "block_title_color": "",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         }
       },
       "block_order": [
-        "77bb8bd3-a0c8-4a79-876d-730dfcb249c9",
-        "c1031af5-1b50-4449-9e4a-3e43d6efad2e",
-        "4bb4c1e2-74be-45b4-bd0d-761fe704ce40",
-        "ca6d6536-58e3-407e-b9d6-f1b0641ab901",
-        "a914c19e-db1a-49c7-9f0a-775dbc14d6d9",
-        "9dc3f8d0-2516-4bc6-b558-c6bc868be558",
-        "5759c0a3-e271-46c2-a82a-89b783d3a04f",
-        "70cbc578-0502-4ae1-9d57-7ebf1f9ed7f8",
-        "c3286eb4-492c-433e-aa9f-05cdcb9fffb9",
-        "5a668790-ac1a-4e41-9e47-a86f8aa4e75d",
-        "da2a74ae-635d-42ed-8054-71bb5210a7ea",
-        "f038b67b-8f86-4bd6-a8c6-61f7eea5f45f"
+        "brand_6hzEft",
+        "brand_7tPHMQ",
+        "brand_mmXMWD",
+        "brand_dhqcAQ",
+        "brand_LryqLP",
+        "brand_gafNwF",
+        "brand_4aeNmn",
+        "brand_WeTLrk",
+        "brand_67XiQ3",
+        "brand_pPTd43",
+        "brand_3GPzEE",
+        "brand_WK7PyN"
       ],
       "settings": {
+        "direct_custom_class": "",
+        "container_width": "100%",
+        "container_background_color": "",
+        "container_background_gradient": "",
+        "container_padding_top_desktop": 0,
+        "container_padding_top_tablet": 0,
+        "container_padding_top_mobile": 0,
+        "container_padding_bottom_desktop": 0,
+        "container_padding_bottom_tablet": 0,
+        "container_padding_bottom_mobile": 0,
+        "brand_type": "grid",
+        "brand_title": "",
+        "brand_title_color": "",
+        "brand_title_font_size": 18,
+        "brand_title_font_size_mobile": 18,
+        "brand_title_margin_bottom": 0,
+        "brand_description": "",
+        "brand_description_color": "",
+        "brand_description_font_size": 18,
+        "brand_description_font_size_mobile": 18,
+        "brand_description_margin_bottom": 0,
+        "brand_button": "",
+        "brand_button_color": "",
+        "brand_button_background_color": "",
+        "brand_button_font_size": 18,
+        "brand_button_spacing_top": 0,
+        "brand_button_link": "",
+        "brand_items_gap": 21,
+        "brand_items_per_row": "6",
+        "brand_enable_arrows": false,
+        "brand_enable_dots": true,
+        "brand_arrows_layout": "style1",
+        "brand_arrows_color": "",
+        "brand_arrows_background_color": "",
+        "brand_arrows_border_color": "",
+        "brand_arrows_hover_color": "",
+        "brand_arrows_hover_background_color": "",
+        "brand_arrows_hover_border_color": "",
+        "brand_items_per_row_mobile": "2"
       }
     },
-    "fcd86e49-ff55-4bdf-a0cd-1f2703c565f4": {
-      "type": "custom-benefits-section",
+    "custom_usp_description_4mYMVG": {
+      "type": "custom-usp-description",
       "blocks": {
-        "2a82c616-7493-4c76-9285-d911a338a7cd": {
-          "type": "benefits",
+        "usp_description_WWAdUT": {
+          "type": "usp_description",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/online-support-64.webp",
-            "direct_benefit_text": "on hand technical support"
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "#fff",
+            "block_border_color_hover": "",
+            "direct_product_text": "ON HAND TECHNICAL SUPPORT",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "#fff",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "fac289f9-03a9-451a-9da4-c64b8729113b": {
-          "type": "benefits",
+        "usp_description_hUCeWH": {
+          "type": "usp_description",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/Australia_Largest_Products_Icon_2.svg",
-            "direct_benefit_text": "10k+ products"
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "10K + PRODUCTS",
+            "block_title_font_size": 20,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "#f3f3f3",
+            "block_title_color_hover": "#f3f3f3",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "f2ee89e1-b16e-46fa-ac50-e5ac9c146cfa": {
-          "type": "benefits",
+        "usp_description_HxmCXG": {
+          "type": "usp_description",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/Lowest_Prices_Everyday_Icon_e21eff83-8260-4d2b-9ee0-c4887ca00df5.svg",
-            "direct_benefit_text": "lowest prices everyday"
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "LOWEST PRICES EVERYDAY",
+            "block_title_font_size": 23,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "#fff",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         },
-        "8e685c4e-5d14-4833-abbf-c00a29b3dfd9": {
-          "type": "benefits",
+        "usp_description_4Ht3XE": {
+          "type": "usp_description",
           "settings": {
             "direct_image": "shopify:\/\/shop_images\/Backed_By_Quality_Icon_000817f3-4f3f-4057-aee4-21c7f819b107.svg",
-            "direct_benefit_text": "backed by quality guarantee"
+            "block_spacing_bottom": 20,
+            "block_enable_border": false,
+            "block_border_radius": 0,
+            "block_border_color": "",
+            "block_border_color_hover": "",
+            "direct_product_text": "BACKED BY QUALITY GUARANTEE",
+            "block_title_font_size": 23,
+            "block_title_font_size_mobile": 13,
+            "block_title_font_weight": "700",
+            "block_title_color": "#ffffff",
+            "block_title_color_hover": "",
+            "block_description_text": "",
+            "block_description_color": "",
+            "block_link": ""
           }
         }
       },
       "block_order": [
-        "2a82c616-7493-4c76-9285-d911a338a7cd",
-        "fac289f9-03a9-451a-9da4-c64b8729113b",
-        "f2ee89e1-b16e-46fa-ac50-e5ac9c146cfa",
-        "8e685c4e-5d14-4833-abbf-c00a29b3dfd9"
+        "usp_description_WWAdUT",
+        "usp_description_hUCeWH",
+        "usp_description_HxmCXG",
+        "usp_description_4Ht3XE"
       ],
       "settings": {
-      }
-    },
-    "32ee266f-b119-4341-8310-6319039f99df": {
-      "type": "usp-description",
-      "blocks": {
-        "9040aa22-62cb-42fd-a200-649fc359ffe0": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "Pool cleaners part",
-            "direct_image": "shopify:\/\/shop_images\/Pool_Cleaners_Parts_Icon_20x_e403eb71-6945-4c3b-a408-71e3b4e8f7ab.svg"
-          }
-        },
-        "c545e8f0-1a25-47e8-8350-7d5abec53de8": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "Pool heating parts",
-            "direct_image": "shopify:\/\/shop_images\/Pool_Heating_Parts_Icon_20x_f7c060ef-bb70-4e6f-be5e-f96c87c9f1bd.svg"
-          }
-        },
-        "7c63aca6-1f94-4865-b351-26d538a2076d": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "Chlorinator parts",
-            "direct_image": "shopify:\/\/shop_images\/Chlorinators_Parts_Icon_20x_bc52076e-6a32-468c-806a-1decd55f92e6.svg"
-          }
-        },
-        "cc926308-73af-4d3b-8e63-0f54cfb9b3a7": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "pool chemicals",
-            "direct_image": "shopify:\/\/shop_images\/Pool_Chemicals_Icon_20x_1f0c07dd-4767-406f-84ba-75773389aead.svg"
-          }
-        },
-        "d265a567-54b8-40d7-8541-f114c3190fe8": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "sand filters",
-            "direct_image": "shopify:\/\/shop_images\/Sand_Filter_Parts_Icon_20x_ee64b2ff-1c93-41a7-986c-223761ec7556.svg"
-          }
-        },
-        "1fdb01d2-35c7-4714-bd5b-7d3848c1e6eb": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "pool lights",
-            "direct_image": "shopify:\/\/shop_images\/Pool_Lights_Parts_Icon_20x_84170dcf-5248-4a6a-a88d-f8f4b1ba0bf2.svg"
-          }
-        },
-        "6000839d-dfd4-4a5b-a92d-55d631a00188": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "skimmer box parts",
-            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
-          }
-        },
-        "740548d1-bc82-4d9a-bbdc-fb55a9152642": {
-          "type": "usp",
-          "settings": {
-            "direct_product_text": "spa lights",
-            "direct_image": "shopify:\/\/shop_images\/Pool_Lights_Parts_Icon_20x_84170dcf-5248-4a6a-a88d-f8f4b1ba0bf2.svg"
-          }
-        }
-      },
-      "block_order": [
-        "9040aa22-62cb-42fd-a200-649fc359ffe0",
-        "c545e8f0-1a25-47e8-8350-7d5abec53de8",
-        "7c63aca6-1f94-4865-b351-26d538a2076d",
-        "cc926308-73af-4d3b-8e63-0f54cfb9b3a7",
-        "d265a567-54b8-40d7-8541-f114c3190fe8",
-        "1fdb01d2-35c7-4714-bd5b-7d3848c1e6eb",
-        "6000839d-dfd4-4a5b-a92d-55d631a00188",
-        "740548d1-bc82-4d9a-bbdc-fb55a9152642"
-      ],
-      "settings": {
-        "direct_Icon": "shopify:\/\/shop_images\/pool_pumps_61x_473b09de-0778-4566-87fb-cde940e150f9.webp",
-        "direct_Title": "pool pumps part finder",
-        "direct_Text": "Direct Pool Supplies are specialist consultants, salespeople, technicians and suppliers of a wide range of Pool & Spa Equipment, Chemicals and Accessories.",
-        "direct_description_btn_text": "find my spare parts",
-        "direct_description_btn_url": ""
+        "direct_custom_class": "",
+        "container_width": "100%",
+        "container_background_color": "#012173",
+        "container_background_gradient": "",
+        "container_padding_top_desktop": 30,
+        "container_padding_top_tablet": 15,
+        "container_padding_top_mobile": 0,
+        "container_padding_bottom_desktop": 30,
+        "container_padding_bottom_tablet": 18,
+        "container_padding_bottom_mobile": 0,
+        "usp_description_type": "slider",
+        "usp_description_title": "",
+        "usp_description_title_color": "",
+        "usp_description_title_font_size": 18,
+        "usp_description_title_font_size_mobile": 18,
+        "usp_description_title_margin_bottom": 0,
+        "usp_description_description": "",
+        "usp_description_description_color": "",
+        "usp_description_description_font_size": 18,
+        "usp_description_description_font_size_mobile": 18,
+        "usp_description_description_margin_bottom": 0,
+        "usp_description_button": "",
+        "usp_description_button_color": "",
+        "usp_description_button_background_color": "",
+        "usp_description_button_font_size": 18,
+        "usp_description_button_spacing_top": 0,
+        "usp_description_button_link": "",
+        "usp_description_items_gap": 0,
+        "usp_description_items_per_row": "6",
+        "usp_description_enable_arrows": false,
+        "usp_description_enable_border": false,
+        "usp_description_enable_dots": true,
+        "usp_description_arrows_layout": "style1",
+        "usp_description_arrows_color": "",
+        "usp_description_arrows_background_color": "",
+        "usp_description_arrows_border_color": "",
+        "usp_description_arrows_hover_color": "",
+        "usp_description_arrows_hover_background_color": "",
+        "usp_description_arrows_hover_border_color": "",
+        "usp_description_items_per_row_mobile": "2"
       }
     },
     "4a1dedb8-0df6-4ea1-b07f-abf81488fb06": {
       "type": "custom-help",
       "blocks": {
-        "80f37716-e734-401c-b472-c4eb8d1d0384": {
-          "type": "help",
+        "item_RwjUCi": {
+          "type": "item",
           "settings": {
-            "direct_help_text": "technician appointment",
-            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
+            "block_background_color": "#fffcfc",
+            "block_border_color": "#080808",
+            "icon_type": "text",
+            "icon": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg width=\"25px\" height=\"25px\" viewbox=\"0 0 25 25\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\">\n    <title>D11047D3-0D69-4FBA-A122-09F8FBE8112E<\/title>\n    <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <g id=\"Direct-Pool-Supplies---Homepage-v8\" transform=\"translate(-301.000000, -4460.000000)\" stroke=\"#000000\" stroke-width=\"1.5\">\n            <g id=\"Group-11\" transform=\"translate(210.000000, 4428.000000)\">\n                <g id=\"Technician-Appointments-Icon\" transform=\"translate(91.000000, 32.000000)\">\n                    <path d=\"M25,23.3333333 C25,24.2222222 24.2222222,25 23.3333333,25 L1.66666667,25 C0.777777778,25 0,24.2222222 0,23.3333333 L0,5 C0,4.11111111 0.777777778,3.33333333 1.66666667,3.33333333 L23.3333333,3.33333333 C24.2222222,3.33333333 25,4.11111111 25,5 L25,23.3333333 Z\" id=\"Path\"><\/path>\n                    <line x1=\"0\" y1=\"10\" x2=\"25\" y2=\"10\" id=\"Path\"><\/line>\n                    <line x1=\"6.66666667\" y1=\"5.77777778\" x2=\"6.66666667\" y2=\"0\" id=\"Path\"><\/line>\n                    <line x1=\"18.3333333\" y1=\"5.77777778\" x2=\"18.3333333\" y2=\"0\" id=\"Path\"><\/line>\n                    <polyline id=\"Path\" points=\"17.467 14.2221111 18.9334444 15.6886667 21.8665556 12.7556667\"><\/polyline>\n                    <path d=\"M19.5555556,19.6788889 C18.9777778,19.6788889 18.5155556,20.1411111 18.5155556,20.7188889 C18.5155556,21.2966667 18.9777778,21.7587778 19.5555556,21.7587778 C20.1332222,21.7587778 20.5954444,21.2966667 20.5954444,20.7188889 C20.5954444,20.1411111 20.1332222,19.6788889 19.5555556,19.6788889 Z\" id=\"Path\"><\/path>\n                    <path d=\"M12.5,19.6788889 C11.9222222,19.6788889 11.46,20.1411111 11.46,20.7188889 C11.46,21.2966667 11.9222222,21.7587778 12.5,21.7587778 C13.0777778,21.7587778 13.54,21.2966667 13.54,20.7188889 C13.54,20.1411111 13.0777778,19.6788889 12.5,19.6788889 Z\" id=\"Path\"><\/path>\n                    <path d=\"M12.5,13.5154444 C11.9222222,13.5154444 11.46,13.9776667 11.46,14.5554444 C11.46,15.1332222 11.9222222,15.5954444 12.5,15.5954444 C13.0777778,15.5954444 13.54,15.1332222 13.54,14.5554444 C13.54,13.9776667 13.0777778,13.5154444 12.5,13.5154444 Z\" id=\"Path\"><\/path>\n                    <path d=\"M5.4445,19.6788889 C4.86672222,19.6788889 4.40451111,20.1411111 4.40451111,20.7188889 C4.40451111,21.2966667 4.86672222,21.7587778 5.4445,21.7587778 C6.02226667,21.7587778 6.48447778,21.2966667 6.48447778,20.7188889 C6.48447778,20.1411111 6.02226667,19.6788889 5.4445,19.6788889 Z\" id=\"Path\"><\/path>\n                    <path d=\"M5.4445,13.5154444 C4.86672222,13.5154444 4.40451111,13.9776667 4.40451111,14.5554444 C4.40451111,15.1332222 4.86672222,15.5954444 5.4445,15.5954444 C6.02226667,15.5954444 6.48447778,15.1332222 6.48447778,14.5554444 C6.48447778,13.9776667 6.02226667,13.5154444 5.4445,13.5154444 Z\" id=\"Path\"><\/path>\n                <\/g>\n            <\/g>\n        <\/g>\n    <\/g>\n<\/svg>",
+            "icon_width": 25,
+            "icon_height": 25,
+            "icon_spacing_bottom": 0,
+            "icon_color": "",
+            "direct_help_text": "Tehnician Appointment",
+            "title_font_size": 18,
+            "title_font_size_mobile": 18,
+            "title_color": "",
+            "title_font_weight": "400",
+            "title_spacing_bottom": 0,
+            "title_spacing_bottom_mobile": 0,
+            "description": "",
+            "description_font_size": 12,
+            "description_font_size_mobile": 12,
+            "description_line_height": 12,
+            "description_spacing_bottom": 12,
+            "description_color": "",
+            "button_text": "",
+            "button_url": "",
+            "button_style": "style1",
+            "button_font_weight": "400",
+            "button_underline": false,
+            "button_color": "#080808",
+            "button_border_color": "",
+            "button_background_color": "",
+            "button_background_gradient_color": "",
+            "button_color_hover": "",
+            "button_border_color_hover": "",
+            "button_background_color_hover": "",
+            "button_background_gradient_color_hover": ""
           }
         },
-        "5ceb46cb-84f9-45dd-b10b-329734bdb1ce": {
-          "type": "help",
+        "item_Lwf3EN": {
+          "type": "item",
           "settings": {
-            "direct_help_text": "contact us",
-            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
+            "block_background_color": "#ffffff",
+            "block_border_color": "#000000",
+            "icon_type": "text",
+            "icon": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg width=\"31px\" height=\"30px\" viewbox=\"0 0 31 30\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\">\n    <title>3B50F7B0-3F37-41E2-978F-013FEDDE8837<\/title>\n    <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <g id=\"Direct-Pool-Supplies---Homepage-v8\" transform=\"translate(-849.000000, -4574.000000)\" stroke=\"#000000\" stroke-width=\"1.5\">\n            <g id=\"Group-15\" transform=\"translate(718.000000, 4543.000000)\">\n                <g id=\"Customer-Service-Icon\" transform=\"translate(131.000000, 31.000000)\">\n                    <path d=\"M19.5423506,28 L22.237251,28 C24.8432197,28 26.9533267,26.5786667 26.9533267,24 L26.9533267,23.1053333\" id=\"Path\"><\/path>\n                    <path d=\"M15.5,28 C15.5,29.1045695 16.404911,30 17.5211753,30 C18.6374396,30 19.5423506,29.1045695 19.5423506,28 C19.5423506,26.8954305 18.6374396,26 17.5211753,26 C16.404911,26 15.5,26.8954305 15.5,28 Z\" id=\"Path\"><\/path>\n                    <path d=\"M25.6058764,12.6666653 C28.23221,12.6648268 30.4775197,14.536407 30.9218113,17.0977696 C31.3661029,19.6591321 29.8800088,22.1644672 27.4033751,23.0293333 C26.9908118,23.1739932 26.5329453,23.1113478 26.1755301,22.8613393 C25.8181149,22.6113307 25.6056897,22.2051134 25.6058764,21.772 L25.6058764,12.6666653 Z\" id=\"Path\"><\/path>\n                    <path d=\"M5.39412359,12.6666653 C2.76779004,12.6648268 0.522480267,14.536407 0.0781886915,17.0977696 C-0.366102884,19.6591321 1.11999119,22.1644672 3.5966249,23.0293333 C4.00918822,23.1739932 4.46705471,23.1113478 4.82446991,22.8613393 C5.1818851,22.6113307 5.39431035,22.2051134 5.39412359,21.772 L5.39412359,12.6666653 Z\" id=\"Path\"><\/path>\n                    <path d=\"M25.6058765,12.6666667 L25.6058765,10 C25.6058765,4.4771525 21.0813215,0 15.5,0 C9.91867851,0 5.39412347,4.4771525 5.39412347,10 L5.39412347,12.6666667\" id=\"Path\"><\/path>\n                <\/g>\n            <\/g>\n        <\/g>\n    <\/g>\n<\/svg>",
+            "icon_width": 25,
+            "icon_height": 25,
+            "icon_spacing_bottom": 0,
+            "icon_color": "",
+            "direct_help_text": "Contact Us",
+            "title_font_size": 18,
+            "title_font_size_mobile": 18,
+            "title_color": "",
+            "title_font_weight": "400",
+            "title_spacing_bottom": 0,
+            "title_spacing_bottom_mobile": 12,
+            "description": "",
+            "description_font_size": 12,
+            "description_font_size_mobile": 12,
+            "description_line_height": 12,
+            "description_spacing_bottom": 12,
+            "description_color": "",
+            "button_text": "",
+            "button_url": "",
+            "button_style": "style1",
+            "button_font_weight": "400",
+            "button_underline": false,
+            "button_color": "",
+            "button_border_color": "",
+            "button_background_color": "",
+            "button_background_gradient_color": "",
+            "button_color_hover": "",
+            "button_border_color_hover": "",
+            "button_background_color_hover": "",
+            "button_background_gradient_color_hover": ""
           }
         },
-        "bc9da358-5e12-4099-92c0-1d8878bb9ef1": {
-          "type": "help",
+        "item_Hqxhnk": {
+          "type": "item",
           "settings": {
-            "direct_help_text": "product enquires",
-            "direct_image": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg"
+            "block_background_color": "#ffffff",
+            "block_border_color": "#060000",
+            "icon_type": "text",
+            "icon": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg width=\"33px\" height=\"24px\" viewbox=\"0 0 33 24\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\">\n    <title>AFF87B88-36AE-4C22-BCA8-A7A20376A5C6<\/title>\n    <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <g id=\"Direct-Pool-Supplies---Homepage-v8\" transform=\"translate(-338.000000, -4576.000000)\" stroke=\"#000000\" stroke-width=\"1.5\">\n            <g id=\"Group-13\" transform=\"translate(210.000000, 4543.000000)\">\n                <g id=\"Products-Delivery-Icon\" transform=\"translate(128.000000, 33.000000)\">\n                    <line x1=\"17.2173865\" y1=\"4.23529412\" x2=\"17.2173865\" y2=\"12.7058824\" id=\"Path\"><\/line>\n                    <line x1=\"12.9130399\" y1=\"4.23529412\" x2=\"12.9130399\" y2=\"12.7058824\" id=\"Path\"><\/line>\n                    <line x1=\"8.60869324\" y1=\"4.23529412\" x2=\"8.60869324\" y2=\"12.7058824\" id=\"Path\"><\/line>\n                    <line x1=\"4.30434662\" y1=\"4.23529412\" x2=\"4.30434662\" y2=\"12.7058824\" id=\"Path\"><\/line>\n                    <path d=\"M18.6521687,20.4705882 C18.6521687,22.4198285 20.2581034,24 22.2391242,24 C24.220145,24 25.8260797,22.4198285 25.8260797,20.4705882 C25.8260797,18.5213479 24.220145,16.9411765 22.2391242,16.9411765 C20.2581034,16.9411765 18.6521687,18.5213479 18.6521687,20.4705882 Z\" id=\"Path\"><\/path>\n                    <path d=\"M2.86956441,20.4705882 C2.86956441,22.4198285 4.4754991,24 6.45651993,24 C8.43754076,24 10.0434754,22.4198285 10.0434754,20.4705882 C10.0434754,18.5213479 8.43754076,16.9411765 6.45651993,16.9411765 C4.4754991,16.9411765 2.86956441,18.5213479 2.86956441,20.4705882 Z\" id=\"Path\"><\/path>\n                    <path d=\"M21.5217331,14.3167059 L21.5217331,1.41176471 C21.5217331,0.632068588 20.8793592,0 20.0869509,0 L1.43478221,0 C0.642373874,0 0,0.632068588 0,1.41176471 L0,19.632\" id=\"Path\"><\/path>\n                    <line x1=\"15.7826043\" y1=\"19.7647059\" x2=\"12.9130399\" y2=\"19.7647059\" id=\"Path\"><\/line>\n                    <path d=\"M28.6956441,21.1764706 L31.5652085,21.1764706 C32.3576169,21.1764706 33,20.544402 33,19.7647059 L33,11.4931765 C33.0055991,8.33913246 30.4646013,5.75076547 27.2608619,5.64705882 L21.5217331,5.64705882\" id=\"Path\"><\/path>\n                    <line x1=\"32.9999907\" y1=\"18.3529412\" x2=\"30.8478174\" y2=\"18.3529412\" id=\"Path\"><\/line>\n                    <path d=\"M32.9999907,12.7058824 L27.2608619,12.7058824 C26.8631752,12.7129532 26.4808708,12.5548016 26.2077892,12.2702476 C25.9347076,11.9856936 25.7961329,11.6010834 25.8260797,11.2108235 L25.8260797,5.64705882\" id=\"Path\"><\/path>\n                    <line x1=\"21.5217331\" y1=\"12.7058824\" x2=\"0\" y2=\"12.7058824\" id=\"Path\"><\/line>\n                <\/g>\n            <\/g>\n        <\/g>\n    <\/g>\n<\/svg>",
+            "icon_width": 25,
+            "icon_height": 25,
+            "icon_spacing_bottom": 0,
+            "icon_color": "",
+            "direct_help_text": "Product Delivery",
+            "title_font_size": 18,
+            "title_font_size_mobile": 12,
+            "title_color": "",
+            "title_font_weight": "400",
+            "title_spacing_bottom": 12,
+            "title_spacing_bottom_mobile": 0,
+            "description": "",
+            "description_font_size": 12,
+            "description_font_size_mobile": 12,
+            "description_line_height": 12,
+            "description_spacing_bottom": 12,
+            "description_color": "",
+            "button_text": "",
+            "button_url": "",
+            "button_style": "style1",
+            "button_font_weight": "400",
+            "button_underline": false,
+            "button_color": "",
+            "button_border_color": "",
+            "button_background_color": "",
+            "button_background_gradient_color": "",
+            "button_color_hover": "",
+            "button_border_color_hover": "",
+            "button_background_color_hover": "",
+            "button_background_gradient_color_hover": ""
+          }
+        },
+        "item_APVMji": {
+          "type": "item",
+          "settings": {
+            "block_background_color": "",
+            "block_border_color": "",
+            "icon_type": "image",
+            "icon": "",
+            "icon_width": 25,
+            "icon_height": 25,
+            "icon_spacing_bottom": 25,
+            "icon_color": "",
+            "direct_help_text": "",
+            "title_font_size": 12,
+            "title_font_size_mobile": 12,
+            "title_color": "",
+            "title_font_weight": "400",
+            "title_spacing_bottom": 12,
+            "title_spacing_bottom_mobile": 12,
+            "description": "",
+            "description_font_size": 12,
+            "description_font_size_mobile": 12,
+            "description_line_height": 12,
+            "description_spacing_bottom": 12,
+            "description_color": "",
+            "button_text": "",
+            "button_url": "",
+            "button_style": "style1",
+            "button_font_weight": "400",
+            "button_underline": false,
+            "button_color": "",
+            "button_border_color": "",
+            "button_background_color": "",
+            "button_background_gradient_color": "",
+            "button_color_hover": "",
+            "button_border_color_hover": "",
+            "button_background_color_hover": "",
+            "button_background_gradient_color_hover": ""
           }
         }
       },
       "block_order": [
-        "80f37716-e734-401c-b472-c4eb8d1d0384",
-        "5ceb46cb-84f9-45dd-b10b-329734bdb1ce",
-        "bc9da358-5e12-4099-92c0-1d8878bb9ef1"
+        "item_RwjUCi",
+        "item_Lwf3EN",
+        "item_Hqxhnk",
+        "item_APVMji"
       ],
       "settings": {
-        "direct_heading": "How can we help",
-        "direct_subheading": "Or Give us a call",
-        "direct_mobile": "+61 2 4956 5694"
-      }
-    },
-    "2bb15b5e-59f4-403b-b4a6-cd913f9f4bdf": {
-      "type": "custom-text-image",
-      "settings": {
-        "direct_Intro": "a little about us",
-        "direct_Title": "Australia's Favourite Pool & Spa Product Supplier",
-        "direct_Text": "Direct Pool Supplies are specialist consultants, salespeople, technicians and suppliers of a wide range of Pool & Spa Equipment, Chemicals and Accessories.",
-        "direct_Image": "shopify:\/\/shop_images\/pool_equipment_1370x_520c8b4c-432e-48e8-9296-feaffbfd1044.webp",
-        "direct_hero_btn1_text": "brands we sell",
-        "direct_hero_btn1_url": "",
-        "direct_hero_btn2_text": "about us",
-        "direct_hero_btn2_url": ""
+        "direct_custom_class": "",
+        "container_width": "100%",
+        "container_background_color": "#f7f7f7",
+        "container_background_gradient": "",
+        "container_padding_top_desktop": 30,
+        "container_padding_top_tablet": 30,
+        "container_padding_top_mobile": 30,
+        "container_padding_bottom_desktop": 30,
+        "container_padding_bottom_tablet": 30,
+        "container_padding_bottom_mobile": 30,
+        "direct_heading": "HOW CAN WE HELP?",
+        "heading_color": "",
+        "heading_font_size_desktop": 37,
+        "heading_font_size_mobile": 22,
+        "heading_padding_bottom_desktop": 20,
+        "heading_padding_bottom_mobile": 12,
+        "direct_subheading": "Or Give us a call on",
+        "subheading_color": "#0b0b0b",
+        "subheading_font_size_desktop": 37,
+        "subheading_font_size_mobile": 16,
+        "subheading_padding_bottom_desktop": 12,
+        "subheading_padding_bottom_mobile": 14,
+        "direct_mobile": "<br> +61 2 4956 5694",
+        "number_color": "#012173",
+        "number_font_size_desktop": 37,
+        "number_font_size_mobile": 16,
+        "number_padding_bottom_desktop": 30,
+        "number_padding_bottom_mobile": 15,
+        "item_hover_shadow": true,
+        "item_hover_animation": true,
+        "align_items": "center",
+        "item_spacing_top": 20,
+        "item_spacing_bottom": 20,
+        "item_spacing_horizontal": 20,
+        "item_border_radius": 0,
+        "grid_gap": 30
       }
     },
     "featured_collection": {
@@ -531,18 +1087,246 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "custom_image_banner_Uxz9DG": {
+      "type": "custom-image-banner",
+      "blocks": {
+        "small_image_3HfzYM": {
+          "type": "small_image",
+          "settings": {
+            "block_width": "50%",
+            "block_grid_gap": 25,
+            "block_border_radius": 0,
+            "block_spacing_horizontal": 0,
+            "block_spacing_vertical": 30,
+            "block_title_font_size": 18,
+            "block_title_spacing_bottom": 0,
+            "block_title_spacing_bottom_mobile": 0,
+            "block_subtitle_font_size": 18,
+            "block_subtitle_font_size_mobile": 18,
+            "block_subtitle_spacing_bottom": 0,
+            "block_subtitle_spacing_bottom_mobile": 0,
+            "block_btn_size": 16,
+            "block_btn_width": 160,
+            "enable_item_1": true,
+            "si_item_1_width": "48%",
+            "si_item_1_spacing_bottom": 0,
+            "si_item_image_1": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg",
+            "si_item_text_1": "Pool Cleaners Part 1",
+            "si_item_title_color_1": "",
+            "si_item_subtext_1": "",
+            "si_item_subtitle_color_1": "",
+            "button_text_1": "",
+            "si_item_button_link_1": "",
+            "si_item_button_color_1": "",
+            "si_item_button_border_color_1": "",
+            "si_item_button_background_color_1": "",
+            "si_item_button_color_1_hover": "",
+            "si_item_button_border_color_1_hover": "",
+            "si_item_button_background_color_1_hover": "",
+            "enable_item_2": true,
+            "si_item_2_width": "48%",
+            "si_item_2_spacing_bottom": 0,
+            "si_item_image_2": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg",
+            "si_item_text_2": "Pool heating parts",
+            "si_item_title_color_2": "",
+            "si_item_subtext_2": "",
+            "si_item_subtitle_color_2": "",
+            "button_text_2": "",
+            "si_item_button_link_2": "",
+            "si_item_button_color_2": "",
+            "si_item_button_border_color_2": "",
+            "si_item_button_background_color_2": "",
+            "si_item_button_color_2_hover": "",
+            "si_item_button_border_color_2_hover": "",
+            "si_item_button_background_color_2_hover": "",
+            "enable_item_3": true,
+            "si_item_3_width": "48%",
+            "si_item_3_spacing_bottom": 0,
+            "si_item_image_3": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg",
+            "si_item_text_3": "Chlorinators parts",
+            "si_item_title_color_3": "",
+            "si_item_subtext_3": "",
+            "si_item_subtitle_color_3": "",
+            "button_text_3": "",
+            "si_item_button_link_3": "",
+            "si_item_button_color_3": "",
+            "si_item_button_border_color_3": "",
+            "si_item_button_background_color_3": "",
+            "si_item_button_color_3_hover": "",
+            "si_item_button_border_color_3_hover": "",
+            "si_item_button_background_color_3_hover": "",
+            "enable_item_4": true,
+            "si_item_4_width": "48%",
+            "si_item_4_spacing_bottom": 0,
+            "si_item_image_4": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg",
+            "si_item_text_4": "pool chemicals",
+            "si_item_title_color_4": "",
+            "si_item_subtext_4": "",
+            "si_item_subtitle_color_4": "",
+            "button_text_4": "",
+            "si_item_button_link_4": "",
+            "si_item_button_color_4": "",
+            "si_item_button_border_color_4": "",
+            "si_item_button_background_color_4": "",
+            "si_item_button_color_4_hover": "",
+            "si_item_button_border_color_4_hover": "",
+            "si_item_button_background_color_4_hover": ""
+          }
+        },
+        "small_image_6FgVk6": {
+          "type": "small_image",
+          "settings": {
+            "block_width": "50%",
+            "block_grid_gap": 25,
+            "block_border_radius": 0,
+            "block_spacing_horizontal": 30,
+            "block_spacing_vertical": 30,
+            "block_title_font_size": 18,
+            "block_title_spacing_bottom": 0,
+            "block_title_spacing_bottom_mobile": 0,
+            "block_subtitle_font_size": 18,
+            "block_subtitle_font_size_mobile": 18,
+            "block_subtitle_spacing_bottom": 0,
+            "block_subtitle_spacing_bottom_mobile": 0,
+            "block_btn_size": 16,
+            "block_btn_width": 160,
+            "enable_item_1": true,
+            "si_item_1_width": "48%",
+            "si_item_1_spacing_bottom": 0,
+            "si_item_image_1": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg",
+            "si_item_text_1": "Sand filters part",
+            "si_item_title_color_1": "",
+            "si_item_subtext_1": "",
+            "si_item_subtitle_color_1": "",
+            "button_text_1": "",
+            "si_item_button_link_1": "",
+            "si_item_button_color_1": "",
+            "si_item_button_border_color_1": "",
+            "si_item_button_background_color_1": "",
+            "si_item_button_color_1_hover": "",
+            "si_item_button_border_color_1_hover": "",
+            "si_item_button_background_color_1_hover": "",
+            "enable_item_2": true,
+            "si_item_2_width": "48%",
+            "si_item_2_spacing_bottom": 0,
+            "si_item_image_2": "shopify:\/\/shop_images\/Skimmer_Box_Parts_Icon_20x_bd1c2d51-e524-44a1-9979-798bb1a21df3.svg",
+            "si_item_text_2": "Pool lights",
+            "si_item_title_color_2": "",
+            "si_item_subtext_2": "",
+            "si_item_subtitle_color_2": "",
+            "button_text_2": "",
+            "si_item_button_link_2": "",
+            "si_item_button_color_2": "",
+            "si_item_button_border_color_2": "",
+            "si_item_button_background_color_2": "",
+            "si_item_button_color_2_hover": "",
+            "si_item_button_border_color_2_hover": "",
+            "si_item_button_background_color_2_hover": "",
+            "enable_item_3": true,
+            "si_item_3_width": "48%",
+            "si_item_3_spacing_bottom": 0,
+            "si_item_image_3": "shopify:\/\/shop_images\/Chlorinators_Parts_Icon_20x_bc52076e-6a32-468c-806a-1decd55f92e6.svg",
+            "si_item_text_3": "Skimmer box parts",
+            "si_item_title_color_3": "",
+            "si_item_subtext_3": "",
+            "si_item_subtitle_color_3": "",
+            "button_text_3": "",
+            "si_item_button_link_3": "",
+            "si_item_button_color_3": "",
+            "si_item_button_border_color_3": "",
+            "si_item_button_background_color_3": "",
+            "si_item_button_color_3_hover": "",
+            "si_item_button_border_color_3_hover": "",
+            "si_item_button_background_color_3_hover": "",
+            "enable_item_4": true,
+            "si_item_4_width": "48%",
+            "si_item_4_spacing_bottom": 0,
+            "si_item_image_4": "shopify:\/\/shop_images\/Pool_Heating_Parts_Icon_20x_f7c060ef-bb70-4e6f-be5e-f96c87c9f1bd.svg",
+            "si_item_text_4": "Spa Lights",
+            "si_item_title_color_4": "",
+            "si_item_subtext_4": "",
+            "si_item_subtitle_color_4": "",
+            "button_text_4": "",
+            "si_item_button_link_4": "",
+            "si_item_button_color_4": "",
+            "si_item_button_border_color_4": "",
+            "si_item_button_background_color_4": "",
+            "si_item_button_color_4_hover": "",
+            "si_item_button_border_color_4_hover": "",
+            "si_item_button_background_color_4_hover": ""
+          }
+        },
+        "large_image_m3nbeK": {
+          "type": "large_image",
+          "settings": {
+            "block_width": "50%",
+            "block_border_radius": 0,
+            "block_spacing_top": 0,
+            "block_spacing_bottom": 0,
+            "direct_intro_image": "shopify:\/\/shop_images\/pool_pumps_61x_473b09de-0778-4566-87fb-cde940e150f9.webp",
+            "direct_Intro": "",
+            "direct_Intro_color": "",
+            "direct_Intro_font_size": 18,
+            "direct_Intro_spacing_bottom": 0,
+            "direct_Title": "Pool Pumps Part Finder",
+            "direct_Title_color": "#ffffff",
+            "direct_Title_font_size": 33,
+            "direct_Title_spacing_bottom": 13,
+            "direct_Text": "Direct Pool Supplies are specialist consultants, salespeople, technicians and suppliers of a wide range of Pool & Spa Equipment, Chemicals and Accessories.",
+            "direct_Text_color": "#ffffff",
+            "direct_Text_font_size": 18,
+            "direct_Text_spacing_bottom": 30,
+            "direct_hero_btn1_text": "Find my spare parts",
+            "direct_hero_btn1_url": "",
+            "direct_hero_btn1_size": 16,
+            "direct_hero_btn1_width": 280,
+            "direct_hero_btn1_color": "#012173",
+            "direct_hero_btn1_color_bg": "#ffffff",
+            "direct_hero_btn1_color_hover": "",
+            "direct_hero_btn1_color_bg_hover": "",
+            "direct_hero_btn2_text": "",
+            "direct_hero_btn2_url": "",
+            "direct_hero_btn2_size": 16,
+            "direct_hero_btn2_width": 160,
+            "direct_hero_btn2_color": "",
+            "direct_hero_btn2_color_bg": "",
+            "direct_hero_btn2_color_hover": "",
+            "direct_hero_btn2_color_bg_hover": "",
+            "align_items_h": "center",
+            "align_items_v": "center",
+            "direct_background_color": "#012173"
+          }
+        }
+      },
+      "block_order": [
+        "small_image_3HfzYM",
+        "small_image_6FgVk6",
+        "large_image_m3nbeK"
+      ],
+      "settings": {
+        "direct_custom_class": "",
+        "container_width": "100%",
+        "container_background_color": "",
+        "container_background_gradient": "",
+        "container_padding_top_desktop": 0,
+        "container_padding_top_tablet": 0,
+        "container_padding_top_mobile": 0,
+        "container_padding_bottom_desktop": 0,
+        "container_padding_bottom_tablet": 0,
+        "container_padding_bottom_mobile": 0,
+        "zoom_background": true
+      }
     }
   },
   "order": [
     "f8fb212b-8796-4946-a1eb-ecd2a198e89f",
-    "395ce8f6-cce3-4752-9159-309498138af7",
-    "ac313d55-ff48-42b7-8efa-34e67e5f4c6b",
-    "157b7d98-7837-45e2-a55b-6e26a4b4a429",
-    "a5ef4251-f0d9-44ee-acbb-a47319bba267",
-    "fcd86e49-ff55-4bdf-a0cd-1f2703c565f4",
-    "32ee266f-b119-4341-8310-6319039f99df",
+    "custom_usp_a68bme",
+    "test_hero_new_MaX9pW",
+    "custom_brand_slider_AzUiq7",
+    "custom_usp_description_4mYMVG",
     "4a1dedb8-0df6-4ea1-b07f-abf81488fb06",
-    "2bb15b5e-59f4-403b-b4a6-cd913f9f4bdf",
-    "featured_collection"
+    "featured_collection",
+    "custom_image_banner_Uxz9DG"
   ]
 }
