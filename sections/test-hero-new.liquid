@@ -329,7 +329,9 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
 }
   @media all and (max-width: 1440px) {
     #{{ sectionID }} .container {
-    flex-direction: column;
+      flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   } }
   @media all and (max-width: 992px) {
     #{{ sectionID }} .hero-button-primary {
@@ -360,7 +362,9 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
   flex-basis: 100% !important;
 }
     #{{ sectionID }} .container {
-      flex-direction: column;
+      flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     }
     #{{ sectionID }}  .hero-button-primary {
       margin: 10px;
