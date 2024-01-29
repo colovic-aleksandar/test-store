@@ -478,15 +478,19 @@ body {
           const elements = document.querySelectorAll('.direct-hero-text');
 if(elements) {
   elements.forEach(element => {
-    if (element && (element.children.length === 0 || (element.children.length === 1 && element.children[0].tagName === 'STYLE'))) {
-      const hasHeroTextWrapper = element.classList.contains('hero-text-wrapper') && element.children.length === 0;
-      
-      if (!hasHeroTextWrapper) {
-        element.classList.add('image-only');
-      }
+    if (
+      element &&
+      (element.children.length === 0 ||
+        (element.children.length === 1 &&
+          element.children[1].tagName === 'STYLE' &&
+          element.children[0].children.length === 0)
+      )
+    ) {
+      element.classList.add('image-only');
     }
   });
 }
+
 
     </script>
 
