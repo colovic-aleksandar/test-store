@@ -974,52 +974,12 @@
             "button_background_color_hover": "",
             "button_background_gradient_color_hover": ""
           }
-        },
-        "item_APVMji": {
-          "type": "item",
-          "settings": {
-            "block_background_color": "",
-            "block_border_color": "",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 25,
-            "icon_height": 25,
-            "icon_spacing_bottom": 25,
-            "icon_color": "",
-            "direct_help_text": "",
-            "title_font_size": 12,
-            "title_font_size_mobile": 12,
-            "title_color": "",
-            "title_font_weight": "400",
-            "title_spacing_bottom": 12,
-            "title_spacing_bottom_mobile": 12,
-            "description": "",
-            "description_font_size": 12,
-            "description_font_size_mobile": 12,
-            "description_line_height": 12,
-            "description_spacing_bottom": 12,
-            "description_color": "",
-            "button_text": "",
-            "button_url": "",
-            "button_style": "style1",
-            "button_font_weight": "400",
-            "button_underline": false,
-            "button_color": "",
-            "button_border_color": "",
-            "button_background_color": "",
-            "button_background_gradient_color": "",
-            "button_color_hover": "",
-            "button_border_color_hover": "",
-            "button_background_color_hover": "",
-            "button_background_gradient_color_hover": ""
-          }
         }
       },
       "block_order": [
         "item_RwjUCi",
         "item_Lwf3EN",
-        "item_Hqxhnk",
-        "item_APVMji"
+        "item_Hqxhnk"
       ],
       "settings": {
         "direct_custom_class": "",
