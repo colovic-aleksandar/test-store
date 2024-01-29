@@ -823,7 +823,7 @@
         "container_padding_bottom_desktop": 30,
         "container_padding_bottom_tablet": 18,
         "container_padding_bottom_mobile": 0,
-        "usp_description_type": "slider",
+        "usp_description_type": "grid",
         "usp_description_title": "",
         "usp_description_title_color": "",
         "usp_description_title_font_size": 18,
