@@ -546,6 +546,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     }
   }
   @media all and (max-width: 768px) {
+
     #{{ sectionID }} .container {
       flex-direction: column;
     }
@@ -565,6 +566,10 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
         {% if container_padding_bottom_mobile != blank %}
             padding-bottom: {{container_padding_bottom_mobile}}px;
         {% endif %}
+        flex-wrap: wrap;
+    }
+    #{{ sectionID }} .direct-hero-image {
+      width: 100% !important;
     }
   }
 .block_item_wrapper {
