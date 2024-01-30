@@ -321,7 +321,7 @@ assign divID = section.id | replace: 'template--', '' | replace: 'shopify-sectio
         margin-left: 20px;
     }
  @media all and (max-width: 768px) {
-    .right-section, .left-section {
+    #{{ sectionID }}    .right-section, #{{ sectionID }}   .left-section {
         display: none !important;
     }
     .center-section {

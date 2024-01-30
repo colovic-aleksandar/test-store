@@ -309,6 +309,25 @@
     font-weight: 600;
     text-align: center;
   }
+  @media all and (min-width: 769px) {
+    .slick-list.draggable {
+    width: 100%;
+    display: flex;
+}
+
+.slick-track {
+    width: 100%;
+    display: flex;
+}
+
+div#direct-usp_description-item {
+    flex: 1;
+}
+
+.slick-track {
+    width: 100% !important;
+}
+  }
   @media all and (max-width: 992px) {
       #{{ sectionID }} .direct-usp_description-section {
       {% if container_padding_top_tablet != blank %}
