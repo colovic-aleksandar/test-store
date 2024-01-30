@@ -39,7 +39,8 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                 ">
                 <div class="small_image_item_wrapper" style="
                     {% if block.settings.enable_item_1 == false  %} display: none; {% endif %}
-                    width:{{ block.settings.si_item_1_width}};
+                    width: 100%;
+                    max-width:{{ block.settings.si_item_1_width}};
                     margin-bottom:{{block.settings.si_item_1_spacing_bottom}}px">
                     <div class="text-button-wrapper">
                         <p class="small_image_text" style="
@@ -83,7 +84,8 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                 </div>
                 <div class="small_image_item_wrapper" style="
                     {% if block.settings.enable_item_2 == false  %} display: none; {% endif %}
-                    width:{{ block.settings.si_item_2_width}};
+                    width: 100%;
+                    max-width:{{ block.settings.si_item_2_width}};
                     margin-bottom:{{block.settings.si_item_2_spacing_bottom}}px">
                     <div class="text-button-wrapper">
                         <p class="small_image_text" style="
@@ -127,7 +129,8 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                 </div>
                 <div class="small_image_item_wrapper" style="
                     {% if block.settings.enable_item_3 == false  %} display: none; {% endif %}
-                    width:{{ block.settings.si_item_3_width}};
+                    width: 100%;
+                    max-width:{{ block.settings.si_item_3_width}};
                     margin-bottom:{{block.settings.si_item_3_spacing_bottom}}px">
                     <div class="text-button-wrapper">
                         <p class="small_image_text" style="
@@ -171,7 +174,8 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
                 </div>
                 <div class="small_image_item_wrapper" style="
                     {% if block.settings.enable_item_4 == false  %} display: none; {% endif %}
-                    width:{{ block.settings.si_item_4_width}};
+                    width: 100%;
+                    max-width:{{ block.settings.si_item_4_width}};
                     margin-bottom:{{block.settings.si_item_4_spacing_bottom}}px">
                     <div class="text-button-wrapper">
                         <p class="small_image_text" style="
@@ -577,7 +581,7 @@ assign container_padding_bottom_mobile = section.settings.container_padding_bott
     width: 100%;
     flex-wrap: wrap;
     border-radius: var(--block-border-radius);
-    padding: var(--block-spacing-horizontal) var(--block-spacing-vertical);
+    padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
 }
 .small_image_text {
     font-size: var(--block-title-font-size);
